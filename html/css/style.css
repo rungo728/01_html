@@ -1,0 +1,21 @@
+.a{
+  color: red;
+  background: pink;
+  border: 50px solid yellow;
+  text-align: center;
+}
+.b{
+  color: blue;
+}
+p{
+  color: pink;
+}
+img{
+  width:300px;
+  height: 200px;
+}
+p{
+  font-size: 20px;
+  padding-bottom: 20px;
+  border-bottom: solid 1px #f5f5f5;
+}
