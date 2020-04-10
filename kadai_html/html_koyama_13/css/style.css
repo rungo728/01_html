@@ -27,7 +27,6 @@ a{
 img{
   padding-top: 0px;
   left: 0%;
-  margin-left: 40px;
   margin-top: -13px;
   width:200px;
   height: 40px;
@@ -87,4 +86,46 @@ img{
   font-size: 16px;
   max-width: 500px;
 
+}
+.about-images{
+  margin: auto;
+  display: flex;
+  padding: 30px 0 0 0;
+
+}
+.about-images-each{
+  width: 23%;
+}
+.about-images-each img{
+  width: 240px;
+  height: 200px;
+
+}
+
+
+@media screen and (max-width: 500px){
+.about__text {
+  width: 95%;
+  margin: auto;
+}
+.about-images{
+  width: 100%;
+  margin: auto;
+  display: block;
+}
+.about-images-each img{
+  width: 320px;
+  height: 170px;
+}
+}
+@media screen and (max-width: 768px){
+.about-images{
+  width: 100%;
+  margin: auto;
+  display: block;
+}
+.about-images-each img{
+  width: 600px;
+  height: 220px;
+}
 }
