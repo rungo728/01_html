@@ -212,6 +212,22 @@ img{
   background-color: #ffd61a;
   color: #FBFBEF;
 }
+/* accessエリア */
+#access{
+  margin-top: 60px;
+  width: 100%;
+  text-align: center;
+}
+.access__title{
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffd61a;
+  margin-bottom: 15px;
+}
+.access__subtitle{
+  font-size: 18px;
+  margin-bottom: 30px;
+}
 @media screen and (max-width: 500px){
 header{
   max-width:500px;
@@ -243,6 +259,9 @@ img{
 .about-images-each img{
   width: 320px;
   height: 170px;
+}
+.accessmap{
+  max-width: 500px;
 }
 }
 @media screen and (max-width: 767px){
