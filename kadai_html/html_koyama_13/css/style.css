@@ -190,4 +190,9 @@ img{
   width: 600px;
   height: 220px;
 }
+.course{
+  padding: 40px 0 0 0;
+  width: 100%;
+  margin: auto;
+}
 }
