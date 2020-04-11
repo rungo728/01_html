@@ -205,6 +205,7 @@ label{
 }
 .news__article{
   width: 250px;
+  text-align: center;
 }
 .readmore{
   margin-top: 60px;
@@ -428,6 +429,9 @@ img{
 .course{
   padding: 40px 0 0 0;
   width: 100%;
+  margin: auto;
+}
+.news__article{
   margin: auto;
 }
 }
