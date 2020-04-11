@@ -33,7 +33,7 @@ img{
 }
 label{
   display: block;
-
+  line-height: 36px;
 }
 .nav-list{
   display: flex;
@@ -203,6 +203,9 @@ label{
 .news__date{
   padding-bottom: 30px;
 }
+.news__article{
+  width: 250px;
+}
 .readmore{
   margin-top: 60px;
   text-align: center;
@@ -213,6 +216,10 @@ label{
   height: 60px;
   border: 1px solid #909090;
   padding: 15px 100px 14px;
+  background-color: #ffffff;
+  color: #bbbbbb;
+}
+.readmore a:hover{
   background-color: #ffd61a;
   color: #FBFBEF;
 }
@@ -282,14 +289,17 @@ label{
   line-height: 35px;
   font-size: 12px;
   text-align: left;
+  
 }
 .form-title{
   width: 118px;
   margin-bottom: 10px;
+  
 }
 .form-detail{
   width: 482px;
-
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 .form-detail input{
   width: 386px;
@@ -302,6 +312,7 @@ label{
 .form-radio{
   width: 386px;
 }
+
 .form-detail textarea{
   width: 386px;
 }
@@ -315,6 +326,10 @@ label{
   height: 60px;
   border: 1px solid #909090;
   padding: 15px 100px 14px;
+  background-color: #ffffff;
+  color: #bbbbbb;
+}
+.submit a:hover{
   background-color: #ffd61a;
   color: #FBFBEF;
 }
@@ -370,13 +385,33 @@ img{
 .accessmap{
   max-width: 500px;
 }
+.form{
+  display: flex;
+  width: 370px;
+  flex-wrap: wrap;
+  margin: auto;
+  text-align: left;
+}
 .form-title {
-  width: 55px;
+  width: 60px;
   margin-bottom: 10px;
+  padding-right: 60px;
 }
 .form-detail{
   width: 250px;
-
+}
+.form-detail input{
+  width: 240px;
+  height: 24px;
+}
+.form-detail select{
+  width: 240px;
+}
+.form-radio{
+  width: 240px;
+}
+.form-detail textarea{
+  width: 240px;
 }
 }
 
