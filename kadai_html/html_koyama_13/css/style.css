@@ -31,6 +31,10 @@ img{
   width:200px;
   height: 40px;
 }
+label{
+  display: block;
+
+}
 .nav-list{
   display: flex;
 
@@ -246,6 +250,91 @@ img{
   width: 280px;
   height: 50px;
 }
+/* contactエリア */
+#contact{
+  margin-top: 60px;
+  width: 100%;
+  text-align: center;
+}
+.contact__title{
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffd61a;
+  margin-bottom: 15px;
+}
+.contact__subtitle{
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+.contact__text{
+  text-align: center;
+  font-size: 15px;
+  padding-bottom: 30px;
+  max-width: 450px;
+  margin: auto;
+}
+.form{
+  display: flex;
+  width: 600px;
+  flex-wrap: wrap;
+  margin: auto;
+  margin-top: 35px;
+  line-height: 35px;
+  font-size: 12px;
+  text-align: left;
+}
+.form-title{
+  width: 118px;
+  margin-bottom: 10px;
+}
+.form-detail{
+  width: 482px;
+
+}
+.form-detail input{
+  width: 386px;
+  height: 30px;
+}
+.form-detail select{
+  width: 386px;
+  height: 30px;
+}
+.form-radio{
+  width: 386px;
+}
+.form-detail textarea{
+  width: 386px;
+}
+.submit{
+  margin-top: 30px;
+  text-align: center;
+  font-size: 18px;
+}
+.submit a{
+  width: 300px;
+  height: 60px;
+  border: 1px solid #909090;
+  padding: 15px 100px 14px;
+  background-color: #ffd61a;
+  color: #FBFBEF;
+}
+.footer{
+  background: #707070;
+  margin-top: 40px;
+}
+.container{
+  margin-top: 140px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.row-text{
+  padding-top: 30px;
+  padding-bottom: 30px;
+  color: #fff;
+  text-align: center;
+}
 @media screen and (max-width: 500px){
 header{
   max-width:500px;
@@ -280,6 +369,14 @@ img{
 }
 .accessmap{
   max-width: 500px;
+}
+.form-title {
+  width: 55px;
+  margin-bottom: 10px;
+}
+.form-detail{
+  width: 250px;
+
 }
 }
 

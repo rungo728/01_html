@@ -161,13 +161,60 @@
         <dt>MAIL</dt>
         <dd>dummy@cheeseacademy.tokyo</dd>
       </dl>
-
     </div>
-
+    <!-- contactエリア -->
+    <div id="contact">
+      <h3 class="contact__title">CONTACT</h3>
+      <p class="contact__subtitle">説明会お申し込み・お問い合わせ</p>
+      <p class="contact__text">ぜひ1度、足を運んでみませんか。説明会は随時開催中。
+        その他、お問い合わせもお気軽にどうぞ。お待ちしております。
+      </p>
+      <p class="contact__text">※チーズアカデミーは実際には存在しません。
+        間違っても問い合わせしないようお願いいたします。
+      </p>
+      <form class="formbox" action="">
+        <dl class="form">
+          <dt class="form-title">名前</dt>
+          <dd class="form-detail"><input type="text"></dd>
+          <dt class="form-title">カナ</dt>
+          <dd class="form-detail"><input type="text"></dd>
+          <dt class="form-title">メールアドレス</dt>
+          <dd class="form-detail"><input type="text"></dd>
+          <dt class="form-title">チーズアカデミーを知ったきっかけ</dt>
+          <dd class="form-detail">
+            <select class="selectbox" id="">
+              <option value="---">---</option>
+              <option value="google検索">google検索</option>
+              <option value="SNS">SNS</option>
+              <option value="紹介">紹介</option>
+              <option value="たまたま通りかかった">たまたま通りかかった</option>
+              <option value="その他">その他</option>
+            </select>
+          </dd>
+          <dt class="form-title">志望動機</dt>
+          <dd class="form-radio">
+            <label><input type="checkbox" class="radio-button" name="about"> 起業をしたい</label>
+            <label><input type="checkbox" class="radio-button" name="about"> チーズ系企業に就職・転職したい</label>
+            <label><input type="checkbox" class="radio-button" name="about"> チーズと関わる仕事をしており、仕事に生かしたい</label>
+            <label><input type="checkbox" class="radio-button" name="about"> チーズの教養を身につけたい</label>
+          </dd>
+          <dt class="form-title">詳細</dt>
+          <dd class="form-detail"><textarea name="" id="" cols="30" rows="10"></textarea></dd>
+        </dl>
+      </form>
+      <div class="submit">
+        <a href="">送信</a>
+      </div>
+    </div>
   </section>
+  <footer id="footer">
+    <div class="container footer">
+      <div class="row">
+        <p class="row-text">copyrights 2019 Cheeese Academy Tokyo All RIghts Reserved.</p>
 
-
-
+      </div>
+    </div>
+  </footer>
   <!-- ここから上にコードを書く -->
   <!-- この中に記述していく -->
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
