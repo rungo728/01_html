@@ -1,14 +1,14 @@
 @import "style";
 /* ここから下に記載していく */
-a{
+a {
   text-decoration: none;
 }
-.eng{
+.eng {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: normal;
   letter-spacing: 3px;
 }
-.header{
+.header {
   width: 100%;
   height: 100px;
   top: 0px;
@@ -16,7 +16,7 @@ a{
   z-index: 7;
   box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 1px 1px;
 }
-.header_contents{
+.header_contents {
   width: 90%;
   margin: auto;
   display: flex;
@@ -24,45 +24,42 @@ a{
   align-items: center;
   padding-top: 18px;
 }
-img{
+img {
   padding-top: 0px;
   left: 0%;
   margin-top: -13px;
-  width:200px;
+  width: 200px;
   height: 40px;
 }
-label{
+label {
   display: block;
   line-height: 36px;
 }
-.nav-list{
+.nav-list {
   display: flex;
-
 }
-.nav-item a{
+.nav-item a {
   margin-left: 15px;
   font-size: 21px;
   font-family: Arial, Helvetica, sans-serif;
   letter-spacing: 1px;
 }
-.mainlogo{
-  height:400px;
+.mainlogo {
+  height: 400px;
   /* 背景画像の部分 */
   background: url("../img/photo-main1.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-
 }
-.mainlogo__title{
+.mainlogo__title {
   padding-top: 238.8px;
   text-align: center;
   font-size: 30px;
   font-weight: bold;
   color: white;
-
 }
-.mainlogo__subtitle{
+.mainlogo__subtitle {
   padding-top: 30px;
   text-align: center;
   font-size: 30px;
@@ -70,71 +67,69 @@ label{
   color: white;
 }
 /* aboutarea */
-.about{
+.about {
   margin-top: 60px;
   width: 100%;
   text-align: center;
 }
-.about__title{
+.about__title {
   font-size: 24px;
   color: #ffd61a;
   margin-bottom: 15px;
 }
-.about__subtitle{
+.about__subtitle {
   font-size: 18px;
   margin-bottom: 30px;
 }
-.about__text{
+.about__text {
   margin: auto;
   margin-bottom: 40px;
   font-size: 16px;
   max-width: 500px;
-
 }
-.about-images{
+.about-images {
   margin: auto;
   display: flex;
   padding: 30px 0 0 0;
-
 }
-.about-images-each{
+.about-images-each {
   width: 24%;
 }
-.about-images-each img{
+.about-images-each img {
   width: 240px;
   height: 200px;
-
+  object-fit: cover;
 }
-#course{
+#course {
   width: 100%;
   text-align: center;
   margin-top: 60px;
 }
-.course__title{
+.course__title {
   font-size: 24px;
   font-weight: bold;
   color: #ffd61a;
   margin-bottom: 15px;
 }
-.course__text{
+.course__text {
   text-align: center;
   font-size: 15x;
   margin-bottom: 20px;
   max-width: 500px;
   margin: auto;
 }
-.course-detail{
+.course-detail {
   padding: 40px 0 0 0;
 }
-.course{
+.course {
   width: 100%;
   height: 220px;
   margin: auto;
   display: flex;
   align-items: center;
-  background-color: #FBFBEF;
+  background-color: #fbfbef;
 }
-.course1-image{
+.course1-image {
   width: 50%;
   height: 220px;
   background: url("../img/about3.png");
@@ -142,17 +137,17 @@ label{
   background-size: cover;
   background-repeat: no-repeat;
 }
-.course-textbox{
+.course-textbox {
   box-sizing: border-box;
   width: 50%;
   padding: 0 51px 0 48px;
 }
-.course__title2{
+.course__title2 {
   font-size: 16px;
   font-weight: bold;
   margin-bottom: 20px;
 }
-.course2-image{
+.course2-image {
   width: 50%;
   height: 220px;
   background: url("../img/course1.png");
@@ -160,7 +155,7 @@ label{
   background-size: cover;
   background-repeat: no-repeat;
 }
-.course3-image{
+.course3-image {
   width: 50%;
   height: 220px;
   background: url("../img/about4.png");
@@ -169,50 +164,50 @@ label{
   background-repeat: no-repeat;
 }
 /* newsエリア */
-#news{
+#news {
   width: 100%;
   text-align: center;
   margin-top: 60px;
 }
-.news__title{
+.news__title {
   font-size: 24px;
   font-weight: bold;
   color: #ffd61a;
   margin-bottom: 15px;
 }
-.news__subtitle{
+.news__subtitle {
   font-size: 18px;
   margin-bottom: 30px;
 }
-.news-content{
+.news-content {
   position: relative;
   padding-left: 15px;
-  padding-right: 15px; 
+  padding-right: 15px;
   margin-bottom: 60px;
 }
-.thumnail{
+.thumnail {
   margin-top: 30px;
-  padding-bottom: 40px; 
+  padding-bottom: 40px;
   text-align: center;
 }
-.thumnail img{
+.thumnail img {
   display: table;
   width: 100%;
   height: 200px;
 }
-.news__date{
+.news__date {
   padding-bottom: 30px;
 }
-.news__article{
+.news__article {
   width: 250px;
   text-align: center;
 }
-.readmore{
+.readmore {
   margin-top: 60px;
   text-align: center;
   font-size: 18px;
 }
-.readmore a{
+.readmore a {
   width: 300px;
   height: 60px;
   border: 1px solid #909090;
@@ -220,28 +215,28 @@ label{
   background-color: #ffffff;
   color: #bbbbbb;
 }
-.readmore a:hover{
+.readmore a:hover {
   background-color: #ffd61a;
-  color: #FBFBEF;
+  color: #fbfbef;
 }
 /* accessエリア */
-#access{
+#access {
   margin-top: 60px;
   width: 100%;
   text-align: center;
   background-color: #fafafa;
 }
-.access__title{
+.access__title {
   font-size: 24px;
   font-weight: bold;
   color: #ffd61a;
   margin-bottom: 15px;
 }
-.access__subtitle{
+.access__subtitle {
   font-size: 18px;
   margin-bottom: 30px;
 }
-.address{
+.address {
   display: flex;
   flex-wrap: wrap;
   line-height: 32px;
@@ -250,38 +245,38 @@ label{
   margin-top: 60px;
   font-size: 12px;
 }
-.address dt{
+.address dt {
   width: 118px;
   margin-bottom: 30px;
 }
-.address dd{
+.address dd {
   width: 280px;
   height: 50px;
 }
 /* contactエリア */
-#contact{
+#contact {
   margin-top: 60px;
   width: 100%;
   text-align: center;
 }
-.contact__title{
+.contact__title {
   font-size: 24px;
   font-weight: bold;
   color: #ffd61a;
   margin-bottom: 15px;
 }
-.contact__subtitle{
+.contact__subtitle {
   font-size: 16px;
   margin-bottom: 30px;
 }
-.contact__text{
+.contact__text {
   text-align: center;
   font-size: 15px;
   padding-bottom: 30px;
   max-width: 450px;
   margin: auto;
 }
-.form{
+.form {
   display: flex;
   width: 600px;
   flex-wrap: wrap;
@@ -290,39 +285,37 @@ label{
   line-height: 35px;
   font-size: 12px;
   text-align: left;
-  
 }
-.form-title{
+.form-title {
   width: 118px;
   margin-bottom: 10px;
-  
 }
-.form-detail{
+.form-detail {
   width: 482px;
   padding-top: 8px;
   padding-bottom: 8px;
 }
-.form-detail input{
+.form-detail input {
   width: 386px;
   height: 30px;
 }
-.form-detail select{
+.form-detail select {
   width: 386px;
   height: 30px;
 }
-.form-radio{
+.form-radio {
   width: 386px;
 }
 
-.form-detail textarea{
+.form-detail textarea {
   width: 386px;
 }
-.submit{
+.submit {
   margin-top: 30px;
   text-align: center;
   font-size: 18px;
 }
-.submit a{
+.submit a {
   width: 300px;
   height: 60px;
   border: 1px solid #909090;
@@ -330,125 +323,132 @@ label{
   background-color: #ffffff;
   color: #bbbbbb;
 }
-.submit a:hover{
+.submit a:hover {
   background-color: #ffd61a;
-  color: #FBFBEF;
+  color: #fbfbef;
 }
-.footer{
+.footer {
   background: #707070;
   margin-top: 40px;
 }
-.container{
+.container {
   margin-top: 140px;
   margin-right: auto;
   margin-left: auto;
   padding-left: 15px;
   padding-right: 15px;
 }
-.row-text{
+.row-text {
   padding-top: 30px;
   padding-bottom: 30px;
   color: #fff;
   text-align: center;
 }
-@media screen and (max-width: 500px){
-header{
-  max-width:500px;
-}
-img{
-  left: 0%;
-  margin-top: -13px;
-  height: 40px;
-  width: 70%;
-}
-.nav-item a{
-  margin-left: 15px;
-  font-size: 11px;
-  font-family: Arial, Helvetica, sans-serif;
-  letter-spacing: 1px;
-}
-.mainlogo{
-  max-width: 500px;
-}
-.about__text {
-  width: 95%;
-  margin: auto;
-}
-.about-images{
-  width: 100%;
-  margin: auto;
-  display: block;
-}
-.about-images-each img{
-  width: 320px;
-  height: 170px;
-}
-.accessmap{
-  max-width: 500px;
-}
-.form{
-  display: flex;
-  width: 370px;
-  flex-wrap: wrap;
-  margin: auto;
-  text-align: left;
-}
-.form-title {
-  width: 60px;
-  margin-bottom: 10px;
-  padding-right: 60px;
-}
-.form-detail{
-  width: 250px;
-}
-.form-detail input{
-  width: 240px;
-  height: 24px;
-}
-.form-detail select{
-  width: 240px;
-}
-.form-radio{
-  width: 240px;
-}
-.form-detail textarea{
-  width: 240px;
-}
+@media screen and (max-width: 500px) {
+  header {
+    max-width: 500px;
+  }
+  img {
+    left: 0%;
+    margin-top: -13px;
+    height: 40px;
+    width: 70%;
+  }
+  .nav-item a {
+    margin-left: 15px;
+    font-size: 11px;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 1px;
+  }
+  .mainlogo {
+    max-width: 500px;
+  }
+  .about__text {
+    width: 95%;
+    margin: auto;
+  }
+  .about-images {
+    width: 100%;
+    margin: auto;
+    display: block;
+  }
+  .about-images-each img {
+    width: 320px;
+    height: 170px;
+  }
+  .course__text {
+    text-align: center;
+    font-size: 12px;
+    margin-bottom: 20px;
+    max-width: 500px;
+    margin: auto;
+  }
+  .accessmap {
+    max-width: 500px;
+  }
+  .form {
+    display: flex;
+    width: 370px;
+    flex-wrap: wrap;
+    margin: auto;
+    text-align: left;
+  }
+  .form-title {
+    width: 60px;
+    margin-bottom: 10px;
+    padding-right: 60px;
+  }
+  .form-detail {
+    width: 250px;
+  }
+  .form-detail input {
+    width: 240px;
+    height: 24px;
+  }
+  .form-detail select {
+    width: 240px;
+  }
+  .form-radio {
+    width: 240px;
+  }
+  .form-detail textarea {
+    width: 240px;
+  }
 }
 
-@media screen and (max-width: 767px){
-.about-images{
-  width: 100%;
-  margin: auto;
-  display: block;
+@media screen and (max-width: 767px) {
+  .about-images {
+    width: 100%;
+    margin: auto;
+    display: block;
+  }
+  .about-images-each img {
+    width: 600px;
+    height: 220px;
+  }
+  .course {
+    padding: 40px 0 0 0;
+    width: 100%;
+    margin: auto;
+  }
+  .news__article {
+    margin: auto;
+  }
 }
-.about-images-each img{
-  width: 600px;
-  height: 220px;
-}
-.course{
-  padding: 40px 0 0 0;
-  width: 100%;
-  margin: auto;
-}
-.news__article{
-  margin: auto;
-}
-}
-@media (min-width: 768px){
-.news-content{
-  display: flex;
-  float: left;
-  justify-content:center;
-  width: 100%;
-}
-.thumnail{
-  margin-right: 15px;
-  margin-left: 15px;
-}
-.thumnail img{
-  display: table;
-  width: 220px;
-  height: 200px;
-}
+@media (min-width: 768px) {
+  .news-content {
+    display: flex;
+    float: left;
+    justify-content: center;
+    width: 100%;
+  }
+  .thumnail {
+    margin-right: 15px;
+    margin-left: 15px;
+  }
+  .thumnail img {
+    display: table;
+    width: 220px;
+    height: 200px;
+  }
 }
