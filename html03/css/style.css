@@ -4,6 +4,9 @@ a {
 }
 .js-header {
   background: #000000;
+  /* position: static; */
+  height: 60px;
+  width: 100%;
 }
 .l-header__inner {
   display: block;
@@ -13,16 +16,52 @@ a {
   width: 130px;
   height: 100px;
 }
+main {
+}
+/* スライド部分 */
+.main-slider {
+  position: relative;
+  height: 100vh;
+  /* 背景画像の部分 */
+}
+.main-slider img {
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  animation: slide-animation 24s linear infinite 0s;
+  min-width: 100%;
+  min-height: 100%;
+}
+.main-slider img {
+  height: auto;
+}
 
-p {
-  color: pink;
+.main-slider img:nth-of-type(2) {
+  animation-delay: 8s; /*2枚目の開始時間*/
 }
-img {
-  width: 300px;
-  height: 200px;
+
+.main-slider img:nth-of-type(3) {
+  animation-delay: 16s; /*3枚目の開始時間*/
 }
-p {
-  font-size: 20px;
-  padding-bottom: 20px;
-  border-bottom: solid 1px #f5f5f5;
+@keyframes slide-animation {
+  0% {
+    animation-timing-function: ease-in; /*ゆっくり表示される*/
+    opacity: 0;
+  }
+  12% {
+    animation-timing-function: ease-out; /*表示された*/
+    opacity: 1;
+  }
+  30% {
+    opacity: 1; /*＊表示期間*/
+  }
+  43% {
+    opacity: 0; /*次の画像で消えている*/
+  }
+  100% {
+    opacity: 0; /*表示されていない時間*/
+  }
 }
