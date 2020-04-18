@@ -65,3 +65,9 @@ main {
     opacity: 0; /*表示されていない時間*/
   }
 }
+@media screen and (max-width: 500px) {
+  .main-slider img {
+    max-width: 480px;
+    object-fit: cover;
+  }
+}
