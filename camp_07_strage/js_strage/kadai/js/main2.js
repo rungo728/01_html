@@ -12,9 +12,13 @@ $("#save").on("click", function () {
   // value は const valueの$("#memo").val();
   localStorage.setItem(key, value);
   //一覧表示に追加
-  // const html = `<li><span>${key}</span><span>${value}</span></li>`
+  const html = `
+  <li>
+    <span>${key}</span>
+    <span>${value}</span>
+  </li>`;
   //変数に格納したデータをhtmlに追加
-  $("#xxx").append();
+  $("#list").append(html);
 
   // この↓消しちゃダメ
 });
