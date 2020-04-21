@@ -1,21 +1,120 @@
-.a{
-  color: red;
-  background: pink;
-  border: 50px solid yellow;
-  text-align: center;
+a {
+  text-decoration: none;
 }
-.b{
-  color: blue;
+
+@media screen and (max-width: 500px) {
+  .hpb-nav {
+    z-index: 3;
+    min-width: 100%;
+    height: 100%;
+    position: relative;
+    border-top-width: 1px;
+    border-top-color: #d8d8d8;
+    border-top-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: #d8d8d8;
+    border-bottom-style: solid;
+  }
+  /* スマホ用ハンバーガーメニュー部分 */
+  .gnavi-sp {
+    position: fixed;
+    right: -500px; /* これで隠れる */
+    top: 0;
+    width: 64%; /* スマホに収まるくらい */
+    height: 500px;
+    padding-top: 80px;
+    background-color: rgba(255, 204, 240, 0.55);
+    transition: all 0.6s;
+    overflow-y: auto; /* メニューが多くなったらスクロールできるように */
+    z-index: 2;
+  }
+  .nav-menu {
+    font-family: futura-pt, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  .nav-menu li {
+    padding-bottom: 15px;
+  }
+  .nav-menu li a {
+    color: black;
+    display: block;
+    padding-bottom: 15px;
+    text-align: center;
+    font-size: 18px;
+  }
+
+  .hamburger {
+    position: absolute;
+    top: 40px;
+    left: 0; /*左端に位置する*/
+    width: 40px; /* クリックしやすいようにちゃんと幅を指定する */
+    height: 40px; /* クリックしやすいようにちゃんと高さを指定する */
+    cursor: pointer;
+    padding: 0;
+  }
+  .hamburger p {
+    color: #000 !important;
+    font-size: 8px;
+    letter-spacing: 0.55em;
+  }
+  .hamburger__line {
+    position: absolute;
+    left: 11px;
+    width: 18px;
+    height: 1px;
+    background-color: #111;
+    transition: all 0.6s;
+  }
+  .hamburger__line--1 {
+    top: 14px;
+  }
+  .hamburger__line--2 {
+    top: 20px;
+  }
+  .hamburger__line--3 {
+    top: 26px;
+  }
+  .black-bg {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 580px;
+    background-color: #000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.6s;
+    cursor: pointer;
+    margin-bottom: 10px;
+    z-index: 2;
+  }
+  /* 表示された時用のCSS */
+  .nav-open .gnavi-sp {
+    left: 0;
+  }
+  /* 表示された時の暗転度合い */
+  .nav-open .black-bg {
+    opacity: 0.5;
+    visibility: visible;
+  }
+  .nav-open .hamburger__line--1 {
+    transform: rotate(45deg);
+    top: 20px;
+  }
+  .nav-open .hamburger__line--2 {
+    width: 0;
+    left: 50%;
+  }
+  .nav-open .hamburger__line--3 {
+    transform: rotate(-45deg);
+    top: 20px;
+  }
 }
-p{
-  color: pink;
+@media screen and (min-width: 768px){
+.gnavi-sp{
+  display: none;
 }
-img{
-  width:300px;
-  height: 200px;
-}
-p{
-  font-size: 20px;
-  padding-bottom: 20px;
-  border-bottom: solid 1px #f5f5f5;
+.hamburger{
+  display: none;
 }
