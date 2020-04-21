@@ -26,17 +26,25 @@ $("#save").on("click", function () {
 //2.clear クリックイベント
 $("#clear").on("click", function () {
   // 保存されたデータ（localStorage）を消す
-
+  localStorage.clear(); //ローカルストレージのデータを削除することができる
   //id="list"を削除する
-  $("#xxx").empty();
+  $("#list").empty();
 });
 
 //3.ページ読み込み：保存データ取得表示
 for (let i = 0; i < localStorage.length; i++) {
   // 保存されたデータのkeyを取得
-
+  const key = localStorage.key(i);
+  // const keyの中身をみている
+  console.log(key);
   // getItemのKeyを使って保存されたデータを全部取得
-
-  const html = ``;
-  $("#xxx").append(xxx);
+  const value = localStorage.getItem(key);
+  //  const valueの中身をみている
+  console.log(value);
+  const html = `
+  <li>
+    <span>${key}</span>
+    <span>${value}</span>
+  </li>`;
+  $("#list").append(html);
 }
