@@ -3,6 +3,9 @@ a {
 }
 
 @media screen and (max-width: 500px) {
+  .gnavi-pc {
+    display: none;
+  }
   .hpb-nav {
     z-index: 3;
     min-width: 100%;
@@ -52,6 +55,7 @@ a {
     height: 40px; /* クリックしやすいようにちゃんと高さを指定する */
     cursor: pointer;
     padding: 0;
+    z-index: 5; /*一番上に持ってくる*/
   }
   .hamburger p {
     color: #000 !important;
@@ -110,11 +114,4 @@ a {
     transform: rotate(-45deg);
     top: 20px;
   }
-}
-@media screen and (min-width: 768px){
-.gnavi-sp{
-  display: none;
-}
-.hamburger{
-  display: none;
 }
