@@ -302,6 +302,23 @@ input[type*="radio"]:checked {
     /* outline: のスマホ版も消す */
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
+  /* useタグの中で１番目 */
+  .btn-trigger.active use:nth-of-type(1) {
+    /* いろんな変形をすることができるcss */
+    /* rotateは回転させるという意味 */
+    transform: translateY(30px) rotate(-45deg);
+  }
+  /* ２番目 */
+  .btn-trigger.active use:nth-of-type(2) {
+    /* ここは透明にするだけ */
+    opacity: 0;
+  }
+  /* ３番目 */
+  .btn-trigger.active use:nth-of-type(3) {
+    /* いろんな変形をすることができるcss */
+    /* rotateは回転させるという意味 */
+    transform: translateX(35px) translateY(-15px) rotate(45deg);
+  }
   .navigation {
     display: block;
     position: fixed;
