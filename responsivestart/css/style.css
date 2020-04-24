@@ -278,6 +278,7 @@ input[type*="radio"]:checked {
     font-weight: bold;
   }
   .btn-trigger {
+    z-index: 100;
     /* buttonの初期状態を打ち消す処理 */
     appearance: none;
     -webkit-appearance: none;
