@@ -1,6 +1,6 @@
 body {
   font-family: Georgia, "Times New Roman", Times, serif;
-  background: #4d639f;
+  background: #02c39a;
 }
 
 .container {
@@ -13,4 +13,11 @@ input[type="text"]:focus {
   border: none;
   background: rgba(0, 0, 0, 0.2);
   max-width: 400px;
+}
+.todos li {
+  background: #02c39a;
+}
+.delete {
+  cursor: pointer;
+  color: peru;
 }
