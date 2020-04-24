@@ -27,3 +27,11 @@ addTask.addEventListener("submit", (e) => {
     addTask.reset();
   }
 });
+// タスク削除機能部分
+list.addEventListener("click", (e) => {
+  // ゴミ箱には、.delete クラスが設定
+  if (e.target.classList.contains("delete")) {
+    // クリックイベント時に、deleteクラスが classListの中に含まれている場合、親要素もろとも削除
+    e.target.parentElement.remove();
+  }
+});
