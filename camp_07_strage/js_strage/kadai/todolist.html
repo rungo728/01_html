@@ -22,6 +22,31 @@
     <title>Todolist</title>
   </head>
   <body>
+    <div class="container">
+      <header class="text-center text-light my-4">
+        <h1 class="mb-4">Todo List</h1>
+        <form class="search">
+          <input
+            type="text"
+            class="form-control m-auto"
+            name="search"
+            placeholder="キーワード検索"
+          />
+        </form>
+      </header>
+      <ul class="list-group todos mx-auto text-light">
+        <!-- javaScript でリストを追加する予定-->
+      </ul>
+      <form class="add text-center my-4">
+        <label class="text-light">ADDING TASK</label>
+        <input
+          type="text"
+          class="form-control m-auto"
+          name="add"
+          placeholder="文字を入力してください"
+        />
+      </form>
+    </div>
     <script src="js/todolist.js"></script>
   </body>
 </html>
