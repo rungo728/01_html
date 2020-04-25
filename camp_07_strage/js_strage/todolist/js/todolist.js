@@ -2,6 +2,33 @@
 const addTask = document.querySelector(".add");
 const list = document.querySelector(".todos");
 
+(function () {
+  // 初期化処理
+  // ローカルストレージに格納されている値を取得し、リストを生成する
+  for (var key in localStorage) {
+    var html = localStorage.getItem(key);
+    // 値を取得したら、右（localStorage.getItem(key)）から左（list.innerHTML）に繰り返し投入していく
+    if (html) {
+      list.innerHTML += localStorage.getItem(key);
+    }
+  }
+})();
+
+const saveTaskToLocalStorage = (task, html) => {
+  // null は、localStorage に保存しない
+  if (html) {
+    // localStorage は、0 から始まる
+    localStorage.setItem(task, html);
+    return;
+  }
+  return;
+};
+
+const deleteTaskFromLocalStorage = (task) => {
+  localStorage.removeItem(task);
+  return;
+};
+
 const createTodoList = (task) => {
   // HTML テンプレートを生成
   const html = `
@@ -12,6 +39,7 @@ const createTodoList = (task) => {
     `;
 
   list.innerHTML += html;
+  saveTaskToLocalStorage(task, html);
 };
 
 addTask.addEventListener("submit", (e) => {
@@ -33,5 +61,8 @@ list.addEventListener("click", (e) => {
   if (e.target.classList.contains("delete")) {
     // クリックイベント時に、deleteクラスが classListの中に含まれている場合、親要素もろとも削除
     e.target.parentElement.remove();
+    // 保存されたデータ（localStorage）を消す
+    const task = e.target.parentElement.textContent.trim();
+    deleteTaskFromLocalStorage(task);
   }
 });
