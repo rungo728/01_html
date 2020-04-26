@@ -30,3 +30,5 @@ config/secrets.yml
 .env
 images/
 design/
+imgs/
+img/
