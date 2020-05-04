@@ -20,10 +20,6 @@ const newPostRef = firebase.database().ref();
 // firebaseの送信処理を記述
 // 送信ボタンをクリックされたら次の処理をする
 $("#send").on("click", function () {
-  //変数で必ず受け取る
-  let username = $("#username").val();
-  let text = $("#text").val();
-
   // データを登録で送る
   newPostRef.push({
     username: $("#username").val(), //名前
@@ -37,9 +33,10 @@ $("#send").on("click", function () {
 // 受信処理
 newPostRef.on("child_added", function (data) {
   let v = data.val(); //ここに保存されたデータが全て入ってくる
-  let k = data.key; //今回は使わない
+  // let k = data.key; //今回は使わない
+  console.log(v); //vの変数に入っているオブジェクトを全てみる
 
-  let str = `<p>${v.username}<br>${v.text}<p>`;
+  let str = `<p>${v.username}<br>${v.text}</p>`;
   // ここでデータをhtmlに埋め込む
   $("#output").prepend(str);
 });
