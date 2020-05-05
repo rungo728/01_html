@@ -12,10 +12,15 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 //firebaseのデーターベース（保存させる場所）を使いますよと言うjsのコードを貼り付ける
-// xxxxxスクリプトを貼り付ける
 const newPostRef = firebase.database().ref();
+let d = 0;
+const img = ["buke.png", "ryouri3.jpeg", "caram.png"];
+$(".icon").on("click", function (params) {
+  console.log(this);
+  d = $(this).attr("data-img");
+});
 
-// ここから下にjqueryの処理を書いて練習します
+// 送信処理
 // 変数を活用する、val()を使って取得
 // firebaseの送信処理を記述
 // 送信ボタンをクリックされたら次の処理をする
@@ -24,6 +29,7 @@ $("#send").on("click", function () {
   newPostRef.push({
     username: $("#username").val(), //名前
     text: $("#text").val(), //テキストエリア
+    icon: d, //アイコンエリア
   });
   // 文字を空にする
   $("#text").val(""); //空にする
@@ -35,8 +41,8 @@ newPostRef.on("child_added", function (data) {
   let v = data.val(); //ここに保存されたデータが全て入ってくる
   // let k = data.key; //今回は使わない
   console.log(v); //vの変数に入っているオブジェクトを全てみる
-
-  let str = `<p>${v.username}<br>${v.text}</p>`;
+  console.log(d);
+  let str = `<img src='img/${img[v.icon]}'><p>${v.username}<br>${v.text}</p>`;
   // ここでデータをhtmlに埋め込む
   $("#output").prepend(str);
 });
