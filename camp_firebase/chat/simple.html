@@ -3,23 +3,28 @@
   <head>
     <meta charset="utf-8" />
     <title>Chatアプリ</title>
-    <style>
-      /* この中にcssをかけます */
-    </style>
+    <!-- /* この中にcssをかけます */ -->
+    <link rel="stylesheet" href="css/toppage.css" />
   </head>
 
   <body>
     <!-- ブラウザの画面に見える内容 -->
-
+    <!-- 画像 -->
+    <div>
+      <img class="icon" data-img="0" src="img/buke.png" alt="" />
+      <img class="icon" data-img="1" src="img/ryouri3.jpeg" alt="" />
+      <img class="icon" data-img="2" src="img/caram.png" alt="" />
+      <input type="file" id="btnUpload" value="アップロード" />
+    </div>
     <div>
       <!-- 名前 -->
-      名前
+      タイトル
       <input type="text" id="username" />
     </div>
 
     <div>
       <!-- テキストエリア -->
-      テキスト
+      記事
       <textarea name="" id="text" cols="30" rows="10"></textarea>
     </div>
 
