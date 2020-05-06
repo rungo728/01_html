@@ -14,7 +14,7 @@ firebase.initializeApp(firebaseConfig);
 //firebaseのデーターベース（保存させる場所）を使いますよと言うjsのコードを貼り付ける
 const newPostRef = firebase.database().ref();
 let d = 0;
-const img = ["buke.png", "ryouri3.jpeg", "caram.png"];
+const img = ["program2.jpg", "ryouri3.jpeg", "douga4.jpg"];
 $(".icon").on("click", function (params) {
   console.log(this);
   d = $(this).attr("data-img");
@@ -27,9 +27,9 @@ $(".icon").on("click", function (params) {
 $("#send").on("click", function () {
   // データを登録で送る
   newPostRef.push({
-    username: $("#username").val(), //名前
-    text: $("#text").val(), //テキストエリア
     icon: d, //アイコンエリア
+    username: $("#username").val(), //タイトル
+    text: $("#text").val(), //テキストエリア
   });
   // 文字を空にする
   $("#text").val(""); //空にする
