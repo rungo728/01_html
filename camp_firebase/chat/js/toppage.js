@@ -28,12 +28,13 @@ $("#send").on("click", function () {
   // データを登録で送る
   newPostRef.push({
     icon: d, //アイコンエリア
-    username: $("#username").val(), //タイトル
+    category: $("#article-category").val(), //カテゴリー
+    title: $("#article-title").val(), //タイトル
     text: $("#text").val(), //テキストエリア
   });
   // 文字を空にする
   $("#text").val(""); //空にする
-  $("#username").val(""); //空にする
+  $("#article-title").val(""); //空にする
 });
 
 // 受信処理
@@ -42,7 +43,9 @@ newPostRef.on("child_added", function (data) {
   // let k = data.key; //今回は使わない
   console.log(v); //vの変数に入っているオブジェクトを全てみる
   console.log(d);
-  let str = `<img src='img/${img[v.icon]}'><p>${v.username}<br>${v.text}</p>`;
+  let str = `<li><img src='img/${img[v.icon]}'><span>${v.category}</span><p>${
+    v.title
+  }<br>${v.text}</p></li>`;
   // ここでデータをhtmlに埋め込む
   $("#output").prepend(str);
 });

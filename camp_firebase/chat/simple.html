@@ -6,10 +6,10 @@
     <!-- /* この中にcssをかけます */ -->
     <link rel="stylesheet" href="css/toppage.css" />
     <link
-    rel="stylesheet"
-    href="https://use.fontawesome.com/releases/v5.0.10/css/all.css"
-    integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg"
-    crossorigin="anonymous"
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.10/css/all.css"
+      integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg"
+      crossorigin="anonymous"
     />
   </head>
 
@@ -24,22 +24,28 @@
     <form action="" class="new_article">
       <!-- 画像アップロード -->
       <div class="field">
-        <label for="" class="new-image">画像アップロード</label>
+        <label for="" class="article-image">画像アップロード</label>
         <br />
         <input type="file" id="btnUpload" value="アップロード" />
       </div>
       <!-- 名前 -->
       <div class="field">
-        タイトル
-        <input type="text" id="username" class="input-field" />
+        <h3>タイトル</h3>
+        <input type="text" id="article-title" class="input-field" />
       </div>
       <div class="field">
-        カテゴリー
+        <h3>カテゴリー</h3>
+        <select class="selectbox" id="article-category">
+          <option value="---">---</option>
+          <option value="プログラミング">プログラミング</option>
+          <option value="料理">料理</option>
+          <option value="紹介">動画編集</option>
+        </select>
       </div>
 
       <div class="field">
         <!-- テキストエリア -->
-        記事
+        <h3>記事</h3>
         <textarea
           name=""
           id="text"
