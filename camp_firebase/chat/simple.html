@@ -14,27 +14,41 @@
       <img class="icon" data-img="0" src="img/buke.png" alt="" />
       <img class="icon" data-img="1" src="img/ryouri3.jpeg" alt="" />
       <img class="icon" data-img="2" src="img/caram.png" alt="" />
-      <input type="file" id="btnUpload" value="アップロード" />
     </div>
-    <div>
+    <form action="" class="new_article">
+      <!-- 画像アップロード -->
+      <div class="field">
+        <label for="" class="new-image">画像アップロード</label>
+        <br />
+        <input type="file" id="btnUpload" value="アップロード" />
+      </div>
       <!-- 名前 -->
-      タイトル
-      <input type="text" id="username" />
-    </div>
+      <div class="field">
+        タイトル
+        <input type="text" id="username" class="input-field" />
+      </div>
 
-    <div>
-      <!-- テキストエリア -->
-      記事
-      <textarea name="" id="text" cols="30" rows="10"></textarea>
-    </div>
+      <div class="field">
+        <!-- テキストエリア -->
+        記事
+        <textarea
+          name=""
+          id="text"
+          cols="30"
+          rows="10"
+          class="input-field article"
+        ></textarea>
+      </div>
 
-    <div>
-      <!-- 送信ボタン -->
-      <button id="send">送信</button>
-    </div>
+      <div class="actions">
+        <!-- 送信ボタン -->
+        <button id="send">送信</button>
+      </div>
+    </form>
 
     <div>
       <!-- 保存されたデータが表示される箇所 -->
+
       <div id="output"></div>
     </div>
 
