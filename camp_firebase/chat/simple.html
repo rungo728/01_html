@@ -2,8 +2,10 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8" />
-    <title>Chatアプリ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BLOGアプリ</title>
     <!-- /* この中にcssをかけます */ -->
+    <link rel="stylesheet" href="css/template.css" />
     <link rel="stylesheet" href="css/toppage.css" />
     <link
       rel="stylesheet"
@@ -39,7 +41,7 @@
           <option value="---">---</option>
           <option value="プログラミング">プログラミング</option>
           <option value="料理">料理</option>
-          <option value="紹介">動画編集</option>
+          <option value="動画編集">動画編集</option>
         </select>
       </div>
 
@@ -66,7 +68,9 @@
       <div class="arrival-index">
         <h3>新着記事</h3>
       </div>
-      <div id="output" class="article-index"></div>
+      <div class="article-index">
+        <ul id="output" class="article-index__list"></ul>
+      </div>
     </div>
 
     <!--/ ブラウザの画面に見える内容 -->
