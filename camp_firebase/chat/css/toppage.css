@@ -37,3 +37,12 @@ img.icon {
   font-size: 14px;
   font-weight: bold;
 }
+.actions button:hover {
+  background-color: black;
+}
+.arrival-index {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 16px;
+  padding: 5px 14px 5px 5px;
+}
