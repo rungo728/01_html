@@ -43,9 +43,11 @@ newPostRef.on("child_added", function (data) {
   // let k = data.key; //今回は使わない
   console.log(v); //vの変数に入っているオブジェクトを全てみる
   console.log(d);
-  let str = `<li><img src='img/${img[v.icon]}'><span>${v.category}</span><p>${
+  let str = `<li class="article-index__item"><a class="article-link" href=""><div class="article-box"><img src='img/${
+    img[v.icon]
+  }'><span>${v.category}</span></div><div class="article-title">${
     v.title
-  }<br>${v.text}</p></li>`;
+  }<br><div class="articles">${v.text}</div></div></a></li>`;
   // ここでデータをhtmlに埋め込む
   $("#output").prepend(str);
 });
