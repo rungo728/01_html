@@ -14,7 +14,14 @@ firebase.initializeApp(firebaseConfig);
 //firebaseのデーターベース（保存させる場所）を使いますよと言うjsのコードを貼り付ける
 const newPostRef = firebase.database().ref();
 let d = 0;
-const img = ["program2.jpg", "ryouri3.jpeg", "douga4.jpg"];
+const img = [
+  "program2.jpg",
+  "ryouri3.jpeg",
+  "douga4.jpg",
+  "douga3.jpg",
+  "program1.jpg",
+  "cooking１.jpg",
+];
 $(".icon").on("click", function (params) {
   console.log(this);
   d = $(this).attr("data-img");

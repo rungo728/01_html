@@ -9,11 +9,6 @@ img.icon {
   width: 300px;
   height: 250px;
 }
-.new-images {
-  display: flex;
-  width: 100%;
-  margin: 0 auto;
-}
 .input-field {
   margin: 10px 0;
   height: 48px;
@@ -25,6 +20,19 @@ img.icon {
   font-size: 16px;
   box-sizing: border-box;
   width: 100%;
+}
+.new-images {
+  margin: auto;
+  display: flex;
+  padding: 0 0 030px;
+}
+.new-images img {
+  width: 16.66666%;
+  object-fit: cover;
+}
+.article-image {
+  color: red;
+  font-weight: bold;
 }
 .selectbox {
   width: 100%;
@@ -97,19 +105,41 @@ img.icon {
 }
 .article-title {
   font-size: 15px;
-  min-height: 100px;
+  height: 140px;
   padding: 0 8px;
 }
 .articles {
   font-size: 12px;
   color: #e0b9b7;
 }
+
 @media screen and (max-width: 500px) {
+  .new-images {
+    display: block;
+  }
+  .new-images img {
+    width: 100%;
+  }
   .article-title {
     font-size: 14px;
-    height: 140px;
+    height: 180px;
     color: red;
   }
 }
+@media screen and (max-width: 767px) {
+  .new-images {
+    display: block;
+  }
+  .new-images img {
+    width: 100%;
+  }
+}
 @media screen and (min-width: 768px) {
+  .article-index__item {
+    width: 20%;
+    padding: 10px;
+  }
+  .article-title {
+    height: 180px;
+  }
 }
