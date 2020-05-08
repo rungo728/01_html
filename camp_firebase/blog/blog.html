@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BLOGアプリ</title>
+    <!-- /* この中にcssをかけます */ -->
+    <link rel="stylesheet" href="css/template.css" />
+    <link rel="stylesheet" href="css/toppage.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.10/css/all.css"
+      integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <!-- ブラウザの画面に見える内容 -->
+    <!-- 画像 -->
+    <div class="main-slider">
+      <img class="icon" data-img="0" src="img/program2.jpg" alt="" />
+      <img class="icon" data-img="1" src="img/ryouri3.jpeg" alt="" />
+      <img class="icon" data-img="2" src="img/douga4.jpg" alt="" />
+    </div>
+    <form action="" class="new_article">
+      <!-- 画像アップロード -->
+      <div class="field">
+        <label for="" class="article-image">画像アップロード</label>
+        <br />
+        <input type="file" id="btnUpload" value="アップロード" />
+      </div>
+      <!-- 名前 -->
+      <div class="field">
+        <h3>タイトル</h3>
+        <input type="text" id="article-title" class="input-field" />
+      </div>
+      <!-- カテゴリー -->
+      <div class="field">
+        <h3>カテゴリー</h3>
+        <select class="selectbox" id="article-category">
+          <option value="---">---</option>
+          <option value="プログラミング">プログラミング</option>
+          <option value="料理">料理</option>
+          <option value="動画編集">動画編集</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <!-- テキストエリア -->
+        <h3>記事</h3>
+        <textarea
+          name=""
+          id="text"
+          cols="30"
+          rows="10"
+          class="input-field article"
+        ></textarea>
+      </div>
+
+      <div class="actions">
+        <!-- 送信ボタン -->
+        <button id="send">送信</button>
+      </div>
+    </form>
+
+    <div>
+      <!-- 保存されたデータが表示される箇所 -->
+      <div class="arrival-index">
+        <h3>新着記事</h3>
+      </div>
+      <div class="article-index">
+        <ul id="output" class="article-index__list"></ul>
+      </div>
+    </div>
+
+    <!--/ ブラウザの画面に見える内容 -->
+
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!--** 以下Firebase **-->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+          https://firebase.google.com/docs/web/setup#available-libraries -->
+    <!-- ここにfirebaseのscriptを貼り付ける -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js"></script>
+    <script src="js/toppage.js"></script>
+  </body>
+</html>
