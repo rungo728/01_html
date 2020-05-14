@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/mainpage.css" />
+    <link rel="stylesheet" href="css/reset.css" />
     <title>Document</title>
   </head>
   <body>
@@ -21,10 +22,12 @@
           <h2>
             メニュー
             <a href="#" id="headerMenuClose">
-              <img src="img/btn_close_02.png/" alt="" />
+              <img class="close" src="img/btn_close_02.png" alt="閉じる" />
             </a>
           </h2>
+          <!-- ヘッダー左側 -->
           <div class="left">
+            <!-- ヘッダー検索フォーム -->
             <div id="headerSearch">
               <form action="" method="">
                 <input type="hidden" name="" />
@@ -38,10 +41,45 @@
                 <input type="image" src="img/search_01.png" alt="検索" />
               </form>
             </div>
-            <!-- ヘッダー検索フォーム -->
-            <ul class="utility"></ul>
+            <!-- ヘッダーメニュー -->
+            <ul class="utility">
+              <li>
+                <a href="">ホーム</a>
+              </li>
+              <li>
+                <a href="">お問い合わせ一覧</a>
+              </li>
+              <li>
+                <a href="">アクセス</a>
+              </li>
+            </ul>
           </div>
-          <!-- ヘッダーメニュー -->
+          <!-- ヘッダー右側 -->
+          <div class="right">
+            <ul class="utility">
+              <li>
+                <a href="">サイトマップ</a>
+              </li>
+              <li>
+                <a href="">ENGLISH</a>
+              </li>
+              <li>
+                <a href="">採用情報</a>
+              </li>
+            </ul>
+            <div id="utiliyBtn">
+              <dl>
+                <dt>文字<br />サイズ</dt>
+                <dd>
+                  <ul>
+                    <li>
+                      <a href="#" id="zoomFontBtn">拡大</a>
+                    </li>
+                  </ul>
+                </dd>
+              </dl>
+            </div>
+          </div>
         </div>
       </div>
     </div>
