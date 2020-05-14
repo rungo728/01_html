@@ -100,3 +100,40 @@
   text-align: right;
   margin-top: 15px;
 }
+#utilityBtn {
+  margin-top: 12px;
+}
+#utilityBtn dl {
+  display: table;
+  float: left;
+}
+#utilityBtn dl:first-child {
+  margin-left: 0;
+}
+#utilityBtn dl dt {
+  color: #777;
+  font-size: 11px;
+  padding-right: 5px;
+  text-align: left;
+  display: table-cell;
+  vertical-align: middle;
+}
+#utilityBtn li {
+  float: left;
+  margin-left: 5px;
+}
+#utilityBtn li:first-child {
+  margin-left: 0;
+}
+#utilityBtn li a {
+  display: block;
+  padding: 13px 0;
+  border: 1px solid #bbb;
+  border-radius: 2px;
+  background-color: #fff;
+  color: #656565;
+  font-size: 13px;
+  width: 40px;
+  text-align: center;
+  line-height: 1;
+}
