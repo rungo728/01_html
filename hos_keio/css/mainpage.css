@@ -192,6 +192,8 @@
   display: table;
   table-layout: fixed;
   padding: 10px 0;
+  background-color: #fff;
+
   /* 初期状態 */
   display: none;
 }
@@ -269,14 +271,15 @@
   background-color: #f1f3ff;
   overflow: hidden;
   position: relative;
-  z-index: -10;
+  /* 初期状態 */
+  display: none;
 }
 
 .linkBa {
   margin: 0;
   float: left;
   position: relative;
-  z-index: -10;
+  z-index: 0;
 }
 .linkBa a {
   position: relative;
