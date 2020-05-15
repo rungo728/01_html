@@ -137,3 +137,158 @@
   text-align: center;
   line-height: 1;
 }
+/* ナビ部分 */
+#globalNav {
+  position: relative;
+  width: 100%;
+  background-color: #000055;
+}
+.wrap {
+  width: 100%;
+  position: relative;
+  margin: 0 auto;
+}
+.wrap ul {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  margin: 0 auto;
+}
+.wrap li {
+  display: table-cell;
+}
+.wrap a {
+  position: relative;
+  font-size: 19px;
+  color: #fff;
+  display: block;
+  text-align: center;
+  padding: 0;
+  height: 100%;
+}
+
+.inner:hover {
+  background-color: #cc0000;
+}
+.inner {
+  padding: 12px 16px;
+  height: 100%;
+}
+/* ドロップ部分 */
+.megaDrop {
+  background-color: #fff;
+  border: 1px solid #ebebeb;
+  top: 100%;
+  left: 0;
+  height: 0;
+  -webkit-transition: height 0.3s ease;
+  transition: height 0.3s ease;
+  /* 通常は隠す */
+  /* overflow: hidden; */
+}
+/* カラム部分 */
+.megaColumn {
+  width: 100%;
+  display: table;
+  table-layout: fixed;
+  padding: 10px 0;
+  /* 初期状態 */
+  display: none;
+}
+.col {
+  display: table-cell;
+  padding: 5px 20px;
+  table-layout: fixed;
+  background-color: #fff;
+  width: 33.3%;
+}
+.col:first-child {
+  border-left: none;
+}
+.col dt {
+  position: relative;
+  font-size: 21px;
+  padding: 4px 0 0 48px;
+  margin-bottom: 20px;
+}
+
+.cross {
+  position: relative;
+  z-index: 10;
+  background-color: #fff;
+}
+.cross:before {
+  background: url("../img/jyuji2.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 50px;
+  width: 50px;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.check {
+  position: relative;
+  z-index: 10;
+}
+.linkListBa {
+  margin-left: 8px;
+}
+.linkListBa a:before {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 17px;
+  width: 18px;
+}
+.linkListBa li {
+  width: 100%;
+  margin-top: 15px;
+  /* 縦に並び替える */
+  display: flex;
+  flex-direction: column;
+}
+.linkListBa a {
+  font-size: 15px;
+  display: inline-block;
+  padding-left: 25px;
+  color: #245dc1;
+}
+.linkListBa li:first-child {
+  margin-top: 0 !important;
+}
+.linkListBa li:last-child {
+  margin-bottom: 0 !important;
+}
+/* カラムのフッター部分 */
+.megaFooter {
+  padding: 15px 20px;
+  background-color: #f1f3ff;
+  overflow: hidden;
+  position: relative;
+  z-index: -10;
+}
+
+.linkBa {
+  margin: 0;
+  float: left;
+  position: relative;
+  z-index: -10;
+}
+.linkBa a {
+  position: relative;
+  padding-left: 25px;
+  display: inline-block;
+  color: #245dc1;
+  font-size: 15px;
+}
+.close {
+  float: right;
+  margin: 0;
+}
+.pcNone {
+  display: none !important;
+}
