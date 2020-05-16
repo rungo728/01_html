@@ -393,3 +393,32 @@
   color: #333;
   line-height: 1;
 }
+.centerBlockMenu {
+  border-bottom: 1px solid #cbcbcb;
+  background-color: #f7f8f8;
+  box-shadow: 0 1px 3px rgba(34, 23, 20, 0.2);
+}
+.centerBlockMenu ul {
+  width: 100%;
+  margin: 0 auto;
+  display: table;
+  table-layout: fixed;
+}
+.centerBlockMenu li {
+  display: table-cell;
+  border-left: 1px solid #ccc;
+  text-align: center;
+}
+.centerBlockMenu a {
+  position: relative;
+  display: block;
+  text-align: left;
+  padding: 20px 0 20px 65px;
+  color: #000;
+  font-size: 21px;
+  text-decoration: none;
+  transition: opacity 0.3s ease-in;
+}
+.centerBlockMenu a:hover {
+  opacity: 0.7;
+}
