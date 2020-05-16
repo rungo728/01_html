@@ -360,3 +360,36 @@
   color: #245dc1;
   text-decoration: underline;
 }
+/* 提案パネルの部分 */
+.purposePanel {
+  border-bottom: 1px solid #ccc;
+  background-color: #fff;
+}
+.purposePanel ul {
+  margin: 0 auto;
+  display: table;
+  table-layout: fixed;
+  overflow: hidden;
+}
+.purposePanel li {
+  display: table-cell;
+  border-right: 1px solid #ccc;
+  text-align: center;
+}
+.purposePanel li:first-child {
+  border-left: 1px solid #ccc;
+}
+.purposePanel a {
+  display: block;
+  padding: 20px 0 15px;
+  transition: opacity 0.3s ease-in;
+}
+.purposePanel a:hover {
+  opacity: 0.7;
+}
+.purposePanel span {
+  font-size: 21px;
+  margin-bottom: 5px;
+  color: #333;
+  line-height: 1;
+}
