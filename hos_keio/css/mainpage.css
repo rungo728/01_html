@@ -193,7 +193,6 @@
   table-layout: fixed;
   padding: 10px 0;
   background-color: #fff;
-
   /* 初期状態 */
   display: none;
 }
@@ -294,4 +293,70 @@
 }
 .pcNone {
   display: none !important;
+}
+.importantInfo {
+  background-color: #e8e8e8;
+}
+.importantInfo dl {
+  display: table;
+  margin: 0 auto;
+}
+.importantInfo dt {
+  width: 166px;
+  background-color: #e17d7d;
+  color: #fff;
+  font-size: 14px;
+  vertical-align: middle;
+  display: table-cell;
+  padding: 8px 0;
+}
+.importantInfo dl dd {
+  display: table-cell;
+  padding: 8px 0 0 20px;
+}
+.importantInfo dd:first-child {
+  margin-top: 0 !important;
+}
+.importantInfo dd:last-child {
+  margin-bottom: 0 !important;
+}
+.importantInfo span {
+  position: relative;
+  display: block;
+  padding-left: 50px;
+}
+.important:before {
+  background: url("../img/bikkuri1.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 29px;
+  width: 29px;
+  top: -4px;
+  left: 12px;
+  content: "";
+  position: absolute;
+}
+.listNewsBa li {
+  width: 100%;
+  margin: 10px 0 20px;
+  padding-top: 10px;
+}
+.block {
+  width: 186px;
+  padding-right: 20px;
+  float: left;
+}
+.block span {
+  display: inline-block;
+}
+.date {
+  width: 120px;
+}
+.content {
+  overflow: hidden;
+}
+.content a {
+  color: #245dc1;
+  text-decoration: underline;
 }
