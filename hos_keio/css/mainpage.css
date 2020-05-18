@@ -523,4 +523,109 @@
   background-color: #7683d2;
 }
 @media screen and (max-width: 720px) {
+  #headerContent {
+    width: auto;
+    padding: 0;
+    height: auto;
+    margin: 0;
+  }
+  #headerMenu {
+    display: block;
+
+    /* position: absolute;
+    -webkit-transform: translate(100%, 0);
+    transform: translateX(100%);
+    top: -5px;
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+    z-index: 10;
+    background-color: #fff; */
+    /* 初期状態 */
+    /* display: none; */
+  }
+  #headerMenu h2 {
+    position: relative;
+    display: block;
+    background-color: #f1f4ff;
+    font-size: 18px;
+    padding: 10px;
+  }
+  #headerMenu h2 img {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    margin-top: -11px;
+    width: 22px;
+    height: 22px;
+  }
+  .left {
+    margin: 0;
+    float: none;
+    text-align: left;
+    display: block;
+  }
+  #headerSearch {
+    position: static;
+  }
+  #headerSearch form {
+    padding: 15px 10px;
+    float: none;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    background-color: #f7f8f8;
+  }
+  #headerSearch form input[type="text"] {
+    width: 100%;
+  }
+  #headerSearch form input[type="image"] {
+    top: 25px;
+    right: 20px;
+  }
+  .utility {
+    /* 縦に並べなおす */
+    display: flex;
+    flex-direction: column;
+  }
+  .utility li {
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #ccc;
+  }
+  .utility li a {
+    position: relative;
+    display: block;
+    color: #245dc1;
+    padding: 15px 30px 15px 10px;
+    font-size: 15px;
+  }
+  .utility li a::after {
+    /* 右矢印をここ全体で作成 */
+    /* fontawesomeを使わなくてもこれでOK */
+    content: "";
+    display: block;
+    position: absolute;
+    border-bottom: 3px solid #999;
+    border-right: 3px solid #999;
+    width: 8px;
+    height: 8px;
+    right: 20px;
+    top: 50%;
+    margin-top: -6px;
+    transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
+  .right {
+    margin: 0;
+    float: none;
+    text-align: left;
+    display: block;
+  }
+  #utilityBtn dl {
+    display: none;
+  }
+  #globalNav {
+    /* 一時的に置くだけ */
+    background: rgba(0, 0, 0, 0);
+  }
 }
