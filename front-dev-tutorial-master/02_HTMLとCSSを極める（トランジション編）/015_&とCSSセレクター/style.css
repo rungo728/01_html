@@ -2,7 +2,11 @@
   color: blue;
 }
 
-.child {
+.parent > .element {
+  color: purple;
+}
+
+.element {
   color: red;
 }
 /*# sourceMappingURL=style.css.map */
