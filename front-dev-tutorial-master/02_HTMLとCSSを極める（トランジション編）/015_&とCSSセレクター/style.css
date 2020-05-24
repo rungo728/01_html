@@ -6,6 +6,10 @@
   color: purple;
 }
 
+.parent > .element .second-child {
+  color: black;
+}
+
 .element {
   color: red;
 }
