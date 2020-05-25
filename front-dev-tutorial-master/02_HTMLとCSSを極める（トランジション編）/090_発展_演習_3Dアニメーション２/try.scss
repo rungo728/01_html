@@ -8,8 +8,11 @@ $cBlack: black;
   .btn {
     position: relative;
     display: inline-block;
+    // ３Dの動作をつけたい親要素につける
     transform-style: preserve-3d;
     perspective: 300px;
+    // 支点の位置を変更できる
+    perspective-origin: -200% 50%;
     width: 150px;
     height: 50px;
     margin: 0 auto;
@@ -17,6 +20,39 @@ $cBlack: black;
 
     &.cubic {
       /** スタイルをここに追加。*/
+      & span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        border: 1px solid $cBlack;
+        line-height: 48px;
+        text-align: center;
+        // 最後にtransitionを使って回転させる動作を見せる
+        transition: all 0.3s;
+      }
+      & .hovering {
+        background-color: $cBlack;
+        color: $cWhite;
+        // X軸方向に90度回転
+        transform: rotateX(90deg);
+        transform-origin: center center -25px;
+      }
+      & .default {
+        background-color: $cWhite;
+        color: $cBlack;
+        transform: rotatex(0);
+        transform-origin: center center -25px;
+      }
+      &:hover {
+        & .hovering {
+          transform: rotateX(0);
+        }
+        & .default {
+          transform: rotateX(-90deg);
+        }
+      }
     }
   }
 }

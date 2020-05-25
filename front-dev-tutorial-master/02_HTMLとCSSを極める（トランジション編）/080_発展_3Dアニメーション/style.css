@@ -19,8 +19,10 @@
   z-index: 1;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
-  -webkit-perspective: 300px;
-          perspective: 300px;
+  -webkit-perspective: 100px;
+          perspective: 100px;
+  -webkit-perspective-origin: -100% 50%;
+          perspective-origin: -100% 50%;
 }
 
 .btn.cover-3d::before {
@@ -32,10 +34,12 @@
   position: absolute;
   top: 0;
   left: 0;
-  -webkit-transform: rotateX(90deg);
-          transform: rotateX(90deg);
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transform: rotateX(-90deg);
+          transform: rotateX(-90deg);
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
   -webkit-transform-origin: top center;
           transform-origin: top center;
   z-index: -1;

@@ -19,8 +19,9 @@ $cBlack: black;
     position: relative;
     z-index: 1;
     transform-style: preserve-3d;
-    perspective: 300px;
-    
+    // 遠近で立体的な動きを見るときに使うプロパティ
+    perspective: 100px;
+    perspective-origin: -100% 50%;
 
     &::before {
       content: "";
@@ -31,8 +32,9 @@ $cBlack: black;
       position: absolute;
       top: 0;
       left: 0;
-      transform: rotateX(90deg);
-      transition: all 0.3s;
+      transform: rotateX(-90deg);
+      transition: transform 0.3s;
+      // button上枠を起点として回転させるため
       transform-origin: top center;
       z-index: -1;
       opacity: 0;
@@ -43,6 +45,7 @@ $cBlack: black;
 
       &::before {
         transform: none;
+        // ホバーした瞬間にopacity:0を解除してあげる
         opacity: 1;
       }
     }
