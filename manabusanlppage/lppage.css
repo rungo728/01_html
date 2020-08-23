@@ -104,6 +104,10 @@ li.header-navItem:first-child {
   margin-top: 16px;
   width: 77%;
 }
+.hero-link {
+  color: #3e3e3e;
+  border-radius: 10px;
+}
 .main-title {
   width: 100%;
   margin-top: 141px;
