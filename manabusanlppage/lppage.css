@@ -4,12 +4,17 @@ a {
 }
 .button-default {
   display: block;
-  background-color: rgb(255 224 0 / 70%);
+  background-color: #ffffffb3;
   border-radius: 10px;
   text-align: center;
   width: 250px;
   -webkit-box-shadow: 0 3px 5px rgba(62, 62, 62, 0.2);
   box-shadow: 0 3px 5px rgba(62, 62, 62, 0.2);
+}
+.btn-yellow {
+  background-color: rgb(255 224 0 / 70%);
+  border: 1px solid #fff;
+  color: #3e3e3e;
 }
 .header {
   height: 80px;
@@ -35,7 +40,7 @@ a {
   height: 100%;
 }
 .headernavList {
-  display: flex;
+  display: contents;
 }
 .header-navItem {
   margin-left: 40px;
@@ -44,10 +49,11 @@ li.header-navItem:first-child {
   margin: 0;
 }
 .header-navLink {
-  color: #3e3e3e;
+  color: #ffffff;
   font-family: "Montserrat", sans-serif;
   position: relative;
   padding: 10px 0;
+  font-weight: 600;
 }
 .header-navLink:after {
   background: #3e3e3e;
@@ -79,18 +85,48 @@ li.header-navItem:first-child {
   padding: 218px 20px 0 0;
 }
 .hero-content {
-  margin-left: auto;
-  max-width: 524px;
+  margin-left: 64px;
+  max-width: 475px;
 }
 .hero-ttl {
-  line-height: 1.5;
-  font-size: 25px;
+  line-height: 80px;
+  font-size: 37px;
+  font-family: "Montserrat", sans-serif;
   font-weight: bold;
+  width: auto;
 }
 .hero-txt {
-  font-size: 17px;
+  font-size: 30px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
   letter-spacing: 1px;
-  line-height: 1.45;
-  margin-top: 35px;
-  text-align: left;
+  line-height: 50px;
+  margin-top: 16px;
+  width: 77%;
+}
+.main-title {
+  width: 100%;
+  margin-top: 141px;
+  line-height: 68px;
+  font-size: 30px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  position: relative;
+}
+.main-title::after {
+  content: "";
+  right: 180px;
+  bottom: 10px;
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  background-color: rgb(255 255 255 / 0.5);
+  border-radius: 50%;
+}
+.problem {
+  background-image: url(images/pexels-anna-shvets-3845291.jpg);
+  height: 648px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
 }
