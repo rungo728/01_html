@@ -1,0 +1,96 @@
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+.button-default {
+  display: block;
+  background-color: rgb(255 224 0 / 70%);
+  border-radius: 10px;
+  text-align: center;
+  width: 250px;
+  -webkit-box-shadow: 0 3px 5px rgba(62, 62, 62, 0.2);
+  box-shadow: 0 3px 5px rgba(62, 62, 62, 0.2);
+}
+.header {
+  height: 80px;
+  text-align: center;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.1);
+  position: fixed;
+  /* 中央に持ってくるため */
+  right: 0;
+  top: 0;
+  left: 0;
+}
+.header-nav {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 100%;
+}
+.headernavList {
+  display: flex;
+}
+.header-navItem {
+  margin-left: 40px;
+}
+li.header-navItem:first-child {
+  margin: 0;
+}
+.header-navLink {
+  color: #3e3e3e;
+  font-family: "Montserrat", sans-serif;
+  position: relative;
+  padding: 10px 0;
+}
+.header-navLink:after {
+  background: #3e3e3e;
+  bottom: 0;
+  content: "";
+  height: 1px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  transition: -webkit-transform 0.2s;
+  transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s;
+  /* -webkit-transform: scaleX(0); */
+  /* transform: scaleX(0); */
+  opacity: 0;
+}
+.header-navLink:hover:after {
+  opacity: 1;
+  bottom: 0;
+}
+/*メインビジュアル*/
+.hero {
+  background-image: url(images/pexels-anastasia-shuraeva-4079281.jpg);
+  height: 648px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.hero-inner {
+  padding: 218px 20px 0 0;
+}
+.hero-content {
+  margin-left: auto;
+  max-width: 524px;
+}
+.hero-ttl {
+  line-height: 1.5;
+  font-size: 25px;
+  font-weight: bold;
+}
+.hero-txt {
+  font-size: 17px;
+  letter-spacing: 1px;
+  line-height: 1.45;
+  margin-top: 35px;
+  text-align: left;
+}
