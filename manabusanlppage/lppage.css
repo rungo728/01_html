@@ -16,6 +16,18 @@ a {
   border: 1px solid #fff;
   color: #3e3e3e;
 }
+.circle {
+  color: #3e3e3e;
+  background-color: #afeddb;
+  padding: 0;
+  margin: 0;
+  width: 200px;
+  height: 200px;
+  line-height: 60px;
+  text-align: center;
+  display: inline-block;
+  border-radius: 50%;
+}
 .header {
   height: 80px;
   text-align: center;
@@ -133,4 +145,44 @@ li.header-navItem:first-child {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: right;
+}
+.problem-inner {
+  padding: 218px 20px 0 0;
+}
+.problem-content {
+  margin-left: auto;
+  max-width: 300px;
+}
+.util-ttl {
+  text-align: center;
+  font-size: 22px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+}
+.problem-txt {
+  margin: 32px 48px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  position: relative;
+}
+.problem-txt::before {
+  content: "";
+  top: 0;
+  left: -50px;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: #afeddb;
+  border-radius: 50%;
+}
+.possible {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  padding: 8px 50px;
+  font-size: 18px;
+  line-height: 35px;
+  width: 100%;
+}
+.problem-item {
+  text-align: left;
 }
