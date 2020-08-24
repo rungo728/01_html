@@ -2,6 +2,11 @@ a {
   cursor: pointer;
   text-decoration: none;
 }
+.text1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+}
 .button-default {
   display: block;
   background-color: #ffffffb3;
@@ -15,6 +20,12 @@ a {
   background-color: rgb(255 224 0 / 70%);
   border: 1px solid #fff;
   color: #3e3e3e;
+}
+.btn-blue {
+  background-color: rgba(90, 240, 240, 0.5);
+  border: 1px solid #fff;
+  color: #3e3e3e;
+  width: 500px;
 }
 .circle {
   color: #3e3e3e;
@@ -32,7 +43,7 @@ a {
   height: 80px;
   text-align: center;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgb(183 183 183 / 50%);
   position: fixed;
   /* 中央に持ってくるため */
   right: 0;
@@ -185,4 +196,153 @@ li.header-navItem:first-child {
 }
 .problem-item {
   text-align: left;
+}
+/* 受講者の声 */
+.voice {
+  padding-top: 76px;
+  background-color: #afeddb;
+}
+.voice-inner {
+  margin: 0 auto;
+  max-width: 838px;
+  padding-bottom: 60px;
+}
+.voice .util-ttl {
+  color: #3e3e3e;
+  text-align: center;
+  background-color: #ffaa3b;
+  border-radius: 30px;
+  line-height: 50px;
+  margin: auto;
+  font-size: 30px;
+  font-weight: 600;
+  padding: 8px 48px;
+  width: 280px;
+}
+.voice-items {
+  display: flex;
+  flex-wrap: wrap;
+}
+.voice-item {
+  width: calc(33.33333333% - 24px * 2 / 3);
+  margin-right: 24px;
+  margin-top: 24px;
+}
+.voice-item:nth-child(3n) {
+  margin-right: 0;
+}
+.feature {
+  background-image: url(images/pexels-anna-shvets-4226140.jpg);
+  height: 648px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
+}
+.feature-text {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  padding: 8px 50px;
+  font-size: 18px;
+  line-height: 35px;
+  width: 50%;
+  margin-left: auto;
+}
+.feature-inner {
+  padding: 60px 20px 0 20px;
+}
+.feature-list th {
+  font-family: "Montserrat", sans-serif;
+  padding: 16px;
+  font-size: 30px;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+}
+.feature-list td {
+  font-family: "Montserrat", sans-serif;
+  padding: 20px 0;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: left;
+}
+.feature-point {
+  margin: 20px 0;
+  padding: 20px 30px;
+}
+.teacher {
+  width: 90%;
+  margin: 0 auto;
+}
+.teacher-inner {
+  display: flex;
+  justify-content: center;
+  justify-items: flex-start;
+  margin: 30px 0 50px;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #ddd;
+}
+.teacher .util-ttl {
+  color: #3e3e3e;
+  text-align: center;
+  background-color: #ffaa3b;
+  border-radius: 30px;
+  line-height: 50px;
+  margin: 60px auto;
+  font-size: 30px;
+  font-weight: 600;
+  padding: 8px 40px;
+  width: 280px;
+}
+.teacher-item1 {
+  display: flex;
+  font-size: 20px;
+  text-align: justify;
+  position: relative;
+}
+.teacher-item1:before {
+  content: "";
+  position: absolute;
+  background: url(../manabusanlppage/images/mittani.png) center center/contain
+    no-repeat;
+  width: 100px;
+  height: 100px;
+  margin-right: 50px;
+  top: -72px;
+  left: 0px;
+}
+.teacher-item2 {
+  display: flex;
+  font-size: 20px;
+  text-align: justify;
+  position: relative;
+}
+.teacher-item2:before {
+  content: "";
+  position: absolute;
+  background: url(../manabusanlppage/images/manabu.png) center center/contain
+    no-repeat;
+  width: 100px;
+  height: 100px;
+  margin-right: 50px;
+  top: -72px;
+  left: 0px;
+}
+.teacher-explain {
+  padding: 30px;
+}
+.teacher-text {
+  margin: 30px auto;
+  width: 50%;
+  padding: 16px;
+}
+@media screen and (max-width: 768px) {
+  .voice-item {
+    width: calc(50% - 24px * 1 / 2);
+    margin-right: 8px;
+    margin-top: 24px;
+  }
+  .voice-item:nth-child(2n) {
+    margin-right: 0;
+  }
 }

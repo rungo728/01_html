@@ -17,6 +17,11 @@
       crossorigin="anonymous"
     ></script>
     <script src="../manabusanlppage/lppage2.js"></script>
+    <script
+      async
+      src="https://platform.twitter.com/widgets.js"
+      charset="utf-8"
+    ></script>
     <title>CodeBegin</title>
   </head>
   <body>
@@ -28,7 +33,7 @@
             <a href="#problem" class="header-navLink js-navLink">お悩み</a>
           </li>
           <li class="header-navItem">
-            <a href="#voices" class="header-navLink js-navLink">受講者の声</a>
+            <a href="#voice" class="header-navLink js-navLink">受講者の声</a>
           </li>
           <li class="header-navItem">
             <a href="#feature" class="header-navLink js-navLink">特徴</a>
@@ -70,7 +75,7 @@
     </div>
     <main>
       <!-- お悩み -->
-      <section class="problem">
+      <section class="problem" id="problem">
         <div class="problem-inner">
           <div class="problem-content">
             <h2 class="util-ttl">こんなお悩みありませんか？</h2>
@@ -84,7 +89,151 @@
           </div>
         </div>
       </section>
-      <section class="voices"></section>
+      <!-- 受講者の声 -->
+      <section class="voice" id="voice">
+        <div class="voice-inner">
+          <h2 class="util-ttl button-default">受講者の声</h2>
+          <ul class="voice-items">
+            <li class="voice-item">
+              <blockquote class="twitter-tweet">
+                <p lang="ja" dir="ltr">
+                  ＼3月の収益報告／<br /><br />✅売上　29,400円<br /><br />プログラミング学習5ヶ月目で念願の初収益報告🎉<br /><br />PC嫌いのSNS音痴でも継続して結果を出せました😊<br /><br />きっかけをくださったマナブさん<a
+                    href="https://twitter.com/manabubannai?ref_src=twsrc%5Etfw"
+                    >@manabubannai</a
+                  >をはじめ、<a
+                    href="https://twitter.com/hashtag/CodeLife?src=hash&amp;ref_src=twsrc%5Etfw"
+                    >#CodeLife</a
+                  >
+                  の皆様には感謝しかないです🙇‍♀<br /><br />まだまだ精進します！<a
+                    href="https://twitter.com/hashtag/%E9%A7%86%E3%81%91%E5%87%BA%E3%81%97%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%E3%81%A8%E7%B9%8B%E3%81%8C%E3%82%8A%E3%81%9F%E3%81%84?src=hash&amp;ref_src=twsrc%5Etfw"
+                    >#駆け出しエンジニアと繋がりたい</a
+                  >
+                </p>
+                &mdash; みさ＠埼玉のWeb系フリーランス (@misaprog)
+                <a
+                  href="https://twitter.com/misaprog/status/1244960872113430528?ref_src=twsrc%5Etfw"
+                  >March 31, 2020</a
+                >
+              </blockquote>
+            </li>
+            <li class="voice-item">
+              <blockquote class="twitter-tweet" data-lang="ja">
+                <p lang="ja" dir="ltr">
+                  【12月の収益報告】<br />ーフリーランス4ヶ月目ー<br /><br />✅売上：914,000円<br />✅粗利：721,000円<br />☑️獲得案件5件<br /><br />2019年、僕の人生を大きく変えてくれた3人の方には感謝してもしきれません。<br />マナブさん(<a
+                    href="https://twitter.com/manabubannai?ref_src=twsrc%5Etfw"
+                    >@manabubannai</a
+                  >)<br />迫さん(<a
+                    href="https://twitter.com/yuki_99_s?ref_src=twsrc%5Etfw"
+                    >@yuki_99_s</a
+                  >)<br />ショーヘーさん(<a
+                    href="https://twitter.com/showheyohtaki?ref_src=twsrc%5Etfw"
+                    >@showheyohtaki</a
+                  >)<br /><br />本当にありがとうございました！🙇‍♂️
+                </p>
+                &mdash; イチタ/ Web制作 (@izukoe_61)
+                <a
+                  href="https://twitter.com/izukoe_61/status/1211790615203024896?ref_src=twsrc%5Etfw"
+                  >2019年12月30日</a
+                >
+              </blockquote>
+            </li>
+            <li class="voice-item">
+              <blockquote class="twitter-tweet" data-lang="ja">
+                <p lang="ja" dir="ltr">
+                  【5月の収益報告】<br /><br />✅収益 : 63,400円
+                  <br /><br />4ヶ月ほどプログラミングを勉強したら、沢山のありがとう
+                  と すこしだけお金をいただけるようになりました😌<br />全てに感謝です。<br /><br />マナブさん<a
+                    href="https://twitter.com/manabubannai?ref_src=twsrc%5Etfw"
+                    >@manabubannai</a
+                  >
+                  の思考とロードマップのおかげで目標に到達できました。本当にありがとうございます。
+                </p>
+                &mdash; だん＠プログラミング を頑張る人 (@dan03301)
+                <a
+                  href="https://twitter.com/dan03301/status/1267382948099092480?ref_src=twsrc%5Etfw"
+                  >2020年6月1日</a
+                >
+              </blockquote>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="feature" id="feature">
+        <div class="feature-inner">
+          <p class="feature-text button-default btn-yellow">
+            その秘訣は、<br />プログラミング学習の<br />プログラムにあります
+          </p>
+          <table class="feature-list">
+            <tbody>
+              <tr class="feature-point button-default btn-blue">
+                <th>1</th>
+                <td>講師の丁寧な動画解説</td>
+              </tr>
+              <tr class="feature-point button-default btn-blue">
+                <th>2</th>
+                <td>コミュニティメンバーとの横のつながり</td>
+              </tr>
+              <tr class="feature-point button-default btn-blue">
+                <th>3</th>
+                <td>自分のペースで続けられる環境</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section class="teacher" id="teacher">
+        <h2 class="util-ttl button-default">講師 みったに</h2>
+        <div class="teacher-inner">
+          <ul class="teacher-list">
+            <li class="teacher-item1">
+              <p class="teacher-explain">
+                <span class="text1">みったに@Webエンジニア</span><br />
+                <a href="https://twitter.com/mittani_s?s=20">@mittani_s</a>
+                ：フリーランスでWeb制作しています /
+                新卒で大手電機メーカーのグループに就職 →
+                4年間勤めた後に独学でWeb制作を学び退職 → Web制作フリーランス /
+                500人超えの初心者向けプログラミングコミュニティをマナブさんと運営中
+                / 普段は愛知の田舎にてWeb制作をしつつ暮らしています /
+                IT関連を中心に呟きます。
+              </p>
+            </li>
+          </ul>
+        </div>
+        <h2 class="util-ttl button-default">創設者 マナブ</h2>
+        <div class="teacher-inner">
+          <ul class="teacher-list">
+            <li class="teacher-item2">
+              <p class="teacher-explain">
+                <span class="text1">マナブ@バンコク</span><br />
+                <a href="https://twitter.com/manabubannai?s=20"
+                  >@manabubannai</a
+                >
+                ：フリーランスでWeb制作しています /
+                新卒で大手電機メーカーのグループに就職 →
+                4年間勤めた後に独学でWeb制作を学び退職 → Web制作フリーランス /
+                500人超えの初心者向けプログラミングコミュニティをマナブさんと運営中
+                / 普段は愛知の田舎にてWeb制作をしつつ暮らしています /
+                IT関連を中心に呟きます。
+              </p>
+            </li>
+          </ul>
+        </div>
+        <p class="teacher-text button-default">
+          こんにちは、マナブです。<br />現在は３０歳のフリーランスです。
+        </p>
+        <p class="teacher-text button-default">
+          安心して受講していただくために<br />
+          僕の収益報告になります。
+        </p>
+        <p class="teacher-text button-default">
+          2016年は、年収150万くらい。<br />
+          2017年は、年収1,800万くらい。<br />
+          2018年は、年収3,300万くらい。<br />2019年は、年収9,000万くらいかな、という感じです。
+        </p>
+        <p class="teacher-text button-default">
+          ブログ・アフィリエイト・プログラミングを愛しています。
+        </p>
+      </section>
     </main>
   </body>
 </html>
