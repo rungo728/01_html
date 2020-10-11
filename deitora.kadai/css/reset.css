@@ -1,88 +1,14 @@
-@charset "UTF-8";
-/* リセットCSS
-===================================== */
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-button,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
+@charset "utf-8";
+
+/*==========================================================================
+# reset - ブラウザの差異や不要なスタイルを無くすためのスタイル
+========================================================================== */
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html, body, h1, h2, h3, h4, h5, h6, ul, ol, dl, li, dt, dd, p, div, span, img, a, table, tr, th, td, small, button, time, figure {
   border: 0;
   font: inherit;
   font-size: 100%;
@@ -95,55 +21,15 @@ html {
   line-height: 1;
 }
 
-ol,
-ul {
+ol, ul {
   list-style: none;
 }
 
-li,
-dd {
+li, dd {
   list-style-type: none;
 }
 
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-caption,
-th,
-td {
-  font-weight: normal;
-  text-align: left;
-  vertical-align: middle;
-}
-
-q,
-blockquote {
-  quotes: none;
-}
-
-q:before,
-q:after,
-blockquote:before,
-blockquote:after {
-  content: "";
-  content: none;
-}
-
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-main,
-menu,
-nav,
-section,
-summary {
+header, footer, nav, section, article, aside, figure, figcaption {
   display: block;
 }
 
@@ -151,14 +37,8 @@ img {
   border: none;
   vertical-align: bottom;
 }
-* {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-body {
-  background: #f3f3f3;
-  color: #3e3e3e;
-  font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3",
-    "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "Droid Sans", sans-serif;
-  line-height: 1.45;
+
+a {
+  cursor: pointer;
+  text-decoration: none;
 }
