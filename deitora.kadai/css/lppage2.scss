@@ -1,8 +1,8 @@
 //マップ型変数breakpointsを定義
 $breakpoints: (
 //キー  値
- 'sm': 'screen and (max-width: 767px)', //767px以下（スマホ）用の表示
- 'md': 'screen and (min-width: 768px)' //768px以上（タブレット・PC）用の表示
+ 'sp-down': 'screen and (max-width: 767px)', //767px以下（スマホ）用の表示
+ 'sp-up': 'screen and (min-width: 768px)' //768px以上（タブレット・PC）用の表示
 ) !default;
 
 //メディアクエリ用のmixinを定義。デフォ値はmd
@@ -31,13 +31,13 @@ $font-family-default: "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3",
 /*======================================================================
 # common 全体共通するスタイル
 =======================================================================*/
-@include mq(sm){
+@include mq(sp-down){
   .is-pc{
     display: none;
   }
 }
 
-@include mq(md){
+@include mq(sp-up){
   .is-sp{
     display: none;
   }
@@ -51,10 +51,273 @@ body{
 /* header
 -------------------------------------------------------------------------*/ 
 .header{
-  background:#FFFFFF1A;
+  background: #fff;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 100;
+
+  @include mq('sp-up'){
+    height: 80px;
+  }
 }
+.header-ttl{
+  @include mq('sp-up'){
+    display: none;
+  } 
+}
+.header-nav{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  @include mq('sp-up'){
+    // メニューをヘッダー幅全体で使うため
+    height: 100%;
+  } 
+}
+.header-navList{
+  @include mq('sp-up'){
+    // PC版では横並び
+    display: flex;
+  } 
+}
+.header-navItem{
+  + .header-navItem{
+    margin-left: 40px;
+  }
+}
+.header-navLink{
+  color: #3E3E3E;
+  font-family: $font-family-english;
+  font-size: 16px;
+  letter-spacing: -0.4px;
+  position: relative;
+
+  @include mq('sp-up'){
+    padding: 8px 0;
+
+    &::after{
+      background: #3e3e3e;
+      bottom: 0;
+      content: '';
+      height: 1px;
+      width: 100%;
+      left: 0;
+      position: absolute;
+      transform: scale(0);
+      // 少し遅れて表示されるようにする
+      transition: transform .2s;
+    }
+
+    &:hover::after{
+      // ホバーした時に出てくるようにする
+      transform: scale(1);
+      
+    }
+  } 
+}
+/* footer
+-------------------------------------------------------------------------*/ 
+.footer{
+  background: #3E3E3E;
+  padding: 50px 0 56px;
+
+}
+.footer-inner{
+	@include mq('sp-up') {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 120px;
+
+  }
+}
+.footer-topLink{
+  display: block;
+  border: 1px solid #3e3e3e;
+  background: rgba(255, 255, 255, 0.8);
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  z-index: 100;
+  // スクロールされるまでは消えている状態
+  // opacity: 0;
+  // visibility: hidden;
+  // transition: .5s;
+  @include mq('sp-up') {
+		bottom: 40px;
+		right: 40px;
+  }
+  &::after{
+    display: block;
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-right: 3px solid #3e3e3e;
+    border-top: 3px solid #3e3e3e;
+    transform: rotate(-45deg);
+    left: 15px;
+    top: 20px;
+  }
+  .add-scrolled & {
+		// opacity: 1;
+		// visibility: visible;
+	}
+}
+.footer-snsList{
+  display: flex;
+
+}
+.footer-snsLink{
+  color: #fff;
+  font-size: 36px;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+
+  @include mq('sp-up') {
+    &:hover{
+      opacity: 1;
+    }
+  }
+}
+.footer-snsItem{
+  + .footer-snsItem{
+    margin-left: 30px;
+  }
+}
+.footer-navList{
+  margin-top: 30px;
+}
+.footer-navItem{
+  + .footer-navItem{
+    @include mq('sp-up') {
+			margin-top: 20px;
+		}
+  }
+}
+.footer-navLink{
+  color: #fff;
+  display: inline-block;
+  font-size: 14px;
+  letter-spacing: 0.4px;
+  position: relative;
+
+  @include mq('sp-up') {
+    font-size: 16px;
+  }
+
+  &::after{
+    @include mq('sp-up') {
+      background: #fff;
+      bottom: -5px;
+      content: '';
+      height: 1px;
+      width: 100%;
+      left: 0;
+      position: absolute;
+      transform: scale(0);
+      // 少し遅れて表示されるようにする
+      transition: transform .2s;
+    }    
+  }
+  &:hover::after{
+    // ホバーした時に出てくるようにする
+    transform: scale(1); 
+  }
+}
+.footer-company{
+  @include mq('sp-up') {
+		margin-left: auto;
+		padding-top: 6px;
+	}
+
+}
+.footer-companyName{
+  color: #fff;
+  font-size: 32px;
+  font-weight: bold;
+  font-family: $font-family-english;
+  line-height: (77 / 40);
+  
+  @include mq('sp-up') {
+		font-size: 40px;
+	}
+}
+.footer-copylight{
+  color: #fff;
+  display: block;
+  font-size: 12px;
+  font-family: $font-family-english;
+  line-height: (15 / 12);
+  letter-spacing: 0.3px;
+  opacity: 0.6;
+  margin-top: 8px;
+  
+  @include mq('sp-up') {
+		text-align: right;
+	}
+}
+/* hero
+-------------------------------------------------------------------------*/ 
+.hero{
+  background: url(../images/mv.png)center center/cover;
+  height: 648px;
+  
+}
+
+.hero-inner{
+
+  @include mq('sp-up') {
+    max-width: 1280px;
+    padding: 228px 20px 0 0;
+
+	}
+}
+.hero-content{
+  @include mq('sp-up') {
+    max-width: 600px;
+    // 右に文章を持ってくる
+    margin-left: auto;
+	}
+}
+.hero-ttl{
+  font-size: 24px;
+  font-weight: bold;
+  line-height: (40 / 24);
+  @include mq('sp-up') {
+    font-size: 32px;
+    line-height: (48 / 32);
+	}
+}
+.hero-txt{
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 0.45px;
+  margin-top: 33px;
+}
+.hero-link{
+  display: block;
+  background-color: $color-main;
+  box-shadow: 0 3px 5px rgba(62, 62, 62, 0.2);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 0.45px;
+  height: 50px;
+  line-height: 50px;
+  width: 280px;
+  text-align: center;
+  margin-top: 40px;
+  @include mq('sp-up') {
+    &:hover{
+      background: $color-active;
+    }
+	}
+}
+/* news
+-------------------------------------------------------------------------*/ 
