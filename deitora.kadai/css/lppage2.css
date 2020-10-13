@@ -1,1 +1,40 @@
-/* No CSS *//*# sourceMappingURL=lppage2.css.map */
+@charset "UTF-8";
+/*======================================================================
+# colors
+=======================================================================*/
+/*======================================================================
+# fonts
+=======================================================================*/
+/*======================================================================
+# common 全体共通するスタイル
+=======================================================================*/
+@media screen and (max-width: 767px) {
+  .is-pc {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .is-sp {
+    display: none;
+  }
+}
+
+body {
+  background: #f3f3f3;
+  color: #3e3e3e;
+  font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "Droid Sans", sans-serif;
+  line-height: 1.5;
+}
+
+/* header
+-------------------------------------------------------------------------*/
+.header {
+  background: #FFFFFF1A;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+/*# sourceMappingURL=lppage2.css.map */

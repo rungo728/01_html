@@ -1,0 +1,60 @@
+//マップ型変数breakpointsを定義
+$breakpoints: (
+//キー  値
+ 'sm': 'screen and (max-width: 767px)', //767px以下（スマホ）用の表示
+ 'md': 'screen and (min-width: 768px)' //768px以上（タブレット・PC）用の表示
+) !default;
+
+//メディアクエリ用のmixinを定義。デフォ値はmd
+@mixin mq($breakpoint: md) {
+//map-get(マップ型変数, キー)で値を取得
+  @media #{map-get($breakpoints, $breakpoint)} {
+    //この中をカスタムできる
+    @content;
+  }
+}
+/*======================================================================
+# colors
+=======================================================================*/
+$primary-color:#3EA1D1;
+$font-color:#3E3E3E;
+$color-background: #f3f3f3;
+$color-text: #3e3e3e;
+$color-main: #ffaa3b;
+$color-active: #f18900;
+$color-disable: #b2b2b2;
+/*======================================================================
+# fonts
+=======================================================================*/
+$font-family-english: "Montserrat", sans-serif;
+$font-family-default: "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "Droid Sans", sans-serif;
+/*======================================================================
+# common 全体共通するスタイル
+=======================================================================*/
+@include mq(sm){
+  .is-pc{
+    display: none;
+  }
+}
+
+@include mq(md){
+  .is-sp{
+    display: none;
+  }
+}
+body{
+  background: $color-background;
+  color: $color-text;
+  font-family: $font-family-default;
+  line-height: 1.5;
+}
+/* header
+-------------------------------------------------------------------------*/ 
+.header{
+  background:#FFFFFF1A;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
