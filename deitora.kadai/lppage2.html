@@ -85,7 +85,7 @@
               <time class="news-itemDate" datetime="2019-02-01"
                 >2019-02-01</time
               >
-              <div class="news-itemCategory">カテゴリー</div>
+              <div class="news-itemCategory">テキスト</div>
               <p class="news-itemTxt">
                 ニュースニュースニュースニュースニュースニュースニュースニュースニュースニュースニュースニュースニュースニュース
               </p>
@@ -96,7 +96,7 @@
               <time class="news-itemDate" datetime="2019-02-01"
                 >2019-02-01</time
               >
-              <div class="news-itemCategory">カテゴリー</div>
+              <div class="news-itemCategory">テキスト</div>
               <p class="news-itemTxt">
                 ニュースニュースニュースニュースニュースニュースニュースニュースニュースニュースニュースニュースニュースニュース
               </p>
@@ -107,7 +107,7 @@
               <time class="news-itemDate" datetime="2019-02-01"
                 >2019-02-01</time
               >
-              <div class="news-itemCategory">カテゴリー</div>
+              <div class="news-itemCategory">テキスト</div>
               <p class="news-itemTxt">
                 ニュースニュースニュースニュースニュースニュースニュースニュースニュースニュースニュースニュースニュースニュース
               </p>
@@ -148,6 +148,7 @@
     </section><!-- /.service -->
  
     <section class="results">
+      <h2 class="util-ttl">Results</h2>
       <div class="results-container swiper-container">
         <div class="results-list swiper-wrapper">
           <div class="results-item swiper-slide">
@@ -221,11 +222,11 @@
             <td>Price ¥10,000</td>
           </tr>
           <tr>
-            <th>row 1</th>
+            <th>row 2</th>
             <td>Price ¥10,000</td>
           </tr>
           <tr>
-            <th>row 1</th>
+            <th>row 3</th>
             <td>Price ¥10,000</td>
           </tr>
         </tbody>
@@ -250,7 +251,15 @@
         <h2 class="util-ttl">Q&A</h2>
         <div class="faq-inner">
           <dl class="faq-list">
-            <div class="faq-item">
+            <div class="faq-item add-active">
+              <dt class="faq-itemQuestion">
+                <p class="faq-itemQuestion_txt">質問質問質問？</p>
+              </dt>
+              <dd class="faq-itemAnswer ">
+                <p class="faq-itemAnswer_txt">回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答</p>
+              </dd>
+            </div>
+            <div class="faq-item add-active">
               <dt class="faq-itemQuestion">
                 <p class="faq-itemQuestion_txt">質問質問質問？</p>
               </dt>
@@ -258,7 +267,7 @@
                 <p class="faq-itemAnswer_txt">回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答</p>
               </dd>
             </div>
-            <div class="faq-item">
+            <div class="faq-item add-active">
               <dt class="faq-itemQuestion">
                 <p class="faq-itemQuestion_txt">質問質問質問？</p>
               </dt>
@@ -266,7 +275,7 @@
                 <p class="faq-itemAnswer_txt">回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答</p>
               </dd>
             </div>
-            <div class="faq-item">
+            <div class="faq-item add-active">
               <dt class="faq-itemQuestion">
                 <p class="faq-itemQuestion_txt">質問質問質問？</p>
               </dt>
@@ -274,7 +283,7 @@
                 <p class="faq-itemAnswer_txt">回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答</p>
               </dd>
             </div>
-            <div class="faq-item">
+            <div class="faq-item add-active">
               <dt class="faq-itemQuestion">
                 <p class="faq-itemQuestion_txt">質問質問質問？</p>
               </dt>
@@ -282,15 +291,7 @@
                 <p class="faq-itemAnswer_txt">回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答</p>
               </dd>
             </div>
-            <div class="faq-item">
-              <dt class="faq-itemQuestion">
-                <p class="faq-itemQuestion_txt">質問質問質問？</p>
-              </dt>
-              <dd class="faq-itemAnswer">
-                <p class="faq-itemAnswer_txt">回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答</p>
-              </dd>
-            </div>
-            <div class="faq-item">
+            <div class="faq-item add-active">
               <dt class="faq-itemQuestion">
                 <p class="faq-itemQuestion_txt">質問質問質問？</p>
               </dt>
@@ -356,7 +357,7 @@
               <div class="contact-item">
                 <dt class="contact-itemTtl">メールアドレス</dt>
                 <dd class="contact-inputBox">
-                  <input type="text" name="email" placeholder="sample@gmail.com" class="js-require">
+                  <input type="email" name="email" placeholder="sample@gmail.com" class="js-require">
                   <span class="contact-focusLine"></span>
                 </dd>
               </div>
@@ -364,16 +365,16 @@
                 <dt class="contact-itemTtl">性別</dt>
                 <dd class="contact-inputBox">
                   <div class="contact-radio">
-                    <input type="radio" value="male" name="sex" checked>
-                    <label class="contact-radioLabel">男性</label>
+                    <input type="radio" value="male" name="sex" id="radio-male" checked>
+                    <label for="radio-male" class="contact-radioLabel">男性</label>
                   </div>
                   <div class="contact-radio">
-                    <input type="radio" value="female" name="sex">
-                    <label class="contact-radioLabel">女性</label>
+                    <input type="radio" value="female" name="sex" id="radio-female">
+                    <label for="radio-female" class="contact-radioLabel">女性</label>
                   </div>
                 </dd>
               </div>
-              <div class="contact-item contact-item--message">
+              <div class="contact-item contact-item--message mod-message">
                 <dt class="contact-itemTtl">メッセージ</dt>
                 <dd >
                   <textarea name="message"></textarea>
