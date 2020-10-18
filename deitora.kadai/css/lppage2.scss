@@ -332,7 +332,8 @@ img{
   letter-spacing: 0.45px;
   margin-top: 33px;
 }
-.hero-link{
+.hero-link,
+.contact-button{
   display: block;
   background-color: $color-main;
   box-shadow: 0 3px 5px rgba(62, 62, 62, 0.2);
@@ -991,12 +992,18 @@ iframe{
   padding: 40px 16px;
 
   @include mq('sp-up'){
-    margin-top: 120px;
+    margin: 120px auto;
     padding: 60px 160px;
   }
   .util-ttl{
     color: #fff;
     text-align: center;
+  }
+  input{
+    &[type="checkbox"] {
+      display: none;
+    }
+    
   }
 }
 .contact-inner{
@@ -1004,8 +1011,8 @@ iframe{
   border-radius: 12px;
   max-width: 960px;
   margin: 0 auto;
-  width: 100%;
   overflow: hidden;
+  width: 100%;
 }
 .contact-header{
   background: #000;
@@ -1050,7 +1057,8 @@ iframe{
   padding: 40px 12px; 
   
   @include mq('sp-up'){
-    padding: 60px 120px;
+    padding: 60px 120px 60px;
+    
   }
 
 }
@@ -1064,16 +1072,17 @@ iframe{
   // notは〜以外
   &:not(.mod-message){
     @include mq('sp-up'){
-      display: flex;
       // mac以外で対応できるように
       display: -webkit-box;
-			display: -ms-flexbox;
+      display: -ms-flexbox;
+      // デフォルト設定
+      display: flex;
     }
   }
   input{
     &[type="text"],
     &[type="email"]{
-      border: 0;
+      border: none;
       border-bottom: solid 1px #3E3E3E;
       border-radius: 0;
       font-size: 16px;
@@ -1087,7 +1096,7 @@ iframe{
       width: 100%;
     }
     &[type="text"]{
-      &:hover,&:focus{
+      &:hover, &:focus{
         border-color: #4973FF;
         outline: none;
         + .contact-focusLine {
@@ -1106,57 +1115,58 @@ iframe{
     }
     &[type="radio"] {
       display: none;
- 
+      
     }
   } 
-}
-select{
-
-  border-radius: 0;
-  border: 1px solid #3E3E3E;
-  color: $color-text;
-  font-size: 16px;
-  font-weight: 500;
-  height: 40px;
-  line-height: 40px;
-  padding: 0 34px 0 8px;
-  outline: none;
-  // セレクトボックスのデフォルトスタイルを消す
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-
-  @include mq('sp-up'){
-    width: 180px;
-
-    &:hover {
-      -webkit-box-shadow: 0 0 4px #4973ff;
-      box-shadow: 0 0 4px #4973ff;
-    }
+  select{
+    border: none;
+    border-radius: 0;
+    border: 1px solid #3E3E3E;
+    color: $color-text;
+    font-size: 16px;
+    font-weight: 500;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 34px 0 8px;
+    outline: none;
+    // セレクトボックスのデフォルトスタイルを消す
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  
+    @include mq('sp-up'){
+      width: 180px;
+  
+      &:hover {
+        -webkit-box-shadow: 0 0 4px #4973ff;
+        box-shadow: 0 0 4px #4973ff;
+      }
+    } 
   }
-
-}
-textarea{
-  border: 1px solid #707070;
-  border-radius: 0;
-  height: 160px;
-  margin-top: 16px;
-  padding: 8px;
-  width: 100%;
-
-  @include mq('sp-up') {
-    font-size: 2.1rem;
-    height: 200px;
-    margin-top: 8px;
-
-    &:hover,&:focus {
-      border-color: #4973ff;
-      box-shadow: 0 0 4px #4973ff;
+  textarea{
+    border: 1px solid #707070;
+    border-radius: 0;
+    height: 160px;
+    margin-top: 16px;
+    padding: 8px;
+    width: 100%;
+    font-size: 16px;
+  
+    @include mq('sp-up') {
+      font-size: 16px;
+      height: 200px;
+      margin-top: 8px;
+  
+      &:hover,&:focus {
+        border-color: #4973ff;
+        box-shadow: 0 0 4px #4973ff;
+      }
     }
   }
 }
 .contact-inputBox{ 
-  
+  // これがないとfocusLineが表示されない
+  position: relative;
   @include mq('sp-up') {
 		flex: 0 1 100%;
 	}
@@ -1188,7 +1198,8 @@ textarea{
   // 入力時・マウスオーバー時に表示のため
   opacity: 0;
   transition: opacity .2s;
-  
+  bottom: 1px;
+  left: 0;
 }
 .contact-itemTtl{
   flex: 0 0 186px;
@@ -1207,10 +1218,83 @@ textarea{
   width: 40px;
   line-height: 16px;
   text-align: center;
+  
+}
+.contact-privacy{
+  margin-top: 26px;
+
+
+  @include mq('sp-up') {
+		margin-top: 32px;
+	}
+}
+.contact-privacyLabel{
+  cursor: pointer;
+  display: block;
+  font-size: 16px;
+  padding-left: 38px;
+  font-weight: 700;
+  position: relative;
+
+  @include mq('sp-up') {
+    font-size: 18px;
+    padding-left: 42px;
+  }
+
+  &:before{
+    display: block;
+    position: absolute;
+    content: '';
+    width: 18px;
+    height: 18px;
+    border: 1px solid #707070;
+    background: #fff;
+    left: 0;
+    top: -2px;
+
+    @include mq('sp-up') {
+			height: 20px;
+			width: 20px;
+		}
+  }
+  
+  @include mq('sp-up'){
+
+    &:hover{
+      &::before{
+        border-color: #4973FF;
+        box-shadow: 0 0 5px #4973FF33 ;
+      }
+    }
+    &:active{
+      &::before{
+        background-color: rgba(73, 115, 255, 0.2);
+        box-shadow: none;
+      }
+    }
+  }
+
+  &:after{
+    position: absolute;
+    display: block;
+    content: '';
+    width: 12px;
+    height: 6px;
+    top: 3px;
+    left: 5px;
+    border-bottom: 2px solid #3B69FF;
+    border-left: 2px solid #3B69FF;
+    transform: rotate(-45deg);
+    opacity: 0;
+    transition: 0.2s; 
+  }
+}
+input[type="checkbox"]:checked + .contact-privacyLabel:after {
+  opacity: 1;
 }
 .contact-radio{
   display: inline-block;
-  position: relative;
+  
   +.contact-radio{
     margin-left: 40px;
   }
@@ -1221,6 +1305,7 @@ textarea{
   padding-left: 22px;
 
   &:before{
+    background: #fff;
     position: absolute;
     content: '';
     display: block;
@@ -1262,4 +1347,18 @@ textarea{
 }
 input[type="radio"]:checked + .contact-radioLabel:after{
   opacity: 1;
+}
+
+.contact-button{
+  margin-top: 38px;
+  width: 165px;
+
+  @include mq('sp-up'){
+    width: 173px;
+    margin-top: 42px;
+  }
+  // 送信条件を満たしていない場合の表示
+  &:disabled{
+    background-color: $color-disable;
+  }
 }
