@@ -1,0 +1,57 @@
+@charset "utf-8";
+/*======================================================================
+# mixins
+=======================================================================*/
+//マップ型変数breakpointsを定義
+$breakpoints: (
+//キー  値
+ 'sm': 'screen and (max-width: 767px)', //767px以下（スマホ）用の表示
+ 'md': 'screen and (min-width: 768px)' //768px以上（タブレット・PC）用の表示
+) !default;
+
+//メディアクエリ用のmixinを定義。デフォ値はmd
+@mixin mq($breakpoint: md) {
+//map-get(マップ型変数, キー)で値を取得
+  @media #{map-get($breakpoints, $breakpoint)} {
+    //この中をカスタムできる
+    @content;
+  }
+}
+/*======================================================================
+# colors
+=======================================================================*/
+$primary-color:#3EA1D1;
+$font-color:#333333;
+/*======================================================================
+# common 全体共通するスタイル
+=======================================================================*/
+@include mq(sm){
+  .is-pc{
+    display: none;
+  }
+}
+
+@include mq(md){
+  .is-sp{
+    display: none;
+  }
+}
+body{
+ font-size: 16px;
+ color: $font-color;
+ font-family:"ヒラギノ明朝 ProN",serif; 
+ line-height: 1.6875;
+}
+// 外枠に対して100%で画像を広げたいので
+img{
+  width: 100%;
+}
+.inner{
+  max-width: 1366px;
+  margin: 0 auto;
+  padding: 0 40px;
+  // paddingも含めて1366pxにするため
+  box-sizing: content-box;
+}
+/* header
+-------------------------------------------------------------------------*/
