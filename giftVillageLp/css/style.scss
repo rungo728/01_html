@@ -1,18 +1,23 @@
 @charset "utf-8";
 /*======================================================================
+# width
+=======================================================================*/
+$layout-width-canvas: 1366px;
+$layout-width-inner: 1200px;
+/*======================================================================
 # mixins
 =======================================================================*/
 //マップ型変数breakpointsを定義
 $breakpoints: (
 //キー  値
  'sp-down': 'screen and (max-width: 767px)', //767px以下（スマホ）用の表示
- 'sp-up': 'screen and (min-width: 768px)' //768px以上（タブレット・PC）用の表示
- "tab-down": "(max-width: #{$layout-width-inner - 1px})",
- "tab-up": "(min-width: #{$layout-width-inner})",
+ 'sp-up': 'screen and (min-width: 768px)', //768px以上（タブレット・PC）用の表示
+ 'tab-down': "(max-width: #{$layout-width-inner - 1px})",
+ 'tab-up': "(min-width: #{$layout-width-inner})",
 ) !default;
 
 //メディアクエリ用のmixinを定義。デフォ値はmd
-@mixin mq($breakpoint: md) {
+@mixin mq($breakpoint: sp) {
 //map-get(マップ型変数, キー)で値を取得
   @media #{map-get($breakpoints, $breakpoint)} {
     //この中をカスタムできる
@@ -29,21 +34,17 @@ $font-color:#4e3f21;
 =======================================================================*/
 $font-family-english: "Montserrat", sans-serif;
 $font-family-default: 'TsukuBRdGothic-Regular', sans-serif;
-/*======================================================================
-# width
-=======================================================================*/
-$layout-width-canvas: 1366px;
-$layout-width-inner: 1200px;
+
 /*======================================================================
 # common 全体共通するスタイル
 =======================================================================*/
-@include mq(sp-down){
+@include mq('sp-down'){
   .is-pc{
     display: none;
   }
 }
 
-@include mq(sp-up){
+@include mq('sp-up'){
   .is-sp{
     display: none;
   }
@@ -178,42 +179,59 @@ header{
   display: inline-block;
   content: '';
 
-  left: 0px;
-  top: 250px;
+  @include mq('tab-up'){
+    left: 0px;
+    top: 250px;
+  }
 }
 .item2{
   position: absolute;
   display: inline-block;
   content: '';
-  left: 170px;
-  top: 100px;
+
+  @include mq('tab-up'){
+    left: 170px;
+    top: 100px;  
+  }
+
 }
 .item3 {
   position: absolute;
   display: block;
   content: '';
-  left: 230px;
-  top: 265px;
+  @include mq('tab-up'){
+    left: 230px;
+    top: 265px;
+  }
+
 }
 .item4 {
   position: absolute;
   display: block;
   content: '';
-  right: 230px;
-  top: 255px;
+  @include mq('tab-up'){
+    right: 230px;
+    top: 255px;
+  }
+
 }
 .item5{
   position: absolute;
   display: block;
   content: '';
-  right: 180px;
-  top: 80px;
+  @include mq('tab-up'){
+    right: 180px;
+    top: 80px;
+  }
 }
 .item6 {
   position: absolute;
   display: block;
   content: '';
-  right: 0;
-  top: 220px;
+  @include mq('tab-up'){
+    right: 0;
+    top: 220px;
+  }
 }
+
 

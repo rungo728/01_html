@@ -1,5 +1,8 @@
 @charset "UTF-8";
 /*======================================================================
+# width
+=======================================================================*/
+/*======================================================================
 # mixins
 =======================================================================*/
 /*======================================================================
@@ -163,47 +166,77 @@ header {
   position: absolute;
   display: inline-block;
   content: '';
-  left: 0px;
-  top: 250px;
+}
+
+@media (min-width: 1200px) {
+  .item1 {
+    left: 0px;
+    top: 250px;
+  }
 }
 
 .item2 {
   position: absolute;
   display: inline-block;
   content: '';
-  left: 170px;
-  top: 100px;
+}
+
+@media (min-width: 1200px) {
+  .item2 {
+    left: 170px;
+    top: 100px;
+  }
 }
 
 .item3 {
   position: absolute;
   display: block;
   content: '';
-  left: 230px;
-  top: 265px;
+}
+
+@media (min-width: 1200px) {
+  .item3 {
+    left: 230px;
+    top: 265px;
+  }
 }
 
 .item4 {
   position: absolute;
   display: block;
   content: '';
-  right: 230px;
-  top: 255px;
+}
+
+@media (min-width: 1200px) {
+  .item4 {
+    right: 230px;
+    top: 255px;
+  }
 }
 
 .item5 {
   position: absolute;
   display: block;
   content: '';
-  right: 180px;
-  top: 80px;
+}
+
+@media (min-width: 1200px) {
+  .item5 {
+    right: 180px;
+    top: 80px;
+  }
 }
 
 .item6 {
   position: absolute;
   display: block;
   content: '';
-  right: 0;
-  top: 220px;
+}
+
+@media (min-width: 1200px) {
+  .item6 {
+    right: 0;
+    top: 220px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
