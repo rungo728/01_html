@@ -5,8 +5,8 @@
 //マップ型変数breakpointsを定義
 $breakpoints: (
 //キー  値
- 'sm': 'screen and (max-width: 767px)', //767px以下（スマホ）用の表示
- 'md': 'screen and (min-width: 768px)' //768px以上（タブレット・PC）用の表示
+ 'sp-down': 'screen and (max-width: 767px)', //767px以下（スマホ）用の表示
+ 'sp-up': 'screen and (min-width: 768px)' //768px以上（タブレット・PC）用の表示
 ) !default;
 
 //メディアクエリ用のmixinを定義。デフォ値はmd
@@ -30,13 +30,13 @@ $font-family-default: 'TsukuBRdGothic-Regular', sans-serif;
 /*======================================================================
 # common 全体共通するスタイル
 =======================================================================*/
-@include mq(sm){
+@include mq(sp-down){
   .is-pc{
     display: none;
   }
 }
 
-@include mq(md){
+@include mq(sp-up){
   .is-sp{
     display: none;
   }
@@ -94,15 +94,8 @@ header{
   background: #c8a063;
   padding: 20px 40px 20px;
   margin-top: 190px;
-}
-.footer-inner{
   position: relative;
-	@include mq('sp-up') {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 120px;
 
-  }
   &:before {
     position: absolute;
     display: inline-block;
@@ -110,12 +103,49 @@ header{
     width: 100%;
     height: 90px;
     bottom: 60px;
-    left: -15px;
+    left: 0;
     background: url(../img/footer_mori.png) center/cover;
-    background-size: 1040px 90px;
-    padding: 0 15px;
-
+    background-size: 100% 90px;
   }
+}
+.footer-inner{
+  position: relative;
+	@include mq('sp-up') {
+    max-width: 1366px;
+    margin: 0 auto;
+    padding: 0 120px;
+  }
+}
+.footer-topLink{
+  display: block;
+  background: url(../img/pagetop_icon.png)center/cover;
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  z-index: 100;
+  // スクロールされるまでは消えている状態
+  // opacity: 0;
+  // visibility: hidden;
+  // transition: .5s;
+  @include mq('sp-up') {
+    bottom: 130px;
+    right: 20px;
+  }
+  &::after{
+    display: block;
+    content: 'TOP';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    left: 10px;
+    top: -25px;
+  }
+  .add-scrolled & {
+		// opacity: 1;
+		// visibility: visible;
+	}
 }
 
 .footer-copyright{
@@ -124,7 +154,7 @@ header{
   text-align: center;
 }
 /* top
-------------------------------------------------------------------------*/
+-------------------------------------------------------------------------*/
 .top{
   padding-top: 150px;
 }
