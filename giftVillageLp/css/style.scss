@@ -21,7 +21,12 @@ $breakpoints: (
 # colors
 =======================================================================*/
 $primary-color:#3EA1D1;
-$font-color:#333333;
+$font-color:#4e3f21;
+/*======================================================================
+# fonts
+=======================================================================*/
+$font-family-english: "Montserrat", sans-serif;
+$font-family-default: 'TsukuBRdGothic-Regular', sans-serif;
 /*======================================================================
 # common 全体共通するスタイル
 =======================================================================*/
@@ -39,7 +44,7 @@ $font-color:#333333;
 body{
  font-size: 16px;
  color: $font-color;
- font-family:"ヒラギノ明朝 ProN",serif; 
+ font-family:$font-family-default;
  line-height: 1.6875;
 }
 // 外枠に対して100%で画像を広げたいので
@@ -55,3 +60,71 @@ img{
 }
 /* header
 -------------------------------------------------------------------------*/
+header{
+  background: #fbffdb;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: 150px;
+}
+.header-inner{
+  padding-top: 100px;
+  position: relative;
+  &:before{
+    position: absolute;
+    display: inline-block;
+    content: '';
+    width: 100%;
+    height: 55px;
+    top: 0;
+    left: 0;
+    background: url(../img/flag1.png) center/cover;
+    background-size: 1040px 55px;
+  }
+}
+.header-logo{
+  width: 120px;
+
+}
+/* footer
+-------------------------------------------------------------------------*/
+.footer {
+  background: #c8a063;
+  padding: 20px 40px 20px;
+  margin-top: 190px;
+}
+.footer-inner{
+  position: relative;
+	@include mq('sp-up') {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 120px;
+
+  }
+  &:before {
+    position: absolute;
+    display: inline-block;
+    content: '';
+    width: 100%;
+    height: 90px;
+    bottom: 60px;
+    left: -15px;
+    background: url(../img/footer_mori.png) center/cover;
+    background-size: 1040px 90px;
+    padding: 0 15px;
+
+  }
+}
+
+.footer-copyright{
+  color: #e0e0e0;
+  font-size: 16px;
+  text-align: center;
+}
+/* top
+------------------------------------------------------------------------*/
+.top{
+  padding-top: 150px;
+}
