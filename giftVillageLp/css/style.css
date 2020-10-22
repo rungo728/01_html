@@ -45,8 +45,7 @@ img {
 /* header
 -------------------------------------------------------------------------*/
 header {
-  background: #fbffdb;
-  position: fixed;
+  background: #fbf9ed;
   top: 0;
   left: 0;
   right: 0;
@@ -55,7 +54,7 @@ header {
 }
 
 .header-inner {
-  padding-top: 100px;
+  padding-top: 70px;
   position: relative;
 }
 
@@ -72,7 +71,7 @@ header {
 }
 
 .header-logo {
-  width: 120px;
+  width: 220px;
 }
 
 /* footer
@@ -145,6 +144,66 @@ header {
 /* top
 -------------------------------------------------------------------------*/
 .top {
-  padding-top: 150px;
+  padding-top: 20px;
+  position: relative;
+  background: #fbf9ed;
+}
+
+.top-picture {
+  padding-top: 35%;
+  background: url(../img/kuma.png) no-repeat;
+  background-position: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.item1 {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  left: 0px;
+  top: 250px;
+}
+
+.item2 {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  left: 170px;
+  top: 100px;
+}
+
+.item3 {
+  position: absolute;
+  display: block;
+  content: '';
+  left: 230px;
+  top: 265px;
+}
+
+.item4 {
+  position: absolute;
+  display: block;
+  content: '';
+  right: 230px;
+  top: 255px;
+}
+
+.item5 {
+  position: absolute;
+  display: block;
+  content: '';
+  right: 180px;
+  top: 80px;
+}
+
+.item6 {
+  position: absolute;
+  display: block;
+  content: '';
+  right: 0;
+  top: 220px;
 }
 /*# sourceMappingURL=style.css.map */
