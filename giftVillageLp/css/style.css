@@ -135,7 +135,9 @@ header {
   width: 15px;
   height: 15px;
   left: 10px;
-  top: -25px;
+  top: -30px;
+  color: #4e3f21;
+  font-weight: 600;
 }
 
 .footer-copyright {
@@ -211,7 +213,7 @@ header {
   color: #df7459;
 }
 
-.svg .svg-box {
+.svg .svg-box1 {
   position: absolute;
   right: 0;
   left: 0;
@@ -220,13 +222,33 @@ header {
   height: 100px;
 }
 
-.svg svg {
+.svg .svg-box1 svg {
   position: absolute;
   top: -170px;
   left: 0;
   display: block;
   width: 100%;
   height: 100%;
+}
+
+.svg .svg-box2 {
+  position: absolute;
+  right: 0;
+  left: 0;
+  line-height: 1;
+  font-size: 0;
+  height: 100px;
+}
+
+.svg .svg-box2 svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 
 /* top
@@ -445,5 +467,45 @@ header {
 .feature {
   padding-top: 72px;
   background: #fbffdb;
+  text-align: center;
+}
+
+.feature-list {
+  padding-top: 32px;
+  margin: 0;
+}
+
+.feature-item {
+  display: inline-block;
+}
+
+@media (min-width: 1200px) {
+  .feature-item + .feature-item {
+    margin-left: 56px;
+    margin-top: 48px;
+  }
+}
+
+.feature-item-title {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.feature-footer {
+  padding-top: 72px;
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.feature-message-title {
+  font-size: 24px;
+  font-weight: 600;
+  border-bottom: solid;
+  border-color: #fff338;
+  border-width: 5px;
+  /*5ピクセルの太さにする*/
 }
 /*# sourceMappingURL=style.css.map */
