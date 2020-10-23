@@ -81,8 +81,7 @@ header {
 -------------------------------------------------------------------------*/
 .footer {
   background: #c8a063;
-  padding: 20px 40px 20px;
-  margin-top: 190px;
+  padding: 30px 40px 30px;
   position: relative;
 }
 
@@ -92,7 +91,7 @@ header {
   content: '';
   width: 100%;
   height: 90px;
-  bottom: 60px;
+  bottom: 80px;
   left: 0;
   background: url(../img/footer_mori.png) center/cover;
   background-size: 100% 90px;
@@ -123,7 +122,7 @@ header {
 
 @media screen and (min-width: 768px) {
   .footer-topLink {
-    bottom: 130px;
+    bottom: 160px;
     right: 20px;
   }
 }
@@ -167,29 +166,29 @@ header {
 .util-title::before {
   content: '';
   display: block;
-  background: url(../img/leaf1.png);
+  background: url(../img/leaf2.png);
   background-repeat: no-repeat;
   width: 50px;
   height: 50px;
   position: absolute;
-  right: 345px;
+  right: -65px;
   top: 0;
 }
 
 .util-title::after {
   content: '';
   display: block;
-  background: url(../img/leaf2.png) no-repeat;
+  background: url(../img/leaf1.png) no-repeat;
   width: 50px;
   height: 50px;
   position: absolute;
-  left: 345px;
+  left: -65px;
   top: 0;
 }
 
 .util-link {
-  font-size: 24px;
-  letter-spacing: .1em;
+  font-size: 32px;
+  letter-spacing: .05em;
   color: #fff;
   background: #87be16;
   display: block;
@@ -211,6 +210,11 @@ header {
 =======================================================================*/
 .important {
   color: #df7459;
+  font-size: 32px;
+}
+
+.big {
+  font-size: 46px;
 }
 
 .svg .svg-box1 {
@@ -388,8 +392,8 @@ header {
   font-weight: 600;
   border-bottom: solid;
   border-color: #fff338;
-  border-width: 5px;
-  /*5ピクセルの太さにする*/
+  border-width: 10px;
+  /*10ピクセルの太さにする*/
 }
 
 .concept-message-text {
@@ -493,6 +497,7 @@ header {
 
 .feature-footer {
   padding-top: 72px;
+  padding-bottom: 70px;
   max-width: -webkit-max-content;
   max-width: -moz-max-content;
   max-width: max-content;
@@ -505,7 +510,147 @@ header {
   font-weight: 600;
   border-bottom: solid;
   border-color: #fff338;
-  border-width: 5px;
-  /*5ピクセルの太さにする*/
+  border-width: 10px;
+  /*10ピクセルの太さにする*/
+}
+
+/* about
+-------------------------------------------------------------------------*/
+.about {
+  padding-top: 112px;
+}
+
+.about-list {
+  padding-top: 72px;
+}
+
+.about-item {
+  font-size: 14px;
+  font-weight: 600;
+  text-align: justify;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+  .about-item {
+    font-size: 18px;
+  }
+}
+
+.about-item::before {
+  content: '';
+  display: block;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 180px;
+          flex: 0 0 180px;
+  height: 180px;
+  margin-right: 40px;
+}
+
+.about-item:nth-child(1)::before {
+  background: url(../img/plofille_img.png);
+}
+
+.about-item:nth-child(2)::before {
+  width: 40px;
+  height: 40px;
+}
+
+.about-sns-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 430px;
+  margin-left: auto;
+  padding: 48px 0 110px;
+}
+
+.about-sns-item + .about-sns-item {
+  padding-left: 24px;
+}
+
+.about-sns-item-link {
+  display: block;
+}
+
+/* contact
+-------------------------------------------------------------------------*/
+.contact {
+  padding: 120px 0 100px;
+  background: #fbf9ed;
+}
+
+.contact-picture {
+  padding-top: 15%;
+  background: url(../img/ribon.png) no-repeat;
+  background-position: center;
+  position: relative;
+  top: -220px;
+}
+
+.contact-picture::before {
+  content: '';
+  display: block;
+  background: url(../img/flag_right.png);
+  background-repeat: no-repeat;
+  width: 45%;
+  height: 100%;
+  position: absolute;
+  right: 5px;
+  top: 100px;
+}
+
+.contact-picture::after {
+  content: '';
+  display: block;
+  background: url(../img/flag_left.png) no-repeat;
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  right: 665px;
+  top: 100px;
+}
+
+.section {
+  margin-top: -200px;
+}
+
+.contact-ttl {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1;
+  letter-spacing: .15em;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  margin: 0 auto;
+  padding-top: 48px;
+}
+
+.contact-button {
+  margin-top: 72px;
+}
+
+.contact-link-inline {
+  font-size: 18px;
+  vertical-align: super;
+}
+
+.contact-text {
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1;
+  letter-spacing: .15em;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  margin: 0 auto;
+  padding: 24px 0 100px;
 }
 /*# sourceMappingURL=style.css.map */
