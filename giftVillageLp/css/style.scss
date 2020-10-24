@@ -28,8 +28,8 @@ $breakpoints: (
 # colors
 =======================================================================*/
 $color-line:#fff338;
-$color-main: #87be16;
-$color-active: #df7459;
+$color-main: #ec0059;
+$color-active: #87be16;
 $color-text: #4e3f21;
 $color-background1: #fbf9ed;
 $color-background2: #fbffdb;
@@ -136,11 +136,11 @@ header{
   right: 16px;
   z-index: 100;
   // スクロールされるまでは消えている状態
-  // opacity: 0;
-  // visibility: hidden;
-  // transition: .5s;
+  opacity: 0;
+  visibility: hidden;
+  transition: .5s;
   @include mq('sp-up') {
-    bottom: 160px;
+    bottom: 120px;
     right: 20px;
   }
   &::after{
@@ -154,10 +154,11 @@ header{
     color: $color-text;
     font-weight: 600;
   }
-  .add-scrolled & {
-		// opacity: 1;
-		// visibility: visible;
-	}
+}
+// 100スクロールしたら表示される
+.is-show  {
+  opacity: 1;
+  visibility: visible;
 }
 
 .footer-copyright{
@@ -203,31 +204,35 @@ header{
   }
 }
 .util-link{
-  font-size: 32px;
+  font-size: 40px;
   letter-spacing: .05em;
   color: #fff;
-  background: #87be16;
+  background: $color-main;
+  box-shadow: 0 6px 4px 6px rgba(210, 0, 79, 1);
   display: block;
-  padding: 20px 60px;
-  border-radius: 50px;
+  padding: 10px 60px;
+  border-radius: 20px;
   font-weight: 600;
   text-align: center;
-  width: 400px;
-  margin: auto;
+  width: 560px;
+  margin: 30px auto;
+
   &:hover{
-    background: #df7459;
+    background: $color-active;
     color: #fff;
+    box-shadow: 0 6px 4px 6px rgba(81 ,121 ,0, 1);
   }
 }
 /*======================================================================
 # common
 =======================================================================*/
 .important{
-  color: #df7459;
+  color: $color-main;
   font-size: 32px;
 }
 .big{
-  font-size: 46px;
+  font-size: 48px;
+  color: $color-main;
 }
 .svg{
   .svg-box1{
@@ -283,25 +288,26 @@ header{
   background-position: center;
   display: flex;
   position: relative;
+  margin-top: -100px;
 }
 .item1 {
   position: absolute;
-  display: inline-block;
+  display: block;
   content: '';
 
   @include mq('tab-up'){
-    left: 0px;
-    top: 250px;
+    left: 30px;
+    top: 290px;
   }
 }
 .item2{
   position: absolute;
-  display: inline-block;
+  display: block;
   content: '';
 
   @include mq('tab-up'){
-    left: 170px;
-    top: 100px;  
+    left: 180px;
+    top: 140px;  
   }
 
 }
@@ -310,8 +316,8 @@ header{
   display: block;
   content: '';
   @include mq('tab-up'){
-    left: 230px;
-    top: 265px;
+    left: 250px;
+    top: 300px;
   }
 
 }
@@ -320,8 +326,8 @@ header{
   display: block;
   content: '';
   @include mq('tab-up'){
-    right: 230px;
-    top: 255px;
+    right: 240px;
+    top: 285px;
   }
 
 }
@@ -331,7 +337,7 @@ header{
   content: '';
   @include mq('tab-up'){
     right: 180px;
-    top: 80px;
+    top: 130px;
   }
 }
 .item6 {
@@ -339,19 +345,19 @@ header{
   display: block;
   content: '';
   @include mq('tab-up'){
-    right: 0;
-    top: 220px;
+    right: -20px;
+    top: 260px;
   }
 }
 .top-content{
-  padding-top: 80px;
+  padding-top: 20px;
   margin: 0 auto;
   width: max-content;
 }
 .top-ttl{
   font-size: 24px;
   font-weight: 600;
-  padding-bottom: 48px;
+  padding-bottom: 18px;
 }
 .top-btn{
   padding-bottom: 110px;
@@ -475,7 +481,7 @@ header{
   padding-top: 112px;
 }
 .about-list{
-  padding-top: 72px;
+  padding: 72px 0 140px;
 }
 .about-item{
   font-size: 14px;
@@ -493,7 +499,7 @@ header{
     display: block;
     flex: 0 0 180px;
     height: 180px;
-    margin-right: 40px;
+    margin-right: 80px;
   }
   &:nth-child(1)::before{
     background: url(../img/plofille_img.png);
@@ -503,20 +509,7 @@ header{
     height: 40px;
   }
 }
-.about-sns-list{
-  display: flex;
-  max-width: 430px;
-  margin-left: auto;
-  padding: 48px 0 110px
-}
-.about-sns-item{
-  +.about-sns-item{
-    padding-left: 24px;
-  }
-}
-.about-sns-item-link{
-  display: block;
-}
+
 /* contact
 -------------------------------------------------------------------------*/
 .contact{
@@ -566,13 +559,20 @@ header{
   margin: 0 auto;
   padding-top: 48px;
 }
-.contact-button{
-  margin-top: 72px;
+.contact-cost{
+  padding-top: 10px;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 0.02em;
 }
-.contact-link-inline{
+.contact-cost-inline{
   font-size: 18px;
   // 米印を上に持ってくる
   vertical-align: super;
+}
+.contact-button{
+  margin-top: 20px;
 }
 .contact-text{
   font-size: 18px;
@@ -582,5 +582,5 @@ header{
   letter-spacing: .15em;
   max-width: fit-content;
   margin: 0 auto;
-  padding: 24px 0 100px;
+  padding: 20px 0 100px;
 }

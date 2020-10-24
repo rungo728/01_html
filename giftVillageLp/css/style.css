@@ -118,11 +118,15 @@ header {
   bottom: 16px;
   right: 16px;
   z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: .5s;
+  transition: .5s;
 }
 
 @media screen and (min-width: 768px) {
   .footer-topLink {
-    bottom: 160px;
+    bottom: 120px;
     right: 20px;
   }
 }
@@ -137,6 +141,11 @@ header {
   top: -30px;
   color: #4e3f21;
   font-weight: 600;
+}
+
+.is-show {
+  opacity: 1;
+  visibility: visible;
 }
 
 .footer-copyright {
@@ -187,34 +196,39 @@ header {
 }
 
 .util-link {
-  font-size: 32px;
+  font-size: 40px;
   letter-spacing: .05em;
   color: #fff;
-  background: #87be16;
+  background: #ec0059;
+  -webkit-box-shadow: 0 6px 4px 6px #d2004f;
+          box-shadow: 0 6px 4px 6px #d2004f;
   display: block;
-  padding: 20px 60px;
-  border-radius: 50px;
+  padding: 10px 60px;
+  border-radius: 20px;
   font-weight: 600;
   text-align: center;
-  width: 400px;
-  margin: auto;
+  width: 560px;
+  margin: 30px auto;
 }
 
 .util-link:hover {
-  background: #df7459;
+  background: #87be16;
   color: #fff;
+  -webkit-box-shadow: 0 6px 4px 6px #517900;
+          box-shadow: 0 6px 4px 6px #517900;
 }
 
 /*======================================================================
 # common
 =======================================================================*/
 .important {
-  color: #df7459;
+  color: #ec0059;
   font-size: 32px;
 }
 
 .big {
-  font-size: 46px;
+  font-size: 48px;
+  color: #ec0059;
 }
 
 .svg .svg-box1 {
@@ -273,31 +287,32 @@ header {
   display: -ms-flexbox;
   display: flex;
   position: relative;
+  margin-top: -100px;
 }
 
 .item1 {
   position: absolute;
-  display: inline-block;
+  display: block;
   content: '';
 }
 
 @media (min-width: 1200px) {
   .item1 {
-    left: 0px;
-    top: 250px;
+    left: 30px;
+    top: 290px;
   }
 }
 
 .item2 {
   position: absolute;
-  display: inline-block;
+  display: block;
   content: '';
 }
 
 @media (min-width: 1200px) {
   .item2 {
-    left: 170px;
-    top: 100px;
+    left: 180px;
+    top: 140px;
   }
 }
 
@@ -309,8 +324,8 @@ header {
 
 @media (min-width: 1200px) {
   .item3 {
-    left: 230px;
-    top: 265px;
+    left: 250px;
+    top: 300px;
   }
 }
 
@@ -322,8 +337,8 @@ header {
 
 @media (min-width: 1200px) {
   .item4 {
-    right: 230px;
-    top: 255px;
+    right: 240px;
+    top: 285px;
   }
 }
 
@@ -336,7 +351,7 @@ header {
 @media (min-width: 1200px) {
   .item5 {
     right: 180px;
-    top: 80px;
+    top: 130px;
   }
 }
 
@@ -348,13 +363,13 @@ header {
 
 @media (min-width: 1200px) {
   .item6 {
-    right: 0;
-    top: 220px;
+    right: -20px;
+    top: 260px;
   }
 }
 
 .top-content {
-  padding-top: 80px;
+  padding-top: 20px;
   margin: 0 auto;
   width: -webkit-max-content;
   width: -moz-max-content;
@@ -364,7 +379,7 @@ header {
 .top-ttl {
   font-size: 24px;
   font-weight: 600;
-  padding-bottom: 48px;
+  padding-bottom: 18px;
 }
 
 .top-btn {
@@ -521,7 +536,7 @@ header {
 }
 
 .about-list {
-  padding-top: 72px;
+  padding: 72px 0 140px;
 }
 
 .about-item {
@@ -548,7 +563,7 @@ header {
       -ms-flex: 0 0 180px;
           flex: 0 0 180px;
   height: 180px;
-  margin-right: 40px;
+  margin-right: 80px;
 }
 
 .about-item:nth-child(1)::before {
@@ -558,23 +573,6 @@ header {
 .about-item:nth-child(2)::before {
   width: 40px;
   height: 40px;
-}
-
-.about-sns-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  max-width: 430px;
-  margin-left: auto;
-  padding: 48px 0 110px;
-}
-
-.about-sns-item + .about-sns-item {
-  padding-left: 24px;
-}
-
-.about-sns-item-link {
-  display: block;
 }
 
 /* contact
@@ -632,13 +630,21 @@ header {
   padding-top: 48px;
 }
 
-.contact-button {
-  margin-top: 72px;
+.contact-cost {
+  padding-top: 10px;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 0.02em;
 }
 
-.contact-link-inline {
+.contact-cost-inline {
   font-size: 18px;
   vertical-align: super;
+}
+
+.contact-button {
+  margin-top: 20px;
 }
 
 .contact-text {
@@ -651,6 +657,6 @@ header {
   max-width: -moz-fit-content;
   max-width: fit-content;
   margin: 0 auto;
-  padding: 24px 0 100px;
+  padding: 20px 0 100px;
 }
 /*# sourceMappingURL=style.css.map */
