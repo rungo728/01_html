@@ -5,15 +5,16 @@ $(function() {
 
   // スクロール検知
   $(window).on("scroll", function() {
-    // トップから100px以上スクロールしたら
-    if (100 < $(this).scrollTop()) {
+    // トップからスクロールしてjs-topを超えたら
+    if ($(this).scrollTop() > $('#js-top').outerHeight() ) {
       // is-showクラスをつける
-      $('.footer-topLink').addClass( 'is-show' );
+      $('.totop').addClass( 'is-show' );
     } else {
-      // 100pxを下回ったらis-showクラスを削除
-      $('.footer-topLink').removeClass( 'is-show' );
+      // js-topより上に戻ったらis-showクラスを削除
+      $('.totop').removeClass( 'is-show' );
     }
   });
+  
   // smoothscroll
   // #から始まるURLがクリックされた時
   $('a[href^="#"]').click(function() {
