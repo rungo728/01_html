@@ -15,6 +15,7 @@ $breakpoints: (
  'sp-up': 'screen and (min-width: 768px)', //768px以上（タブレット・PC）用の表示
  'tab-down': "(max-width: #{$layout-width-inner - 1px})",
  'tab-up': "(min-width: #{$layout-width-inner})",
+ 'pc': "(min-width: #{$layout-width-canvas})",
 ) !default;
 
 //メディアクエリ用のmixinを定義。デフォ値はmd
@@ -67,7 +68,6 @@ img{
 
 }
 .inner{
-  max-width: 1366px;
   margin: 0 auto;
   box-sizing: content-box;
 }
@@ -100,13 +100,18 @@ header{
 .header-logo{
   width: 220px;
   margin-left: 90px;
+  position: relative;
+  z-index: 100;
 
-  @include mq('tab-down'){
-    width: 200px;
+  @include mq('sp-up'){
+    display: none;
   } 
   @include mq('sp-down'){
     margin: auto;
   }
+  @include mq('sp'){
+    width: 180px;
+  } 
 
 }
 /* footer
@@ -126,6 +131,7 @@ header{
     left: 0;
     background: url(../img/footer_mori.png) center/cover;
     background-size: 100% 90px;
+    
   
     @include mq('sp-down'){
       background: url(../img/mori01.png)center/cover;
@@ -172,6 +178,10 @@ header{
     bottom: 120px;
     right: 20px;
   }
+  @include mq('sp-down'){
+    bottom: 165px;
+    
+  }
   @include mq('sp'){
     bottom: 176px;
   }
@@ -182,9 +192,8 @@ header{
     z-index: 200;
 
   }
+
 }
-
-
 .footer-copyright{
   color: #e0e0e0;
   font-size: 16px;
@@ -218,11 +227,16 @@ header{
     position: absolute;
     right: -25px;
     top: 0;
+    @include mq('sp-up'){
+      right: -60px;
+    }
     @include mq('sp-down'){
       right: -45px;
     }
     @include mq('sp'){
-      right: -15px;
+      right: -25px;
+      top: 15px;
+      background-size: 65%;
     }
   }
   &::after{
@@ -234,11 +248,78 @@ header{
     position: absolute;
     left: -25px;
     top: 0;
+    @include mq('sp-up'){
+      left: -60px;
+    }
     @include mq('sp-down'){
       left: -45px;
     }
     @include mq('sp'){
-      left: -15px;
+      left: -7px;
+      top: 15px;
+      background-size: 65%;
+    }
+  }
+  img{
+    @include mq('sp-down'){
+      width: 90%;
+    }
+    @include mq('sp'){
+      width: 70%;
+    }
+  }
+}
+.util-title-feature{
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1;
+  position: relative;
+  letter-spacing: .15em;
+  max-width: fit-content;
+  margin: 0 auto;
+
+  &::before{
+    content: '';
+    display: block;
+    background: url(../img/leaf2.png);
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: -25px;
+    top: 0;
+    @include mq('sp-up'){
+      right: -65px;
+    }
+    @include mq('sp-down'){
+      right: -45px;
+    }
+    @include mq('sp'){
+      right: -15px;
+      top: 15px;
+      background-size: 65%;
+    }
+  }
+  &::after{
+    content: '';
+    display: block;
+    background: url(../img/leaf1.png)no-repeat;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: -25px;
+    top: 0;
+    @include mq('sp-up'){
+      left: -65px;
+    }
+    @include mq('sp-down'){
+      left: -45px;
+    }
+    @include mq('sp'){
+      left: 5px;
+      top: 15px;
+      background-size: 65%;
     }
   }
   img{
@@ -271,7 +352,9 @@ header{
     right: 65px;
     top: 0;
     @include mq('sp'){
-      top: -10px;
+      top: 0;
+      right: 55px;
+      background-size: 65%;
     }
   }
   &::after{
@@ -284,7 +367,9 @@ header{
     left: 65px;
     top: 0;
     @include mq('sp'){
-      top: -10px;
+      left: 75px;
+      top: 0;
+      background-size: 65%;
     }
   }
   img{
@@ -292,7 +377,7 @@ header{
       width: 90%;
     }
     @include mq('sp'){
-      width: 70%;
+      width: 85%;
     }
   }
 }
@@ -302,7 +387,7 @@ header{
   letter-spacing: .05em;
   color: #fff;
   background: $color-main;
-  box-shadow: 0 6px 4px 6px rgba(210, 0, 79, 1);
+  box-shadow: 0 6px 0 6px rgba(210, 0, 79, 1);
   display: block;
   padding: 10px 60px;
   border-radius: 20px;
@@ -314,7 +399,7 @@ header{
   &:hover{
     background: $color-active;
     color: #fff;
-    box-shadow: 0 6px 4px 6px rgba(81 ,121 ,0, 1);
+    box-shadow: 0 6px 0 6px rgba(81 ,121 ,0, 1);
   }
   @include mq('sp-down'){
     width: 400px;
@@ -332,12 +417,13 @@ header{
   color: $color-main;
   font-size: 32px;
   @include mq('sp'){
-    font-size: 24px;
+    font-size: 17px;
   }
 }
 .big{
   font-size: 48px;
   color: $color-main;
+  padding-left: 12px;
   @include mq('sp'){
     font-size: 36px;
   }
@@ -386,6 +472,7 @@ header{
 .top{
   padding-top: 20px;
   position: relative;
+  z-index: 15;
   background: #fbf9ed;
   // 下を丸くする
   border-bottom-right-radius: 2000px 300px;
@@ -393,132 +480,157 @@ header{
 }
 .top-picture{
   padding-top: 45%;
-  background: url(../img/top-picture3_04.png) no-repeat;
+  background: url(../img/top-picture1_03.png) no-repeat;
   background-position: center;
   display: flex;
   position: relative;
   margin-top: -100px;
-
+  
+  @include mq('tab-up'){
+    background-size: 100%;
+    margin-top: -190px;
+  }
+  @include mq('pc'){
+    background-size: 90%;
+    margin-top: -235px;
+  }
   @include mq('tab-down'){
-    background-size: 99.5%;
+    background-size: 100%;
     padding-top: 45%;
+    margin-top: -160px;
   }
   @include mq('sp-down'){
     background: url(../img/top-picture3_02.png) no-repeat;
     padding-top: 65%;
     background-size: 100%;
-    margin-top: -60px;
+    margin-top: -35px;
   }
   @include mq('sp'){
     margin-top: -45px;
   }
 }
-.item1 {
-  position: absolute;
-  display: block;
-  content: '';
+// .item1 {
+//   position: absolute;
+//   display: block;
+//   content: '';
 
-  @include mq('sp-up'){
-    display: none;
-  }
-  @include mq('tab-down'){
-    display: none;
-  }
-  @include mq('tab-up'){
-    display: none;
-  }
-}
-.item2{
-  position: absolute;
-  display: block;
-  content: '';
+//   @include mq('sp-up'){
+//     display: none;
+//   }
+//   @include mq('tab-down'){
+//     display: none;
+//   }
+//   @include mq('tab-up'){
+//     display: none;
+//   }
+// }
+// .item2{
+//   position: absolute;
+//   display: block;
+//   content: '';
 
-  @include mq('tab-up'){
-    display: none; 
-  }
-  @include mq('tab-down'){
-    display: none;
-  }
-  @include mq('sp-up'){
-    left: 60px;
-    top: 90px;
-  }
+//   @include mq('tab-up'){
+//     display: none; 
+//   }
+//   @include mq('tab-down'){
+//     display: none;
+//   }
+//   @include mq('sp-up'){
+//     left: 60px;
+//     top: 90px;
+//   }
 
-}
-.item3 {
-  position: absolute;
-  display: block;
-  content: '';
-  @include mq('tab-up'){
-    display: none;
-  }
-  @include mq('tab-down'){
-    display: none;
-  }
-  @include mq('sp-up'){
-    left: 0;
-    top: 260px;
-  }
+// }
+// .item3 {
+//   position: absolute;
+//   display: block;
+//   content: '';
+//   @include mq('tab-up'){
+//     display: none;
+//   }
+//   @include mq('tab-down'){
+//     display: none;
+//   }
+//   @include mq('sp-up'){
+//     left: 0;
+//     top: 260px;
+//   }
 
-}
-.item4 {
-  position: absolute;
-  display: block;
-  content: '';
-  @include mq('tab-up'){
-    display: none;
-  }
-  @include mq('tab-down'){
-    display: none;
-  }
-  @include mq('sp-up'){
-    right: 0;
-    top: 240px;
-  }
+// }
+// .item4 {
+//   position: absolute;
+//   display: block;
+//   content: '';
+//   @include mq('tab-up'){
+//     display: none;
+//   }
+//   @include mq('tab-down'){
+//     display: none;
+//   }
+//   @include mq('sp-up'){
+//     right: 0;
+//     top: 240px;
+//   }
 
-}
-.item5{
-  position: absolute;
-  display: block;
-  content: '';
-  @include mq('tab-up'){
-    display: none;
-  }
-  @include mq('tab-down'){
-    display: none;
-  }
-  @include mq('sp-up'){
-    right: 20px;
-    top: 90px;
-  }
-}
-.item6 {
-  position: absolute;
-  display: block;
-  content: '';
-  @include mq('tab-up'){
-    display: none;
-  }
-  @include mq('tab-down'){
-    display: none;
-  }
-  @include mq('sp-up'){
-    display: none;
-  }
-}
+// }
+// .item5{
+//   position: absolute;
+//   display: block;
+//   content: '';
+//   @include mq('tab-up'){
+//     display: none;
+//   }
+//   @include mq('tab-down'){
+//     display: none;
+//   }
+//   @include mq('sp-up'){
+//     right: 20px;
+//     top: 90px;
+//   }
+// }
+// .item6 {
+//   position: absolute;
+//   display: block;
+//   content: '';
+//   @include mq('tab-up'){
+//     display: none;
+//   }
+//   @include mq('tab-down'){
+//     display: none;
+//   }
+//   @include mq('sp-up'){
+//     display: none;
+//   }
+// }
 .top-content{
   padding-top: 20px;
   margin: 0 auto;
   width: 100%;
+  @include mq('sp-up'){
+    padding: 0;
+    margin: -50px auto;
+  }
+  @include mq('pc'){
+    padding: 0;
+    margin: -120px auto;
+  }
 }
 .top-ttl{
   font-size: 24px;
   font-weight: 600;
   padding-bottom: 18px;
+  text-align: center;
+  @include mq('pc'){
+    padding: 0;
+  }
+  @include mq('sp-up'){
+    padding: 0;
+  }
 
   @include mq('sp-down'){
     margin-top: -40px;
     font-size: 18px;
+    padding: 0;
   }
   @include mq('sp'){
     font-size: 14px;
@@ -529,7 +641,7 @@ header{
   padding-bottom: 110px;
 
   @include mq('sp-down'){
-    padding-bottom: 90px;
+    padding-bottom: 80px;
     width: 100%;
   }
   @include mq('sp'){
@@ -540,22 +652,35 @@ header{
 -------------------------------------------------------------------------*/
 .concept{
   padding-top: 72px;
+
+  @include mq('tab-up'){
+    padding-top: 112px;
+  }
+  @include mq('pc'){
+    padding-top: 182px;
+  } 
+  @include mq('tab-down'){
+    padding-top: 112px;
+  }
+  @include mq('sp-down'){
+    padding-top: 62px;
+  }
   @include mq('sp'){
     padding-top: 50px;
   }
 }
 .concept-inner{
   padding-top: 48px;
-  padding-bottom: 140px;
   max-width: max-content;
   margin: 0 auto;
   text-align: center;
   @include mq('sp-down'){
-    margin: 0 40px auto ;
+    padding-bottom: 30px;
+    margin: 0  auto ;
   }
   @include mq('sp'){
-    padding-bottom: 60px;
-    margin: 0 35px auto ;
+    padding: 30px 30px 60px;
+    margin: 0 auto;
   }
 }
 .concept-message{
@@ -569,17 +694,17 @@ header{
   font-weight: 600;
   border-bottom: solid;
   border-color: $color-line;
-  border-width: 10px;/*10ピクセルの太さにする*/
+  border-width: 5px;/*10ピクセルの太さにする*/
 
   @include mq('tab-down'){
-    background: linear-gradient(transparent 95%, #fff338 0%);
+    background: linear-gradient(transparent 100%, #fff338 0%);
     display: inline;
     line-height: 2.0;
     // 線を下にズラす    
     padding: 0 2px 10px;
   }
   @include mq('sp-down'){
-    background: linear-gradient(transparent 95%, #fff338 0%);
+    background: linear-gradient(transparent 100%, #fff338 0%);
     display: inline;
     line-height: 2.0;
     // 線を下にズラす    
@@ -587,7 +712,7 @@ header{
   }
   @include mq('sp'){
     font-size: 18px;
-    background: linear-gradient(transparent 95%, #fff338 0%);
+    background: linear-gradient(transparent 100%, #fff338 0%);
     display: inline;
     line-height: 2.0;
     // 線を下にズラす    
@@ -610,6 +735,7 @@ header{
   z-index: 10;
   background: url(../img/ki05.png) no-repeat;
   background-position: center;
+  background-size: cover;
   padding-top: 11%;
   .img1 {
     position: absolute;
@@ -652,7 +778,7 @@ header{
     }
   }
   @include mq('tab-down'){
-    padding-top: 12%;
+    padding-top: 11%;
     background-size: 100%;
   }
   @include mq('sp-down'){
@@ -667,31 +793,55 @@ header{
   padding-top: 72px;
   background: $color-background2;
   text-align: center;
+  @include mq('tab-up'){
+    padding-top: 42px;
+  }
+  @include mq('pc'){
+    padding-top: 32px;
+  }
+  @include mq('tab-down'){
+    padding-top: 32px;
+  }
+  @include mq('sp-down'){
+    padding-top: 50px;
+  }
   @include mq('sp'){
     padding-top: 50px;
   }
+  
 }
 .feature-list{
   padding-top: 32px;
   margin: 0;
+
 }
 .feature-item{
   display: inline-block;
+
   +.feature-item{
+    @include mq('sp-up'){
+      margin-top: 48px;
+      margin-left: 16px;
+    }
     @include mq('tab-up'){
-    margin-left: 56px;
-    margin-top: 48px;
+      margin-left: 96px;
+      margin-top: 48px;
     }
   }
   @include mq('sp-down'){
     margin-bottom: 40px;
-
+    &:last-child{
+      margin-bottom: 0;
+    }
   }
   @include mq('sp'){
     margin-bottom: 40px;
     &:last-child{
       margin-bottom: 0;
     }
+  }
+  @include mq('pc'){
+    margin: 48px 78px 0; 
   }
 }
 .feature-item-picture{
@@ -716,7 +866,7 @@ header{
   font-weight: 600;
   border-bottom: solid;
   border-color: $color-line;
-  border-width: 10px;/*10ピクセルの太さにする*/
+  border-width: 5px;/*10ピクセルの太さにする*/
   @include mq('sp-down'){
     background: linear-gradient(transparent 95%, #fff338 0%);
     display: inline;
@@ -754,7 +904,7 @@ header{
   font-weight: 600;
   text-align: justify;
   display: flex;
-  max-width: 640px;
+  max-width: 680px;
   margin: 0 auto;
   &::before{
     content: '';
@@ -780,11 +930,16 @@ header{
   @include mq('sp-down'){
     display: flex;
     flex-wrap: wrap;
-    margin: 0 40px auto;
+    margin: 0 50px auto;
+  }
+  @include mq('sp'){
+    margin: 0 65px auto;
   }
   +.about-item{
-    margin-top: -90px;
-    padding-bottom: 100px;
+    @include mq('sp-down'){
+      margin-top: -90px;
+      padding-bottom: 100px;
+    }
   }
 
 }
@@ -800,6 +955,7 @@ header{
   padding-top: 25%;
   background: url(../img/ribon-flag1.png) no-repeat;
   background-position: center;
+  background-size: 100%;
   position: relative;
   top: -220px;
 
@@ -811,6 +967,7 @@ header{
     background-size: 100%;
     top: -160px;
   }
+  
 
   // &::before{
   //   content: '';
@@ -836,6 +993,9 @@ header{
 }
 .section{
   margin-top: -200px;
+  @include mq('sp-up'){
+    margin-top: -320px;
+  }
 
 }
 .contact-ttl{
@@ -846,9 +1006,13 @@ header{
   letter-spacing: .15em;
   max-width: fit-content;
   margin: 0 auto;
-  padding-top: 48px;
+  padding-top: 60px;
+  @include mq('sp-down'){
+    font-size: 22px;
+  }
   @include mq('sp'){
     font-size: 16px;
+    padding-top: 35px;
   }
 }
 .contact-cost{
@@ -863,8 +1027,10 @@ header{
 }
 .contact-cost-inline{
   font-size: 18px;
+  margin-left: -10px;
   // 米印を上に持ってくる
   vertical-align: super;
+
   @include mq('sp'){
     font-size: 14px;
   }
@@ -881,7 +1047,15 @@ header{
   max-width: fit-content;
   margin: 0 auto;
   padding: 20px 0 100px;
+
+  @include mq('sp-up'){
+    padding: 20px 0 50px;
+  }
+  @include mq('sp-down'){
+    padding: 20px 0 50px;
+  }
+
   @include mq('sp'){
-    font-size: 16px;
+    font-size: 14px;
   }
 }
