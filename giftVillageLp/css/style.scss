@@ -118,26 +118,33 @@ header{
 -------------------------------------------------------------------------*/
 .footer {
   background: #c8a063;
-  padding: 30px 40px 30px;
+  padding: 20px 40px 30px;
   position: relative;
-  height: 90px;
+  height: 100px;
+  @include mq('tab-down'){
+    padding: 20px 0 20px;
+  }
+  @include mq('sp'){
+    padding: 15px 40px 20px;
+    height: 110px;
+  }
   &:before {
     position: absolute;
     display: inline-block;
     content: '';
     width: 100%;
     height: 90px;
-    bottom: 80px;
+    bottom: 90px;
     left: 0;
     background: url(../img/footer_mori.png) center/cover;
-    background-size: 100% 90px;
+    background-size: 90% 90px;
     
   
     @include mq('sp-down'){
       background: url(../img/mori01.png)center/cover;
     }
     @include mq('sp'){
-      bottom: 90px;
+      bottom: 110px;
     }
   }
 }
@@ -198,9 +205,16 @@ header{
   color: #e0e0e0;
   font-size: 16px;
   text-align: center;
-  @include mq('sp'){
+  a {
+    color: #e0e0e0;
+  }
+  @include mq('tab-down'){
+    font-size: 14px;
+  }
+  @include mq('sp-down'){
     font-size: 12px;
   }
+
 }
 /*======================================================================
 # main
