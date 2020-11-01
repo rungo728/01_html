@@ -177,6 +177,13 @@ header{
   @include mq('sm'){
     padding: .3em 0;
   }
+
+  @include mq('md'){
+    transition: opacity .4s;
+    &:hover{
+      opacity: 0.7;
+    }
+  }
 }
 .footer-sns-list{
   text-align: center;
@@ -197,6 +204,12 @@ header{
   font-size: 24px;
   display: block;
   padding: .1em .5em;
+  @include mq('md'){
+    transition: opacity .4s;
+    &:hover{
+      opacity: 0.7;
+    }
+  }
 }
 .footer-copyright{
   color: #888;
@@ -254,6 +267,7 @@ header{
   display: inline-block;
   padding: 10px 54px;
   transition: background-color .4s, color .4s;
+
 
   &.-active {
     background: $primary-color;
@@ -373,6 +387,24 @@ header{
   color: $font-color;
   background: #fff;
   box-shadow: 3px 3px 15px rgba(96, 96, 96, 0.16);
+
+  @include mq('md'){
+    &:hover{
+      .feature-item-picture > img{
+        // ホバーしたときに画像が拡大する
+        transform: scale(1.05);
+      }
+    }
+  }
+
+}
+
+.feature-item-picture{
+  overflow: hidden;
+  > img {
+    transition: transform .4s;
+  }
+
 }
 .feature-item-body{
   text-align: center;
@@ -455,10 +487,29 @@ header{
     }
   }
 }
+
 .products-item-link{
   display: block;
   color: $font-color;
   font-size: 14px;
+
+  @include mq('md'){
+    &:hover{
+      .products-item-picture > img{
+        // ホバーしたときに画像が拡大する
+        transform: scale(1.05);
+      }
+    }
+  }
+
+}
+
+.products-item-picture{
+  overflow: hidden;
+  > img {
+    transition: transform .4s;
+  }
+
 }
 .products-item-body{
   margin-top: 22px;
@@ -505,6 +556,17 @@ header{
   @include mq('md'){
     display: flex;
     align-items: center;
+
+    &:hover{
+      .news-item-picture > img{
+        // このままだとtranslate(-50%,-50%)で戻した分がなくなってしまうので
+        // translate(-50%,-50%)を入れる
+        transform: translate(-50%,-50%) scale(1.05);
+
+      }
+
+    }
+
   }
 }
 .news-item-header{
@@ -513,6 +575,23 @@ header{
     flex: 0 0 260px;
   }
 }
+.news-item-picture{
+  // topの画像設定と同じ設定をする
+  padding-top: 61.5385%;
+  position: relative;
+  overflow: hidden;
+  > img{
+    position: absolute;
+    // 中央に寄せる
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    // X軸・Y軸にそれぞれ要素の５０％分のサイズを戻すという意味
+    transform: translate(-50%,-50%);
+    transition: transform .4s;
+  }
+}
+
 .news-item-body{
 
   @include mq('sm'){
@@ -731,6 +810,7 @@ header{
   line-height: 38px;
   width: 80px;
   text-align: center;
+  transition: background-color .4s color .4s;
 }
 
 .contact-footer{
@@ -757,6 +837,7 @@ header{
   position: absolute;
   top: 0;
   left: 0;
+  transition: all .2s;
 }
 .contact-privacy-input{
   position: absolute;
