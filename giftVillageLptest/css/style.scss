@@ -1,0 +1,1075 @@
+@charset "utf-8";
+/*======================================================================
+# width
+=======================================================================*/
+$layout-width-canvas: 1366px;
+$layout-width-inner: 1200px;
+/*======================================================================
+# mixins
+=======================================================================*/
+//マップ型変数breakpointsを定義
+$breakpoints: (
+//キー  値
+ 'sp':'screen and (max-width: 500px)', //500px以下（スマホ）用の表示
+ 'sp-down': 'screen and (max-width: 767px)', //767px以下（スマホ）用の表示
+ 'sp-up': 'screen and (min-width: 768px)', //768px以上（タブレット・PC）用の表示
+ 'tab-down': "(max-width: #{$layout-width-inner - 1px})",
+ 'tab-up': "(min-width: #{$layout-width-inner})",
+ 'pc': "(min-width: #{$layout-width-canvas})",
+) !default;
+
+//メディアクエリ用のmixinを定義。デフォ値はmd
+@mixin mq($breakpoint: sp) {
+//map-get(マップ型変数, キー)で値を取得
+  @media #{map-get($breakpoints, $breakpoint)} {
+    //この中をカスタムできる
+    @content;
+  }
+}
+/*======================================================================
+# colors
+=======================================================================*/
+$color-line:#fff338;
+$color-main: #ec0059;
+$color-active: #87be16;
+$color-text: #4e3f21;
+$color-background1: #fbf9ed;
+$color-background2: #fbffdb;
+/*======================================================================
+# fonts
+=======================================================================*/
+$font-family-english: "Montserrat", sans-serif;
+$font-family-default: 'TsukuBRdGothic-Regular', sans-serif;
+
+/*======================================================================
+# common 全体共通するスタイル
+=======================================================================*/
+@include mq('sp-down'){
+  .is-pc{
+    display: none;
+  }
+}
+
+@include mq('sp-up'){
+  .is-sp{
+    display: none;
+  }
+}
+
+body{
+ font-size: 16px;
+ color: $color-text;
+ font-family:$font-family-default;
+ line-height: 1.6875;
+}
+// 外枠に対して100%で画像を広げたいので
+img{
+  width: 100%;
+
+}
+.inner{
+  margin: 0 auto;
+  box-sizing: content-box;
+}
+/* header
+-------------------------------------------------------------------------*/
+header{
+  background: #fbf9ed;
+  top: 0;
+  left: 0;
+  right: 0;
+  position: relative;
+  z-index: 10;
+  height: 150px;
+}
+.header-inner{
+  padding-top: 70px;
+  position: relative;
+  &:before{
+    position: absolute;
+    display: inline-block;
+    content: '';
+    width: 100%;
+    height: 55px;
+    top: 0;
+    left: 0;
+    background: url(../img/flag1.png) center/cover;
+    background-size: 1040px 55px;
+  }
+}
+.header-logo{
+  width: 220px;
+  margin-left: 90px;
+  position: relative;
+  z-index: 100;
+
+  @include mq('sp-up'){
+    display: none;
+  } 
+  @include mq('sp-down'){
+    margin: auto;
+  }
+  @include mq('sp'){
+    width: 180px;
+  } 
+
+}
+/* footer
+-------------------------------------------------------------------------*/
+.footer {
+  background: #c8a063;
+  padding: 20px 40px 30px;
+  position: relative;
+  height: 100px;
+  @include mq('tab-down'){
+    padding: 20px 0 20px;
+  }
+  @include mq('sp'){
+    padding: 15px 40px 20px;
+    height: 110px;
+  }
+  &:before {
+    position: absolute;
+    display: inline-block;
+    content: '';
+    width: 100%;
+    height: 90px;
+    bottom: 90px;
+    left: 0;
+    background: url(../img/footer_mori.png) center/cover;
+    background-size: 90% 90px;
+    
+  
+    @include mq('sp-down'){
+      background: url(../img/mori01.png)center/cover;
+    }
+    @include mq('sp'){
+      bottom: 110px;
+    }
+  }
+}
+.footer-inner{
+  position: relative;
+	@include mq('sp-up') {
+    max-width: 1366px;
+    margin: 0 auto;
+    padding: 0 120px;
+  }
+}
+.footer-topLink{
+  display: block;
+  background: url(../img/pagetop_icon.png)center/cover;
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  z-index: 100;
+  // スクロールされるまでは消えている状態
+  opacity: 0;
+  visibility: hidden;
+  transition: .5s;
+
+  &::after{
+    display: block;
+    content: 'TOP';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    left: 10px;
+    top: -30px;
+    color: $color-text;
+    font-weight: 600;
+  }
+  @include mq('sp-up') {
+    bottom: 120px;
+    right: 20px;
+  }
+  @include mq('sp-down'){
+    bottom: 165px;
+    
+  }
+  @include mq('sp'){
+    bottom: 176px;
+  }
+  // js-topを超えてスクロールしたら表示される
+  .is-show & {
+    opacity: 1;
+    visibility: visible;
+    z-index: 200;
+
+  }
+
+}
+.footer-copyright{
+  color: #e0e0e0;
+  font-size: 16px;
+  text-align: center;
+  a {
+    color: #e0e0e0;
+  }
+  @include mq('tab-down'){
+    font-size: 14px;
+  }
+  @include mq('sp-down'){
+    font-size: 12px;
+  }
+
+}
+/*======================================================================
+# main
+=======================================================================*/
+/* util
+-------------------------------------------------------------------------*/
+.util-title{
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1;
+  position: relative;
+  letter-spacing: .15em;
+  max-width: fit-content;
+  margin: 0 auto;
+
+  &::before{
+    content: '';
+    display: block;
+    background: url(../img/leaf2.png);
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: -25px;
+    top: 0;
+    @include mq('sp-up'){
+      right: -60px;
+    }
+    @include mq('sp-down'){
+      right: -45px;
+    }
+    @include mq('sp'){
+      right: -25px;
+      top: 15px;
+      background-size: 65%;
+    }
+  }
+  &::after{
+    content: '';
+    display: block;
+    background: url(../img/leaf1.png)no-repeat;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: -25px;
+    top: 0;
+    @include mq('sp-up'){
+      left: -60px;
+    }
+    @include mq('sp-down'){
+      left: -45px;
+    }
+    @include mq('sp'){
+      left: -7px;
+      top: 15px;
+      background-size: 65%;
+    }
+  }
+  img{
+    @include mq('sp-down'){
+      width: 90%;
+    }
+    @include mq('sp'){
+      width: 70%;
+    }
+  }
+}
+.util-title-feature{
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1;
+  position: relative;
+  letter-spacing: .15em;
+  max-width: fit-content;
+  margin: 0 auto;
+
+  &::before{
+    content: '';
+    display: block;
+    background: url(../img/leaf2.png);
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: -25px;
+    top: 0;
+    @include mq('sp-up'){
+      right: -65px;
+    }
+    @include mq('sp-down'){
+      right: -45px;
+    }
+    @include mq('sp'){
+      right: -15px;
+      top: 15px;
+      background-size: 65%;
+    }
+  }
+  &::after{
+    content: '';
+    display: block;
+    background: url(../img/leaf1.png)no-repeat;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: -25px;
+    top: 0;
+    @include mq('sp-up'){
+      left: -65px;
+    }
+    @include mq('sp-down'){
+      left: -45px;
+    }
+    @include mq('sp'){
+      left: 5px;
+      top: 15px;
+      background-size: 65%;
+    }
+  }
+  img{
+    @include mq('sp-down'){
+      width: 90%;
+    }
+    @include mq('sp'){
+      width: 70%;
+    }
+  }
+}
+.util-title-about{
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1;
+  position: relative;
+  letter-spacing: .15em;
+  max-width: fit-content;
+  margin: 0 auto;
+
+  &::before{
+    content: '';
+    display: block;
+    background: url(../img/leaf2.png);
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 65px;
+    top: 0;
+    @include mq('sp'){
+      top: 0;
+      right: 55px;
+      background-size: 65%;
+    }
+  }
+  &::after{
+    content: '';
+    display: block;
+    background: url(../img/leaf1.png)no-repeat;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 65px;
+    top: 0;
+    @include mq('sp'){
+      left: 75px;
+      top: 0;
+      background-size: 65%;
+    }
+  }
+  img{
+    @include mq('sp-down'){
+      width: 90%;
+    }
+    @include mq('sp'){
+      width: 85%;
+    }
+  }
+}
+
+.util-link{
+  font-size: 40px;
+  letter-spacing: .05em;
+  color: #fff;
+  background: $color-main;
+  box-shadow: 0 6px 0 6px rgba(210, 0, 79, 1);
+  display: block;
+  padding: 10px 60px;
+  border-radius: 20px;
+  font-weight: 600;
+  text-align: center;
+  width: 560px;
+  margin: 30px auto;
+
+  &:hover{
+    background: $color-active;
+    color: #fff;
+    box-shadow: 0 6px 0 6px rgba(81 ,121 ,0, 1);
+  }
+  @include mq('sp-down'){
+    width: 400px;
+    font-size: 28px;
+  }
+  @include mq('sp'){
+    width: 310px;
+    font-size: 20px;
+  }
+}
+/*======================================================================
+# common
+=======================================================================*/
+.important{
+  color: $color-main;
+  font-size: 32px;
+  @include mq('sp'){
+    font-size: 17px;
+  }
+}
+.big{
+  font-size: 48px;
+  color: $color-main;
+  padding-left: 12px;
+  @include mq('sp'){
+    font-size: 36px;
+  }
+
+}
+.svg{
+  .svg-box1{
+    position: absolute;
+    right: 0;
+    left: 0;
+    line-height: 1;
+    font-size: 0;
+    height: 100px;
+    svg{
+      position: absolute;
+      top: -170px;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .svg-box2{
+    position: absolute;
+    right: 0;
+    left: 0;
+    line-height: 1;
+    font-size: 0;
+    height: 100px;
+    svg{
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      transform: rotate(180deg);
+    }
+  }
+
+  
+}
+
+/* top
+-------------------------------------------------------------------------*/
+.top{
+  padding-top: 20px;
+  position: relative;
+  z-index: 15;
+  background: #fbf9ed;
+  // 下を丸くする
+  border-bottom-right-radius: 2000px 300px;
+  border-bottom-left-radius: 2000px 300px;
+}
+.top-picture{
+  padding-top: 45%;
+  background: url(../img/top-picture1_03.png) no-repeat;
+  background-position: center;
+  display: flex;
+  position: relative;
+  margin-top: -100px;
+  
+  @include mq('tab-up'){
+    background-size: 100%;
+    margin-top: -190px;
+  }
+  @include mq('pc'){
+    background-size: 90%;
+    margin-top: -235px;
+  }
+  @include mq('tab-down'){
+    background-size: 100%;
+    padding-top: 45%;
+    margin-top: -160px;
+  }
+  @include mq('sp-down'){
+    background: url(../img/top-picture3_02.png) no-repeat;
+    padding-top: 65%;
+    background-size: 100%;
+    margin-top: -35px;
+  }
+  @include mq('sp'){
+    margin-top: -45px;
+  }
+}
+// .item1 {
+//   position: absolute;
+//   display: block;
+//   content: '';
+
+//   @include mq('sp-up'){
+//     display: none;
+//   }
+//   @include mq('tab-down'){
+//     display: none;
+//   }
+//   @include mq('tab-up'){
+//     display: none;
+//   }
+// }
+// .item2{
+//   position: absolute;
+//   display: block;
+//   content: '';
+
+//   @include mq('tab-up'){
+//     display: none; 
+//   }
+//   @include mq('tab-down'){
+//     display: none;
+//   }
+//   @include mq('sp-up'){
+//     left: 60px;
+//     top: 90px;
+//   }
+
+// }
+// .item3 {
+//   position: absolute;
+//   display: block;
+//   content: '';
+//   @include mq('tab-up'){
+//     display: none;
+//   }
+//   @include mq('tab-down'){
+//     display: none;
+//   }
+//   @include mq('sp-up'){
+//     left: 0;
+//     top: 260px;
+//   }
+
+// }
+// .item4 {
+//   position: absolute;
+//   display: block;
+//   content: '';
+//   @include mq('tab-up'){
+//     display: none;
+//   }
+//   @include mq('tab-down'){
+//     display: none;
+//   }
+//   @include mq('sp-up'){
+//     right: 0;
+//     top: 240px;
+//   }
+
+// }
+// .item5{
+//   position: absolute;
+//   display: block;
+//   content: '';
+//   @include mq('tab-up'){
+//     display: none;
+//   }
+//   @include mq('tab-down'){
+//     display: none;
+//   }
+//   @include mq('sp-up'){
+//     right: 20px;
+//     top: 90px;
+//   }
+// }
+// .item6 {
+//   position: absolute;
+//   display: block;
+//   content: '';
+//   @include mq('tab-up'){
+//     display: none;
+//   }
+//   @include mq('tab-down'){
+//     display: none;
+//   }
+//   @include mq('sp-up'){
+//     display: none;
+//   }
+// }
+.top-content{
+  padding-top: 20px;
+  margin: 0 auto;
+  width: 100%;
+  @include mq('sp-up'){
+    padding: 0;
+    margin: -50px auto;
+  }
+  @include mq('pc'){
+    padding: 0;
+    margin: -120px auto;
+  }
+}
+.top-ttl{
+  font-size: 24px;
+  font-weight: 600;
+  padding-bottom: 18px;
+  text-align: center;
+  @include mq('pc'){
+    padding: 0;
+  }
+  @include mq('sp-up'){
+    padding: 0;
+  }
+
+  @include mq('sp-down'){
+    margin-top: -40px;
+    font-size: 18px;
+    padding: 0;
+  }
+  @include mq('sp'){
+    font-size: 14px;
+    padding: 0 8px;
+  }
+}
+.top-btn{
+  padding-bottom: 110px;
+
+  @include mq('sp-down'){
+    padding-bottom: 80px;
+    width: 100%;
+  }
+  @include mq('sp'){
+    padding-bottom: 60px;
+  }
+}
+/* concept
+-------------------------------------------------------------------------*/
+.concept{
+  padding-top: 72px;
+
+  @include mq('tab-up'){
+    padding-top: 112px;
+  }
+  @include mq('pc'){
+    padding-top: 182px;
+  } 
+  @include mq('tab-down'){
+    padding-top: 112px;
+  }
+  @include mq('sp-down'){
+    padding-top: 62px;
+  }
+  @include mq('sp'){
+    padding-top: 50px;
+  }
+}
+.concept-inner{
+  padding-top: 48px;
+  max-width: max-content;
+  margin: 0 auto;
+  text-align: center;
+  @include mq('sp-down'){
+    padding-bottom: 30px;
+    margin: 0  auto ;
+  }
+  @include mq('sp'){
+    padding: 30px 30px 60px;
+    margin: 0 auto;
+  }
+}
+.concept-message{
+  padding: 0 40px; 
+  @include mq('sp-down'){
+    padding: 0;
+  }
+}
+.concept-message-title{
+  font-size: 24px;
+  font-weight: 600;
+  border-bottom: solid;
+  border-color: $color-line;
+  border-width: 5px;/*10ピクセルの太さにする*/
+
+  @include mq('tab-down'){
+    background: linear-gradient(transparent 100%, #fff338 0%);
+    display: inline;
+    line-height: 2.0;
+    // 線を下にズラす    
+    padding: 0 2px 10px;
+  }
+  @include mq('sp-down'){
+    background: linear-gradient(transparent 100%, #fff338 0%);
+    display: inline;
+    line-height: 2.0;
+    // 線を下にズラす    
+    padding: 0 2px 10px;
+  }
+  @include mq('sp'){
+    font-size: 18px;
+    background: linear-gradient(transparent 100%, #fff338 0%);
+    display: inline;
+    line-height: 2.0;
+    // 線を下にズラす    
+    padding: 0 2px 5px;
+  }
+}
+.concept-message-text{
+  padding-top: 32px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 2.5;
+  @include mq('sp'){
+    font-size: 14px;
+  }
+
+}
+.concept-picture{
+  display: flex;
+  position: relative;
+  z-index: 10;
+  background: url(../img/ki05.png) no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding-top: 11%;
+  .img1 {
+    position: absolute;
+    display: block;
+    content: '';
+
+    @include mq('tab-up'){
+      left: 70px;
+      bottom: 0;
+    }
+  }
+  .img2 {
+    position: absolute;
+    display: block;
+    content: '';
+
+    @include mq('tab-up'){
+      left: 230px;
+      bottom: -10px;
+    }
+  }
+  .img3 {
+    position: absolute;
+    display: block;
+    content: '';
+
+    @include mq('tab-up'){
+      right: 230px;
+      bottom: 10px;
+    }
+  }
+  .img4 {
+    position: absolute;
+    display: block;
+    content: '';
+
+    @include mq('tab-up'){
+      right: 70px;
+      bottom: 0;
+    }
+  }
+  @include mq('tab-down'){
+    padding-top: 11%;
+    background-size: 100%;
+  }
+  @include mq('sp-down'){
+    background: url(../img/ki06.png);
+    background-size: 100%;
+    padding-top: 13%;
+  }  
+}
+/* feature
+-------------------------------------------------------------------------*/
+.feature{
+  padding-top: 72px;
+  background: $color-background2;
+  text-align: center;
+  @include mq('tab-up'){
+    padding-top: 42px;
+  }
+  @include mq('pc'){
+    padding-top: 32px;
+  }
+  @include mq('tab-down'){
+    padding-top: 32px;
+  }
+  @include mq('sp-down'){
+    padding-top: 50px;
+  }
+  @include mq('sp'){
+    padding-top: 50px;
+  }
+  
+}
+.feature-list{
+  padding-top: 32px;
+  margin: 0;
+
+}
+.feature-item{
+  display: inline-block;
+
+  +.feature-item{
+    @include mq('sp-up'){
+      margin-top: 48px;
+      margin-left: 16px;
+    }
+    @include mq('tab-up'){
+      margin-left: 96px;
+      margin-top: 48px;
+    }
+  }
+  @include mq('sp-down'){
+    margin-bottom: 40px;
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+  @include mq('sp'){
+    margin-bottom: 40px;
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+  @include mq('pc'){
+    margin: 48px 78px 0; 
+  }
+}
+.feature-item-picture{
+  @include mq('sp-down'){
+   margin-bottom: 30px; 
+  }
+}
+.feature-item-title{
+  font-size: 24px;
+  font-weight: 600;
+
+}
+.feature-footer{
+  padding-top: 72px;
+  padding-bottom: 70px;
+  max-width: max-content;
+  margin: 0 auto;
+  text-align: center;
+}
+.feature-message-title{
+  font-size: 24px;
+  font-weight: 600;
+  border-bottom: solid;
+  border-color: $color-line;
+  border-width: 5px;/*10ピクセルの太さにする*/
+  @include mq('sp-down'){
+    background: linear-gradient(transparent 95%, #fff338 0%);
+    display: inline;
+    line-height: 2.0;
+    // 線を下にズラす    
+    padding: 0 2px 10px;
+  }
+  @include mq('sp'){
+    font-size: 20px;
+    background: linear-gradient(transparent 95%, #fff338 0%);
+    display: inline;
+    line-height: 2.0;
+    // 線を下にズラす    
+    padding: 0 2px 10px;
+  }
+}
+/* about
+-------------------------------------------------------------------------*/
+.about{
+  padding-top: 112px;
+
+  @include mq('sp'){
+    padding-top: 100px;
+  }
+}
+
+.about-list{
+  padding: 72px 0 140px;
+  @include mq('sp-down'){
+    padding: 0;
+  }
+}
+.about-item{
+  font-size: 18px;
+  font-weight: 600;
+  text-align: justify;
+  display: flex;
+  max-width: 680px;
+  margin: 0 auto;
+  &::before{
+    content: '';
+    display: block;
+    flex: 0 0 180px;
+    height: 180px;
+    margin-right: 80px;
+    @include mq('sp-down'){
+      margin: 40px auto;
+
+    }
+  }
+  &:nth-child(1)::before{
+    background: url(../img/plofille_img.png);
+  }
+  &:nth-child(2)::before{
+    width: 40px;
+    height: 40px;
+  }
+  @include mq('sp-up'){
+    font-size: 18px;
+  }
+  @include mq('sp-down'){
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 50px auto;
+  }
+  @include mq('sp'){
+    margin: 0 65px auto;
+  }
+  +.about-item{
+    @include mq('sp-down'){
+      margin-top: -90px;
+      padding-bottom: 100px;
+    }
+  }
+
+}
+
+/* contact
+-------------------------------------------------------------------------*/
+.contact{
+  padding: 120px 0 100px;
+  background: $color-background1;
+
+}
+.contact-picture{
+  padding-top: 25%;
+  background: url(../img/ribon-flag1.png) no-repeat;
+  background-position: center;
+  background-size: 100%;
+  position: relative;
+  top: -220px;
+
+  @include mq('tab-down'){
+    padding-top: 30%;
+  }
+  @include mq('sp-down'){
+    background: url(../img/ribon-flag2.png)no-repeat;
+    background-size: 100%;
+    top: -160px;
+  }
+  
+
+  // &::before{
+  //   content: '';
+  //   display: block;
+  //   background: url(../img/flag_right.png);
+  //   background-repeat: no-repeat;
+  //   width: 45%;
+  //   height: 100%;
+  //   position: absolute;
+  //   right: 5px;
+  //   top: 100px;
+  // }
+  // &::after{
+  //   content: '';
+  //   display: block;
+  //   background: url(../img/flag_left.png) no-repeat;
+  //   width: 50%;
+  //   height: 100%;
+  //   position: absolute;
+  //   right: 665px;
+  //   top: 100px;
+  // }
+}
+.section{
+  margin-top: -200px;
+  @include mq('sp-up'){
+    margin-top: -320px;
+  }
+
+}
+.contact-ttl{
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1;
+  letter-spacing: .15em;
+  max-width: fit-content;
+  margin: 0 auto;
+  padding-top: 60px;
+  @include mq('sp-down'){
+    font-size: 22px;
+  }
+  @include mq('sp'){
+    font-size: 16px;
+    padding-top: 35px;
+  }
+}
+.contact-cost{
+  padding-top: 10px;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 0.02em;
+  @include mq('sp'){
+    font-size: 28px;
+  }
+}
+.contact-cost-inline{
+  font-size: 18px;
+  margin-left: -10px;
+  // 米印を上に持ってくる
+  vertical-align: super;
+
+  @include mq('sp'){
+    font-size: 14px;
+  }
+}
+.contact-button{
+  margin-top: 20px;
+}
+.contact-text{
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1;
+  letter-spacing: .15em;
+  max-width: fit-content;
+  margin: 0 auto;
+  padding: 20px 0 100px;
+
+  @include mq('sp-up'){
+    padding: 20px 0 50px;
+  }
+  @include mq('sp-down'){
+    padding: 20px 0 50px;
+  }
+
+  @include mq('sp'){
+    font-size: 14px;
+  }
+}
