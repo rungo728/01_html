@@ -274,11 +274,12 @@ header{
     color: #fff; 
   }
   @include mq('md'){
-    &:hover{
-      background: $primary-color;
-      color: #fff;
+    &:not(.-submit){
+      &:hover{
+        background: $primary-color;
+        color: #fff;
+      }
     }
-  
   }
 }
 /* top
@@ -872,5 +873,13 @@ header{
 
   @include mq('sm'){
     margin-top: 24px;
+  }
+}
+.contact-message{
+  text-align: center;
+  margin-top: 60px;
+  display: none;
+  &.-error{
+    color: #f00;
   }
 }

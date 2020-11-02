@@ -326,7 +326,7 @@ header .drawer-hamburger-icon::before, header .drawer-hamburger-icon::after {
 }
 
 @media screen and (min-width: 768px) {
-  .util-link:hover {
+  .util-link:not(.-submit):hover {
     background: #3EA1D1;
     color: #fff;
   }
@@ -1083,5 +1083,15 @@ header .drawer-hamburger-icon::before, header .drawer-hamburger-icon::after {
   .contact-footer-submit {
     margin-top: 24px;
   }
+}
+
+.contact-message {
+  text-align: center;
+  margin-top: 60px;
+  display: none;
+}
+
+.contact-message.-error {
+  color: #f00;
 }
 /*# sourceMappingURL=style.css.map */
