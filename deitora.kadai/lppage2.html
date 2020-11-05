@@ -17,51 +17,51 @@
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"></script>
   <!-- jQueryのライブラリー本体を読み込む -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="../deitora.kadai/js/lppage.js"></script>
+  <script src="../deitora.kadai/js/smoothscroll.js"></script>
   <title>デイトラ2nd最終課題</title>
 </head>
 
 <body>
 
-  <header class="header">
+  <header id="js-header" class="header">
     <h1 class="header-ttl">Sample Corp.
     </h1>
     <nav class="header-nav">
-      <button class="header-burger" aria-label="menu">
+      <button id="js-toggle" class="header-burger" aria-label="menu">
         <span class="header-burgerInline"></span>
         <span class="header-burgerInline"></span>
         <span class="header-burgerInline"></span>
       </button>
       <ul class="header-navList">
         <li class="header-navItem">
-          <a href="#news" class="header-navLink ">News</a>
+          <a href="#news" class="header-navLink js-navLink">News</a>
         </li>
         <li class="header-navItem">
-          <a href="#service" class="header-navLink ">Service</a>
+          <a href="#service" class="header-navLink js-navLink">Service</a>
+        </li>
+        <li class="header-navItem" >
+          <a href="#results" class="header-navLink js-navLink">Results</a>
         </li>
         <li class="header-navItem">
-          <a href="#results" class="header-navLink ">Results</a>
+          <a href="#price" class="header-navLink js-navLink">Price</a>
         </li>
         <li class="header-navItem">
-          <a href="#price" class="header-navLink ">Price</a>
+          <a href="#comments" class="header-navLink js-navLink">Comments</a>
+        </li>
+        <li class="header-navItem"> 
+          <a href="#faq" class="header-navLink js-navLink">FAQs</a>
         </li>
         <li class="header-navItem">
-          <a href="#comments" class="header-navLink ">Comments</a>
-        </li>
-        <li class="header-navItem">
-          <a href="#faqs" class="header-navLink ">FAQs</a>
-        </li>
-        <li class="header-navItem">
-          <a href="#contact" class="header-navLink ">Contact</a>
+          <a href="#contact" class="header-navLink js-navLink">Contact</a>
         </li>
       </ul>
     </nav>
-    <div class="header-overlay"></div>
+    <div id="js-overlay" class="header-overlay"></div>
   </header><!-- /.header -->
 
-  <div class="hero">
+  <div id="js-hero" class="hero">
     <div class="hero-inner">
       <div class="hero-content">
         <h2 class="hero-ttl">
@@ -76,7 +76,7 @@
   </div><!-- /.hero -->
   <main>
 
-    <section class="news">
+    <section id="news" class="news">
       <div class="news-inner">
         <h2 class="util-ttl">News</h2>
         <ul class="news-list">
@@ -120,7 +120,7 @@
       </div>
     </section><!-- /.news -->
 
-    <section class="service">
+    <section id="service" class="service">
       <h2 class="util-ttl">Service</h2>
       <div class="service-inner">
         <dl class="service-list">
@@ -147,11 +147,11 @@
       </div>
     </section><!-- /.service -->
  
-    <section class="results">
+    <section id="results" class="results">
       <h2 class="util-ttl">Results</h2>
       <div class="results-container swiper-container">
-        <div class="results-list swiper-wrapper">
-          <div class="results-item swiper-slide">
+        <ul class="results-list swiper-wrapper">
+          <li class="results-item swiper-slide">
             <a href="#" class="results-itemLink">
               <figure class="results-itemFig">
                 <img src="../deitora.kadai/images/slide1.png" alt="" />
@@ -163,8 +163,8 @@
                 </p>
               </div>
             </a>
-          </div>
-          <div class="results-item swiper-slide">
+          </li>
+          <li class="results-item swiper-slide">
             <a href="#" class="results-itemLink">
               <figure class="results-itemFig">
                 <img src="../deitora.kadai/images/slide1.png" alt="" />
@@ -176,8 +176,8 @@
                 </p>
               </div>
             </a>
-          </div>
-          <div class="results-item swiper-slide">
+          </li>
+          <li class="results-item swiper-slide">
             <a href="#" class="results-itemLink">
               <figure class="results-itemFig">
                 <img src="../deitora.kadai/images/slide1.png" alt="" />
@@ -189,8 +189,8 @@
                 </p>
               </div>
             </a>
-          </div>
-          <div class="results-item swiper-slide">
+          </li>
+          <li class="results-item swiper-slide">
             <a href="#" class="results-itemLink">
               <figure class="results-itemFig">
                 <img src="../deitora.kadai/images/slide1.png" alt="" />
@@ -202,8 +202,8 @@
                 </p>
               </div>
             </a>
-          </div>
-        </div>
+          </li>
+        </ul>
         <!-- <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div> -->
       </div>
@@ -213,7 +213,7 @@
         <a href="#" class="util-link mod-light">VIEW ALL</a>
       </div>
     </section><!-- /.results -->
-    <section class="price">
+    <section id="price" class="price">
       <h2 class="util-ttl">Price</h2>
       <table class="price-table">
         <tbody>
@@ -234,7 +234,7 @@
       <p class="price-txt">※ 上記料金はサンプルです。</p>
     </section><!-- /.price -->
     <div class="bg-wrapper">
-      <section class="comments">
+      <section id="comments" class="comments">
         <div class="comments-inner">
           <div class="comments-box">
             <h2 class="util-ttl">Comments</h2>
@@ -247,7 +247,7 @@
         </div>
       </section>
       <!-- /.comments -->
-      <section class="faq">
+      <section id="faq" class="faq">
         <h2 class="util-ttl">Q&A</h2>
         <div class="faq-inner">
           <dl class="faq-list">
@@ -315,7 +315,7 @@
         </div>
       </section><!-- /.access -->
     </div><!-- /.bg-wrapper -->
-    <section class="contact">
+    <section id="contact" class="contact">
       <div class="contact-inner">
         <div class="contact-header">
           <div class="contact-headerInner">
@@ -363,7 +363,7 @@
               </div>
               <div class="contact-item">
                 <dt class="contact-itemTtl">性別</dt>
-                <dd class="contact-inputBox">
+                <dd class="contact-inputBox contact-item--radio">
                   <div class="contact-radio">
                     <input type="radio" value="male" name="sex" id="radio-male" checked>
                     <label for="radio-male" class="contact-radioLabel">男性</label>
@@ -382,8 +382,8 @@
               </div>
             </dl>
             <div class="contact-privacy">
-              <input type="checkbox" name="privacy">
-              <label class="contact-privacyLabel">個人情報保護方針に同意する</label>
+              <input type="checkbox" name="privacy" id="form-privacy">
+              <label for="form-privacy" class="contact-privacyLabel">個人情報保護方針に同意する</label>
             </div>
             <button class="contact-button" disabled>送信する</button>
           </form>
