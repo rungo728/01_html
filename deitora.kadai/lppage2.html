@@ -19,7 +19,6 @@
   <!-- jQueryのライブラリー本体を読み込む -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="../deitora.kadai/js/lppage.js"></script>
-  <script src="../deitora.kadai/js/smoothscroll.js"></script>
   <title>デイトラ2nd最終課題</title>
 </head>
 
@@ -251,51 +250,51 @@
         <h2 class="util-ttl">Q&A</h2>
         <div class="faq-inner">
           <dl class="faq-list">
-            <div class="faq-item add-active">
+            <div class="faq-item js-faq">
               <dt class="faq-itemQuestion">
                 <p class="faq-itemQuestion_txt">質問質問質問？</p>
               </dt>
-              <dd class="faq-itemAnswer ">
+              <dd class="faq-itemAnswer js-faqA">
                 <p class="faq-itemAnswer_txt">回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答</p>
               </dd>
             </div>
-            <div class="faq-item add-active">
+            <div class="faq-item js-faq">
               <dt class="faq-itemQuestion">
                 <p class="faq-itemQuestion_txt">質問質問質問？</p>
               </dt>
-              <dd class="faq-itemAnswer">
+              <dd class="faq-itemAnswer js-faqA">
                 <p class="faq-itemAnswer_txt">回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答</p>
               </dd>
             </div>
-            <div class="faq-item add-active">
+            <div class="faq-item js-faq">
               <dt class="faq-itemQuestion">
                 <p class="faq-itemQuestion_txt">質問質問質問？</p>
               </dt>
-              <dd class="faq-itemAnswer">
+              <dd class="faq-itemAnswer js-faqA">
                 <p class="faq-itemAnswer_txt">回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答</p>
               </dd>
             </div>
-            <div class="faq-item add-active">
+            <div class="faq-item js-faq">
               <dt class="faq-itemQuestion">
                 <p class="faq-itemQuestion_txt">質問質問質問？</p>
               </dt>
-              <dd class="faq-itemAnswer">
+              <dd class="faq-itemAnswer js-faqA">
                 <p class="faq-itemAnswer_txt">回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答</p>
               </dd>
             </div>
-            <div class="faq-item add-active">
+            <div class="faq-item js-faq">
               <dt class="faq-itemQuestion">
                 <p class="faq-itemQuestion_txt">質問質問質問？</p>
               </dt>
-              <dd class="faq-itemAnswer">
+              <dd class="faq-itemAnswer js-faqA">
                 <p class="faq-itemAnswer_txt">回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答</p>
               </dd>
             </div>
-            <div class="faq-item add-active">
+            <div class="faq-item js-faq">
               <dt class="faq-itemQuestion">
                 <p class="faq-itemQuestion_txt">質問質問質問？</p>
               </dt>
-              <dd class="faq-itemAnswer">
+              <dd class="faq-itemAnswer js-faqA">
                 <p class="faq-itemAnswer_txt">回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答</p>
               </dd>
             </div>
@@ -324,15 +323,15 @@
           </div>
         </div>
         <div class="contact-content">
-          <form action="" method="post">
+          <form id="js-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSckdPOushnA4ZddC8g-OyijZVZAGDFueEcOAtQzOfrcTh-xCA/formResponse" method="post">
             <dl class="contact-list">
               <div class="contact-item">
                 <dt class="contact-itemTtl">お問い合わせ種別</dt>
                 <dd class="contact-selectBox">
-                  <select name="form-select" id="">
+                  <select name="entry.1325834752" id="">
                     <option value="-"selected>選択してください</option>
-                    <option value="A">A</option>
-                    <option value="B">B</option>
+                    <option value="法人">法人</option>
+                    <option value="個人">個人</option>
                   </select>
                 </dd>
               </div>
@@ -341,7 +340,7 @@
                   <span class="contact-requireLabel">必須</span>
                 </dt>
                 <dd class="contact-inputBox">
-                  <input type="text" name="name" placeholder="氏名" class="js-require">
+                  <input type="text" name="entry.2041433104" placeholder="氏名" class="js-require" required>
                   <span class="contact-focusLine"></span>
                 </dd>
               </div>
@@ -350,14 +349,16 @@
                   <span class="contact-requireLabel">必須</span>
                 </dt>
                 <dd class="contact-inputBox">
-                  <input type="text" name="kana" placeholder="フリガナ" class="js-require">
+                  <input type="text" name="entry.12297759" placeholder="フリガナ" class="js-require" required>
                   <span class="contact-focusLine"></span>
                 </dd>
               </div>
               <div class="contact-item">
-                <dt class="contact-itemTtl">メールアドレス</dt>
+                <dt class="contact-itemTtl">メールアドレス
+                  <span class="contact-requireLabel">必須</span>
+                </dt>
                 <dd class="contact-inputBox">
-                  <input type="email" name="email" placeholder="sample@gmail.com" class="js-require">
+                  <input type="email" name="emailAddress" placeholder="sample@gmail.com" class="js-require" required>
                   <span class="contact-focusLine"></span>
                 </dd>
               </div>
@@ -365,11 +366,11 @@
                 <dt class="contact-itemTtl">性別</dt>
                 <dd class="contact-inputBox contact-item--radio">
                   <div class="contact-radio">
-                    <input type="radio" value="male" name="sex" id="radio-male" checked>
+                    <input type="radio" value="男性" name="entry.372406160" id="radio-male" checked>
                     <label for="radio-male" class="contact-radioLabel">男性</label>
                   </div>
                   <div class="contact-radio">
-                    <input type="radio" value="female" name="sex" id="radio-female">
+                    <input type="radio" value="女性" name="entry.372406160" id="radio-female">
                     <label for="radio-female" class="contact-radioLabel">女性</label>
                   </div>
                 </dd>
@@ -377,16 +378,22 @@
               <div class="contact-item contact-item--message mod-message">
                 <dt class="contact-itemTtl">メッセージ</dt>
                 <dd >
-                  <textarea name="message"></textarea>
+                  <textarea name="entry.1186026670"></textarea>
                 </dd>
               </div>
             </dl>
             <div class="contact-privacy">
-              <input type="checkbox" name="privacy" id="form-privacy">
+              <input type="checkbox" name="entry.563652281" id="form-privacy" value="個人情報保護方針の同意">
               <label for="form-privacy" class="contact-privacyLabel">個人情報保護方針に同意する</label>
             </div>
-            <button class="contact-button" disabled>送信する</button>
+            <button id="js-submit" class="contact-button -submit" disabled>送信する</button>
           </form>
+          <div id="js-success" class="contact-message">
+            <p class="contact-success">送信完了しました！ありがとうございました！</p>
+          </div>
+          <div id="js-error" class="contact-message -error">
+            <p class="contact-error">送信が失敗しました。<br>ページを更新して再度送信してください。</p>
+          </div>
         </div>
       </div>
     </section>

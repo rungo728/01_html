@@ -305,9 +305,9 @@ img{
   right: 16px;
   z-index: 100;
   // スクロールされるまでは消えている状態
-  // opacity: 0;
-  // visibility: hidden;
-  // transition: .5s;
+  opacity: 0;
+  visibility: hidden;
+  transition: .5s;
   @include mq('sp-up') {
 		bottom: 40px;
 		right: 40px;
@@ -325,8 +325,8 @@ img{
     top: 20px;
   }
   .add-scrolled & {
-		// opacity: 1;
-		// visibility: visible;
+		opacity: 1;
+		visibility: visible;
 	}
 }
 .footer-snsList{
@@ -518,8 +518,10 @@ img{
   text-align: center;
   margin-top: 40px;
   @include mq('sp-up') {
-    &:hover{
-      background: $color-active;
+    &:not(.-submit){
+      &:hover{
+        background: $color-active;
+      }
     }
   }
   @include mq('sp-down'){
@@ -1170,6 +1172,7 @@ img{
     // 中央によせる
     top: 50%;
     transform: translateY(-50%);
+    transition: transform .3s;
   }
   &::after{
     position: absolute;
@@ -1182,9 +1185,11 @@ img{
     // 中央によせる
     top: 50%;
     transform: translateY(-50%)rotate(90deg);
+    transition: transform .3s;
   }
 
 }
+// afterの部分だけ90度回転するようにする
 .faq-item.add-active .faq-itemQuestion_txt:after {
   transform: translateY(-50%) rotate(0);
 }
@@ -1196,11 +1201,12 @@ img{
   background: #3B69FF33;
   border-radius: 4px;
   line-height: 1.5;
-  padding: 12px;
+  padding: 12px 16px 12px 12px;
 
   @include mq('sp-up'){
     padding: 16px;
   }
+  
 }
 /* access
 -------------------------------------------------------------------------*/
@@ -1294,7 +1300,7 @@ iframe{
   padding: 40px 16px;
 
   @include mq('sp-up'){
-    margin: 120px auto;
+    margin: 120px 0 auto;
     padding: 60px 160px;
   }
   .util-ttl{
@@ -1622,6 +1628,9 @@ iframe{
     transform: rotate(-45deg);
     opacity: 0;
     transition: 0.2s; 
+    @include mq('sp-down'){
+      left: 4px;
+    }
   }
 }
 input[type="checkbox"]:checked + .contact-privacyLabel:after {
@@ -1687,7 +1696,7 @@ input[type="radio"]:checked + .contact-radioLabel:after{
 .contact-button{
   margin-top: 38px;
   width: 165px;
-
+  background-color: $color-disable;
   @include mq('sp-up'){
     width: 173px;
     margin-top: 42px;
@@ -1696,4 +1705,23 @@ input[type="radio"]:checked + .contact-radioLabel:after{
   &:disabled{
     background-color: $color-disable;
   }
+  &.-active{
+    background: $color-active;
+  }
 }
+.contact-message{
+  text-align: center;
+  margin-top: 60px;
+  display: none;
+  &.-error{
+    color: #f00;
+  }
+
+}
+.contact-success{
+  color: $color-active;
+}
+.contact-error{
+  line-height: 1.5;
+}
+
