@@ -10,6 +10,7 @@ $layout-width-inner: 1200px;
 //マップ型変数breakpointsを定義
 $breakpoints: (
 //キー  値
+ 'small-sp':'screen and (max-width: 360px)', //360px以下（スモールスマホ）用の表示  
  'sp':'screen and (max-width: 500px)', //500px以下（スマホ）用の表示
  'sp-down': 'screen and (max-width: 767px)', //767px以下（スマホ）用の表示
  'sp-up': 'screen and (min-width: 768px)', //768px以上（タブレット・PC）用の表示
@@ -182,15 +183,15 @@ header{
     font-weight: 600;
   }
   @include mq('sp-up') {
-    bottom: 120px;
+    bottom: 15px;
     right: 20px;
   }
   @include mq('sp-down'){
-    bottom: 165px;
+    bottom: 10px;
     
   }
   @include mq('sp'){
-    bottom: 176px;
+    bottom: 25px;
   }
   // js-topを超えてスクロールしたら表示される
   .is-show & {
@@ -281,6 +282,9 @@ header{
     @include mq('sp'){
       width: 70%;
     }
+    @include mq('small-sp'){
+      width: 65%;
+    }
   }
 }
 .util-title-feature{
@@ -314,6 +318,11 @@ header{
       top: 15px;
       background-size: 65%;
     }
+    @include mq('small-sp'){
+      right: -5px;
+      top: 15px;
+      background-size: 55%;
+    }
   }
   &::after{
     content: '';
@@ -335,6 +344,11 @@ header{
       top: 15px;
       background-size: 65%;
     }
+    @include mq('small-sp'){
+      left: 15px;
+      top: 15px;
+      background-size: 55%;
+    }
   }
   img{
     @include mq('sp-down'){
@@ -342,6 +356,9 @@ header{
     }
     @include mq('sp'){
       width: 70%;
+    }
+    @include mq('small-sp'){
+      width: 65%;
     }
   }
 }
@@ -370,6 +387,11 @@ header{
       right: 55px;
       background-size: 65%;
     }
+    @include mq('small-sp'){
+      top: 0;
+      right: 45px;
+      background-size: 55%;
+    }
   }
   &::after{
     content: '';
@@ -385,6 +407,11 @@ header{
       top: 0;
       background-size: 65%;
     }
+    @include mq('small-sp'){
+      left: 65px;
+      top: 0;
+      background-size: 55%;
+    } 
   }
   img{
     @include mq('sp-down'){
@@ -392,6 +419,9 @@ header{
     }
     @include mq('sp'){
       width: 85%;
+    }
+    @include mq('small-sp'){
+      width: 82%;
     }
   }
 }
@@ -422,6 +452,10 @@ header{
   @include mq('sp'){
     width: 310px;
     font-size: 20px;
+  }
+  @include mq('small-sp'){
+    width: 295px;
+    font-size: 18px;
   }
 }
 /*======================================================================
@@ -650,6 +684,9 @@ header{
     font-size: 14px;
     padding: 0 8px;
   }
+  @include mq('small-sp'){
+    font-size: 12px;
+  }
 }
 .top-btn{
   padding-bottom: 110px;
@@ -693,8 +730,11 @@ header{
     margin: 0  auto ;
   }
   @include mq('sp'){
-    padding: 30px 30px 60px;
+    padding: 26px 26px 60px;
     margin: 0 auto;
+  }
+  @include mq('small-sp'){
+    padding: 10px 10px 60px;
   }
 }
 .concept-message{
@@ -732,6 +772,9 @@ header{
     // 線を下にズラす    
     padding: 0 2px 5px;
   }
+  @include mq('small-sp'){
+    font-size: 16px;
+  }
 }
 .concept-message-text{
   padding-top: 32px;
@@ -740,6 +783,9 @@ header{
   line-height: 2.5;
   @include mq('sp'){
     font-size: 14px;
+  }
+  @include mq('small-sp'){
+    font-size: 13px;
   }
 
 }
@@ -867,6 +913,16 @@ header{
   font-size: 24px;
   font-weight: 600;
 
+  @include mq('sp-down'){
+    font-size: 22px;
+  }
+  @include mq('sp'){
+    font-size: 20px;
+  }
+  @include mq('small-sp'){
+    font-size: 18px;
+  }
+
 }
 .feature-footer{
   padding-top: 72px;
@@ -874,6 +930,7 @@ header{
   max-width: max-content;
   margin: 0 auto;
   text-align: center;
+
 }
 .feature-message-title{
   font-size: 24px;
@@ -895,6 +952,10 @@ header{
     line-height: 2.0;
     // 線を下にズラす    
     padding: 0 2px 10px;
+  }
+  @include mq('small-sp'){
+    font-size: 17px;
+    padding: 0 2px 8px;
   }
 }
 /* about
@@ -947,6 +1008,7 @@ header{
     margin: 0 50px auto;
   }
   @include mq('sp'){
+    font-size: 15px;
     margin: 0 65px auto;
   }
   +.about-item{
@@ -1028,6 +1090,9 @@ header{
     font-size: 16px;
     padding-top: 35px;
   }
+  @include mq('small-sp'){
+    font-size: 14px;
+  }
 }
 .contact-cost{
   padding-top: 10px;
@@ -1071,5 +1136,8 @@ header{
 
   @include mq('sp'){
     font-size: 14px;
+  }
+  @include mq('small-sp'){
+    font-size: 12px;
   }
 }
